@@ -2,8 +2,7 @@ name: Deploy Website
 on:
   push:
     branches:
-      - main # Robot działa, gdy wysyłasz zmiany do głównej gałęzi
-
+      - main
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
