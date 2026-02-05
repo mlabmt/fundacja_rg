@@ -2,90 +2,84 @@
 import Layout from '../layouts/Layout.astro';
 import TopBar from '../components/TopBar.astro';
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Fundacja Znaj Granice">
-  <TopBar />
-  <Header />
+  <div class="sticky top-0 z-50 shadow-2xl">
+    <TopBar />
+    <Header />
+  </div>
 
-  <main class="bg-white">
-    <section class="py-20 px-6 max-w-5xl mx-auto text-center">
-      <h1 class="text-3xl md:text-5xl font-black text-slate-900 mb-8 leading-tight uppercase tracking-tight">
-        Fundacja <span class="text-emerald-600">Znaj Granice</span>
-      </h1>
-      <p class="text-xl text-slate-700 leading-relaxed font-medium">
-        Niezależna organizacja pozarządowa, która w sposób strategiczny i systemowy zajmuje się problematyką uzależnień behawioralnych.
-      </p>
-      <div class="mt-8 p-6 bg-slate-50 rounded-2xl border-l-4 border-emerald-500 inline-block text-left">
-        <p class="text-sm font-bold uppercase tracking-widest text-emerald-700 mb-2">Dewiza Fundacji</p>
-        <p class="text-lg italic text-slate-800">"Niezależny, wiarygodny i strategiczny lider w dziedzinie przeciwdziałania uzależnieniom."</p>
+  <main>
+    <section id="o-nas" class="py-24 px-6 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-black text-slate-900 mb-8 leading-tight uppercase tracking-tight">
+          Fundacja <span class="text-emerald-600">Znaj Granice</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-slate-700 leading-relaxed font-medium mb-12">
+          Niezależna organizacja pozarządowa, która w sposób strategiczny i systemowy zajmuje się problematyką uzależnień behawioralnych.
+        </p>
+        
+        <div class="inline-block bg-slate-900 text-white p-10 rounded-[2rem] border-b-8 border-emerald-500 text-left shadow-2xl">
+          <p class="text-xs font-bold text-emerald-400 uppercase tracking-[0.3em] mb-3">Dewiza Fundacji</p>
+          <p class="text-xl md:text-2xl font-bold italic leading-snug">
+            "Niezależny, wiarygodny i strategiczny lider w dziedzinie przeciwdziałania uzależnieniom."
+          </p>
+        </div>
       </div>
     </section>
 
-    <section id="dzialania" class="py-20 bg-slate-50 px-6">
-      <div class="max-w-6xl mx-auto text-center mb-16">
-        <h2 class="text-3xl font-bold mb-4">Nasze Obszary Działania</h2>
-        <p class="text-slate-600">Dostosowujemy model pomocy do potrzeb różnych grup odbiorców.</p>
+    <section id="dzialania" class="py-24 px-6 bg-slate-900 text-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
+          <h2 class="text-4xl font-black uppercase tracking-tighter">Obszary<br/><span class="text-emerald-500">Działania</span></h2>
+          <p class="text-slate-400 max-w-sm font-medium">Dostosowujemy model pomocy i rozwoju, działając w trzech kluczowych filarach społeczno-biznesowych.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-emerald-500 transition-colors group">
+            <div class="w-12 h-12 bg-emerald-500 rounded-xl mb-6 flex items-center justify-center font-black text-slate-900">01</div>
+            <h3 class="text-2xl font-black mb-6 uppercase italic group-hover:text-emerald-400 transition">Dla Graczy</h3>
+            <ul class="space-y-4 text-slate-300 text-sm leading-relaxed">
+              <li><strong class="text-white">Wsparcie</strong> – Rozwój profesjonalnego leczenia dla osób uzależnionych oraz ich rodzin.</li>
+              <li><strong class="text-white">Profilaktyka</strong> – Tworzenie nowoczesnych programów edukacyjnych.</li>
+              <li><strong class="text-white">Terapia</strong> – Certyfikowani specjaliści i ośrodki.</li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-emerald-500 transition-colors group">
+            <div class="w-12 h-12 bg-emerald-500 rounded-xl mb-6 flex items-center justify-center font-black text-slate-900">02</div>
+            <h3 class="text-2xl font-black mb-6 uppercase italic group-hover:text-emerald-400 transition text-white">Społeczna</h3>
+            <ul class="space-y-4 text-slate-300 text-sm leading-relaxed">
+              <li><strong class="text-white">Badania</strong> – Ogólnopolskie analizy nad rynkiem hazardu.</li>
+              <li><strong class="text-white">Kampanie</strong> – Edukacja społeczna na poziomie regionalnym.</li>
+              <li><strong class="text-white">Szkolenia</strong> – Wsparcie dla pedagogów i kuratorów.</li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-emerald-500 transition-colors group">
+            <div class="w-12 h-12 bg-emerald-500 rounded-xl mb-6 flex items-center justify-center font-black text-slate-900">03</div>
+            <h3 class="text-2xl font-black mb-6 uppercase italic group-hover:text-emerald-400 transition text-white">Dla Biznesu</h3>
+            <ul class="space-y-4 text-slate-300 text-sm leading-relaxed">
+              <li><strong class="text-white">Audyt</strong> – Certyfikacja Responsible Gaming i Compliance.</li>
+              <li><strong class="text-white">Edukacja</strong> – Szkolenia CSR i wsparcie działów prawnych.</li>
+              <li><strong class="text-white">Wydarzenia</strong> – Konferencje i webinary eksperckie.</li>
+            </ul>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
-          <div class="text-emerald-600 font-bold mb-4">Obszar 1</div>
-          <h3 class="text-xl font-black mb-6 uppercase">DLA GRACZY</h3>
-          <ul class="space-y-4 text-sm text-slate-600">
-            <li><strong class="text-slate-900">Wsparcie:</strong> Rozwój profesjonalnej pomocy dla osób uzależnionych i rodzin.</li>
-            <li><strong class="text-slate-900">Profilaktyka:</strong> Programy edukacyjne i profilaktyczne.</li>
-            <li><strong class="text-slate-900">Terapia:</strong> Budowa sieci certyfikowanych ośrodków.</li>
-          </ul>
-        </div>
-
-        <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
-          <div class="text-emerald-600 font-bold mb-4">Obszar 2</div>
-          <h3 class="text-xl font-black mb-6 uppercase text-slate-900">DZIAŁALNOŚĆ SPOŁECZNA</h3>
-          <ul class="space-y-4 text-sm text-slate-600">
-            <li><strong class="text-slate-900">Badania:</strong> Ogólnopolskie badania nad hazardem.</li>
-            <li><strong class="text-slate-900">Kampanie:</strong> Działania regionalne i ogólnopolskie.</li>
-            <li><strong class="text-slate-900">Szkolenia:</strong> Certyfikacja pedagogów i kuratorów.</li>
-          </ul>
-        </div>
-
-        <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
-          <div class="text-emerald-600 font-bold mb-4">Obszar 3</div>
-          <h3 class="text-xl font-black mb-6 uppercase text-slate-900">DLA BIZNESU</h3>
-          <ul class="space-y-4 text-sm text-slate-600">
-            <li><strong class="text-slate-900">Audyt:</strong> Odpowiedzialna gra i zgodność z ustawą.</li>
-            <li><strong class="text-slate-900">Edukacja:</strong> Szkolenia dla działów Compliance i CSR.</li>
-            <li><strong class="text-slate-900">Wydarzenia:</strong> Webinary i konferencje z ekspertami.</li>
-          </ul>
-        </div>
+    <section id="misja" class="py-24 px-6 bg-emerald-50 border-y border-emerald-100">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-black text-emerald-900 uppercase mb-8">Nasz cel strategiczny</h2>
+        <p class="text-xl text-emerald-800 font-medium italic leading-relaxed">
+          "Dążymy do bycia liderem, który nie tylko pomaga w kryzysie, ale przede wszystkim wyznacza standardy bezpiecznej rozrywki i odpowiedzialnego biznesu w Polsce."
+        </p>
       </div>
     </section>
   </main>
 
-  <footer class="bg-slate-900 text-white py-20 px-6">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
-      <div>
-        <div class="font-black text-xl mb-6">FUNDACJA ZNAJ GRANICE</div>
-        <div class="text-slate-400 text-sm space-y-2">
-          <p>KRS: 0000XXXXXX</p>
-          <p>NIP: XXXXXXXXXX</p>
-          <p>REGON: XXXXXXXXX</p>
-        </div>
-      </div>
-      <div>
-        <div class="font-bold mb-6">Kontakt</div>
-        <div class="text-slate-400 text-sm space-y-2">
-          <p>Tel: +48 XXX XXX XXX</p>
-          <p>Email: kontakt@znajgranice.org</p>
-        </div>
-      </div>
-      <div class="flex flex-col gap-4 text-sm font-bold">
-        <a href="/rodo" class="hover:text-emerald-400">Polityka Prywatności i RODO</a>
-        <a href="/regulamin" class="hover:text-emerald-400">Regulamin</a>
-      </div>
-    </div>
-    <div class="max-w-6xl mx-auto mt-16 pt-8 border-t border-slate-800 text-xs text-slate-500">
-      © 2026 Fundacja Znaj Granice. Wszystkie prawa zastrzeżone.
-    </div>
-  </footer>
+  <Footer />
 </Layout>
