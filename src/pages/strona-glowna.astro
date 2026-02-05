@@ -1,0 +1,177 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+	<div class="min-h-screen bg-slate-50 font-sans text-slate-900">
+		
+		<nav class="sticky top-0 z-50 bg-white border-b border-slate-200">
+			<div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
+				<div class="text-xl font-black tracking-tighter text-emerald-800">ZNAJ GRANICE</div>
+				
+				<div class="hidden md:flex gap-8 items-center font-semibold text-sm">
+					<a href="#o-nas" class="hover:text-emerald-600 transition">O nas</a>
+					<a href="#test" class="hover:text-emerald-600 transition">Test</a>
+					<a href="#pomoc" class="hover:text-emerald-600 transition">Pomoc</a>
+					<a href="tel:116123" class="bg-emerald-600 text-white px-5 py-2 rounded-full hover:bg-emerald-700 transition shadow-lg italic">Infolinia: 116 123</a>
+				</div>
+
+				<button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-2 focus:outline-none" aria-label="Menu">
+					<div class="w-6 h-0.5 bg-slate-900 transition-all origin-center" id="line1"></div>
+					<div class="w-6 h-0.5 bg-slate-900 transition-all" id="line2"></div>
+					<div class="w-6 h-0.5 bg-slate-900 transition-all origin-center" id="line3"></div>
+				</button>
+			</div>
+
+			<div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-8 flex flex-col gap-6 font-bold text-lg animate-fade-in">
+				<a href="#o-nas" class="mobile-link">O nas</a>
+				<a href="#test" class="mobile-link">Test autodiagnozy</a>
+				<a href="#pomoc" class="mobile-link">Gdzie szukać pomocy?</a>
+				<a href="tel:116123" class="text-emerald-600">Zadzwoń: 116 123</a>
+			</div>
+		</nav>
+
+		<header class="py-24 px-6 text-center max-w-4xl mx-auto">
+			<h1 class="text-5xl md:text-7xl font-black mb-8 tracking-tight text-slate-900 leading-[1.1]">
+				Graj odpowiedzialnie. <br/> <span class="text-emerald-600">Żyj w pełni.</span>
+			</h1>
+			<p class="text-xl text-slate-600 mb-10 leading-relaxed">
+				Fundacja RG wspiera osoby zagrożone uzależnieniem od hazardu. Pomagamy zrozumieć mechanizmy gry i odzyskać równowagę.
+			</p>
+			<div class="flex flex-wrap justify-center gap-4">
+				<a href="#test" class="bg-slate-900 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-slate-800 transition shadow-2xl">Rozpocznij Test</a>
+				<a href="#o-nas" class="bg-white border-2 border-slate-200 px-10 py-5 rounded-2xl font-bold text-lg hover:border-emerald-600 transition">Poznaj naszą misję</a>
+			</div>
+		</header>
+
+		<section id="o-nas" class="py-20 px-6 max-w-6xl mx-auto">
+			<div class="bg-emerald-50 rounded-[3rem] p-10 md:p-20 grid md:grid-cols-2 gap-12 items-center">
+				<div>
+					<h2 class="text-3xl font-bold mb-6">Pomoc bez oceniania.</h2>
+					<p class="text-slate-700 text-lg mb-6">Nasza fundacja skupia się na edukacji i profilaktyce. Hazard nie jest Twoją winą, ale Twoja reakcja na niego może zmienić przyszłość.</p>
+					<ul class="space-y-4 font-semibold text-slate-800">
+						<li class="flex gap-3 items-center text-emerald-700">✓ Pełna anonimowość</li>
+						<li class="flex gap-3 items-center text-emerald-700">✓ Bezpłatne materiały</li>
+						<li class="flex gap-3 items-center text-emerald-700">✓ Wsparcie ekspertów</li>
+					</ul>
+				</div>
+				<div class="aspect-square bg-emerald-200/50 rounded-2xl border-4 border-white shadow-xl flex items-center justify-center italic text-emerald-800">
+					[Tu wstaw grafikę edukacyjną]
+				</div>
+			</div>
+		</section>
+
+		<section id="test" class="py-20 px-6">
+			<div class="max-w-2xl mx-auto">
+				<div class="bg-slate-900 text-white p-10 md:p-16 rounded-[3rem] shadow-2xl">
+					<h2 class="text-3xl font-bold mb-8 text-center">Test Autodiagnozy</h2>
+					<div id="quiz">
+						<div id="q-container">
+							<p id="question" class="text-xl md:text-2xl font-medium mb-10 leading-relaxed">Czy kiedykolwiek grałeś za więcej pieniędzy niż mogłeś stracić?</p>
+							<div class="grid gap-4">
+								<button onclick="nextQ(1)" class="w-full text-center py-5 rounded-2xl border border-slate-700 hover:bg-emerald-600 hover:border-emerald-600 transition font-bold text-lg">Tak</button>
+								<button onclick="nextQ(0)" class="w-full text-center py-5 rounded-2xl border border-slate-700 hover:bg-emerald-600 hover:border-emerald-600 transition font-bold text-lg">Nie</button>
+							</div>
+						</div>
+						<div id="result" class="hidden text-center">
+							<div class="w-20 h-20 bg-emerald-500 rounded-full mx-auto mb-6 flex items-center justify-center text-3xl italic font-black text-white">i</div>
+							<h3 class="text-2xl font-bold mb-4">Twój Wynik</h3>
+							<p id="res-text" class="text-slate-400 mb-10 text-lg"></p>
+							<a href="tel:116123" class="block w-full bg-red-600 py-5 rounded-2xl font-black text-xl hover:bg-red-700 transition">INFLOLINIA: 116 123</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer class="bg-white border-t border-slate-200 py-20 px-6">
+			<div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-16">
+				<div>
+					<div class="font-black text-2xl text-emerald-800 mb-6 uppercase tracking-tighter">Fundacja RG</div>
+					<p class="text-slate-500 leading-relaxed">Pracujemy na rzecz bezpieczeństwa w świecie cyfrowej rozrywki i przeciwdziałamy uzależnieniom.</p>
+				</div>
+				<div class="flex flex-col gap-4 font-bold text-slate-700">
+					<a href="#" class="hover:text-emerald-700">Polityka Prywatności</a>
+					<a href="#" class="hover:text-emerald-700">Regulamin Darowizn</a>
+					<a href="#" class="hover:text-emerald-700">RODO</a>
+					<a href="#" class="hover:text-emerald-700">Deklaracja Dostępności</a>
+				</div>
+				<div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+					<p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Skontaktuj się</p>
+					<p class="text-lg font-bold mb-2">pomoc@fundacjarg.pl</p>
+					<p class="text-slate-500">ul. Spokojna 15, Warszawa</p>
+				</div>
+			</div>
+			<div class="max-w-6xl mx-auto mt-20 pt-8 border-t border-slate-100 text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em] flex justify-between">
+				<p>© 2026 Fundacja RG</p>
+				<p>Zgodność WCAG 2.1</p>
+			</div>
+		</footer>
+
+	</div>
+</Layout>
+
+<script is:inline>
+	// OBSŁUGA HAMBURGERA
+	const btn = document.getElementById('hamburger');
+	const menu = document.getElementById('mobile-menu');
+	const l1 = document.getElementById('line1');
+	const l2 = document.getElementById('line2');
+	const l3 = document.getElementById('line3');
+	const links = document.querySelectorAll('.mobile-link');
+
+	btn.addEventListener('click', () => {
+		menu.classList.toggle('hidden');
+		// Animacja ikonki (X)
+		l1.classList.toggle('rotate-45');
+		l1.classList.toggle('translate-y-2');
+		l2.classList.toggle('opacity-0');
+		l3.classList.toggle('-rotate-45');
+		l3.classList.toggle('-translate-y-2');
+	});
+
+	// Zamykanie menu po kliknięciu w link
+	links.forEach(link => {
+		link.addEventListener('click', () => {
+			menu.classList.add('hidden');
+			l1.classList.remove('rotate-45', 'translate-y-2');
+			l2.classList.remove('opacity-0');
+			l3.classList.remove('-rotate-45', '-translate-y-2');
+		});
+	});
+
+	// LOGIKA QUIZU
+	let step = 0;
+	let score = 0;
+	const qs = [
+		"Czy kiedykolwiek grałeś za więcej pieniędzy niż mogłeś stracić?",
+		"Czy po graniu odczuwasz stres, lęk lub wyrzuty sumienia?",
+		"Czy zdarza Ci się wracać do gry, aby spróbować odegrać stracone pieniądze?"
+	];
+
+	function nextQ(val) {
+		score += val;
+		step++;
+		if (step < qs.length) {
+			document.getElementById('question').innerText = qs[step];
+		} else {
+			document.getElementById('q-container').classList.add('hidden');
+			const res = document.getElementById('result');
+			const txt = document.getElementById('res-text');
+			res.classList.remove('hidden');
+			txt.innerText = score > 0 
+				? "Twój wynik wskazuje na możliwe ryzyko. Hazard może negatywnie wpływać na Twoje życie. Nie czekaj, aż problem się pogłębi." 
+				: "Twój wynik wskazuje na niskie ryzyko, ale pamiętaj, że hazard jest zawsze związany z losowością i stratą. Graj tylko dla zabawy.";
+		}
+	}
+</script>
+
+<style>
+	.animate-fade-in {
+		animation: fadeIn 0.3s ease-out;
+	}
+	@keyframes fadeIn {
+		from { opacity: 0; transform: translateY(-10px); }
+		to { opacity: 1; transform: translateY(0); }
+	}
+</style>
