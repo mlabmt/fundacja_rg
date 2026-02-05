@@ -1,0 +1,47 @@
+---
+// src/components/Footer.astro
+---
+<footer class="bg-slate-900 text-white py-20 px-6 border-t border-emerald-900/30">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-16 mb-16">
+      
+      <div class="space-y-6">
+        <div class="flex flex-col">
+          <span class="text-2xl font-black tracking-tighter leading-none">ZNAJ GRANICE</span>
+          <span class="text-[10px] uppercase tracking-[0.3em] text-emerald-500 font-bold mt-2">Fundacja</span>
+        </div>
+        <div class="text-sm text-slate-400 space-y-2 font-medium">
+          <p>KRS: <span class="text-slate-200">Wpisz numer</span></p>
+          <p>NIP: <span class="text-slate-200">Wpisz numer</span></p>
+          <p>REGON: <span class="text-slate-200">Wpisz numer</span></p>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <h3 class="text-lg font-bold text-white uppercase tracking-widest">Kontakt</h3>
+        <div class="space-y-4 text-sm font-bold">
+          <a href="mailto:kontakt@znajgranice.org" class="block text-emerald-400 hover:text-emerald-300 transition">kontakt@znajgranice.org</a>
+          <a href="tel:+48XXXXXXXXX" class="block text-slate-200 hover:text-emerald-400 transition">Tel: +48 XXX XXX XXX</a>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <h3 class="text-lg font-bold text-white uppercase tracking-widest">Dokumenty</h3>
+        <nav class="flex flex-col gap-3 text-sm font-bold uppercase tracking-widest text-slate-400">
+          <a href="/rodo" class="hover:text-emerald-400 transition">RODO</a>
+          <a href="/polityka-prywatnosci" class="hover:text-emerald-400 transition">Polityka Prywatności</a>
+          <a href="/regulamin" class="hover:text-emerald-400 transition">Regulamin darowizn</a>
+        </nav>
+      </div>
+
+    </div>
+
+    <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] text-slate-500 font-bold uppercase tracking-[0.2em]">
+      <p>© 2026 Fundacja Znaj Granice</p>
+      <div class="flex items-center gap-4">
+        <span class="text-emerald-900/50 italic">Niezależność • Wiarygodność • Strategia</span>
+        <span class="bg-emerald-500/10 px-2 py-1 rounded text-emerald-500">PHP</span>
+      </div>
+    </div>
+  </div>
+</footer>
