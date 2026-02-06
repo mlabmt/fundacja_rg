@@ -3,27 +3,62 @@
 ---
 <nav class="bg-white border-b border-slate-200">
   <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
-    <a href="/" class="flex flex-col group">
+    <a href="/" class="flex flex-col group relative z-[1001]">
       <span class="text-xl font-black tracking-tighter text-slate-900 leading-none group-hover:text-emerald-600 transition">ZNAJ GRANICE</span>
-      <span class="text-[9px] uppercase tracking-[0.2em] font-bold text-emerald-600 mt-1">Fundacja Przeciwdziałania
-Uzależnieniu od Hazardu</span>
+      <span class="text-[9px] uppercase tracking-[0.2em] font-bold text-emerald-600 mt-1">Fundacja</span>
     </a>
 
     <div class="hidden lg:flex gap-8 items-center font-bold text-[13px] uppercase tracking-wide text-slate-600">
       <a href="/" class="hover:text-emerald-600 transition">Główna</a>
       <a href="#o-nas" class="hover:text-emerald-600 transition">O nas</a>
-      <a href="#misja" class="hover:text-emerald-600 transition">Misja</a>
       <a href="#dzialania" class="hover:text-emerald-600 transition">Działania</a>
+      <a href="#partnerzy" class="hover:text-emerald-600 transition">Partnerzy</a>
       <a href="#kontakt" class="hover:text-emerald-600 transition text-slate-900">Kontakt</a>
       <a href="#darowizna" class="bg-emerald-600 text-white px-6 py-2.5 rounded-full hover:bg-emerald-700 transition shadow-md shadow-emerald-200">
         Wspieram
       </a>
     </div>
 
-    <button class="lg:hidden p-2 text-slate-900">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <button id="hamburger" class="lg:hidden p-2 text-slate-900 relative z-[1001]" aria-label="Menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 open-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 close-icon hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
     </button>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[1000] flex flex-col items-center justify-center gap-8 translate-x-full transition-transform duration-300 lg:hidden">
+      <nav class="flex flex-col items-center gap-6 font-black text-2xl uppercase tracking-tighter text-slate-900">
+        <a href="/" class="mobile-link">Główna</a>
+        <a href="#o-nas" class="mobile-link">O nas</a>
+        <a href="#dzialania" class="mobile-link">Działania</a>
+        <a href="#partnerzy" class="mobile-link">Partnerzy</a>
+        <a href="#kontakt" class="mobile-link">Kontakt</a>
+        <a href="#darowizna" class="bg-emerald-600 text-white px-8 py-4 rounded-full text-lg shadow-xl mobile-link">Wspieram</a>
+      </nav>
+    </div>
   </div>
 </nav>
+
+<script>
+  const btn = document.getElementById('hamburger');
+  const menu = document.getElementById('mobile-menu');
+  const links = document.querySelectorAll('.mobile-link');
+  const openIcon = document.querySelector('.open-icon');
+  const closeIcon = document.querySelector('.close-icon');
+
+  function toggleMenu() {
+    menu.classList.toggle('translate-x-full');
+    openIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+    document.body.classList.toggle('overflow-hidden'); // Blokada scrolla tła
+  }
+
+  btn.addEventListener('click', toggleMenu);
+
+  // Zamknij menu po kliknięciu w link
+  links.forEach(link => {
+    link.addEventListener('click', toggleMenu);
+  });
+</script>
