@@ -3,23 +3,25 @@
 ---
 <nav class="bg-white border-b border-slate-200">
   <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
-    <a href="/" class="flex flex-col group relative z-[1001]">
+    <a href="/" class="flex flex-col group relative z-[1001] shrink-0">
       <span class="text-xl font-black tracking-tighter text-slate-900 leading-none group-hover:text-emerald-600 transition">ZNAJ GRANICE</span>
-      <span class="text-[9px] uppercase tracking-[0.2em] font-bold text-emerald-600 mt-1">Fundacja Przeciwdziałania Uzależnieniu od Hazardu</span>
+      <span class="text-[9px] uppercase tracking-[0.2em] font-bold text-emerald-600 mt-1 whitespace-nowrap">Fundacja Przeciwdziałania Uzależnieniu od Hazardu</span>
     </a>
 
- <div class="hidden lg:flex gap-8 items-center font-bold text-[13px] uppercase tracking-wide text-slate-600">
-  <a href="/" class="hover:text-emerald-600 transition">Główna</a>
-  <a href="#o-nas" class="hover:text-emerald-600 transition">O nas</a>
-   <a href="#zespol" class="hover:text-emerald-600 transition">Zespół</a>
-  <a href="#misja" class="hover:text-emerald-600 transition font-black text-slate-900 border-b-2 border-emerald-500">Misja</a>
-  <a href="#dzialania" class="hover:text-emerald-600 transition">Działania</a>
-  <a href="#partnerzy" class="hover:text-emerald-600 transition">Partnerzy</a>
-  <a href="#kontakt" class="hover:text-emerald-600 transition">Kontakt</a>
-   <a href="#darowizna" class="bg-emerald-600 text-white px-8 py-4 rounded-full text-lg shadow-xl mobile-link">Wspieram</a>
-</div>
+    <div class="hidden xl:flex gap-5 items-center font-bold text-[12px] uppercase tracking-wide text-slate-600 shrink-0">
+      <a href="/" class="hover:text-emerald-600 transition whitespace-nowrap">Główna</a>
+      <a href="#o-nas" class="hover:text-emerald-600 transition whitespace-nowrap">O nas</a>
+      <a href="#zespol" class="hover:text-emerald-600 transition whitespace-nowrap">Zespół</a>
+      <a href="#misja" class="hover:text-emerald-600 transition font-black text-slate-900 border-b-2 border-emerald-500 whitespace-nowrap">Misja</a>
+      <a href="#dzialania" class="hover:text-emerald-600 transition whitespace-nowrap">Działania</a>
+      <a href="#partnerzy" class="hover:text-emerald-600 transition whitespace-nowrap">Partnerzy</a>
+      <a href="#kontakt" class="hover:text-emerald-600 transition whitespace-nowrap">Kontakt</a>
+      <a href="#darowizna" class="bg-emerald-600 text-white px-5 py-2.5 rounded-full text-xs shadow-lg hover:bg-emerald-700 transition shadow-emerald-100 whitespace-nowrap">
+        Wspieram
+      </a>
+    </div>
 
-    <button id="hamburger" class="lg:hidden p-2 text-slate-900 relative z-[1001]" aria-label="Menu">
+    <button id="hamburger" class="xl:hidden p-2 text-slate-900 relative z-[1001]" aria-label="Menu">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 open-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
@@ -28,7 +30,7 @@
       </svg>
     </button>
 
-    <div id="mobile-menu" class="fixed inset-0 bg-white z-[1000] flex flex-col items-center justify-center gap-8 translate-x-full transition-transform duration-300 lg:hidden">
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[1000] flex flex-col items-center justify-center gap-8 translate-x-full transition-transform duration-300 xl:hidden">
       <nav class="flex flex-col items-center gap-6 font-black text-2xl uppercase tracking-tighter text-slate-900">
         <a href="/" class="mobile-link">Główna</a>
         <a href="#o-nas" class="mobile-link">O nas</a>
@@ -54,12 +56,11 @@
     menu.classList.toggle('translate-x-full');
     openIcon.classList.toggle('hidden');
     closeIcon.classList.toggle('hidden');
-    document.body.classList.toggle('overflow-hidden'); // Blokada scrolla tła
+    document.body.classList.toggle('overflow-hidden');
   }
 
   btn.addEventListener('click', toggleMenu);
 
-  // Zamknij menu po kliknięciu w link
   links.forEach(link => {
     link.addEventListener('click', toggleMenu);
   });
