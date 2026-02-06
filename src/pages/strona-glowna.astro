@@ -6,16 +6,17 @@ import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Fundacja Znaj Granice">
-  <div class="sticky top-0 z-[999] w-full bg-white shadow-xl">
+  <div class="fixed top-0 left-0 w-full z-[9999] shadow-2xl bg-white" style="isolation: isolate;">
     <TopBar />
     <Header />
   </div>
 
-  <main class="relative">
-    <section id="o-nas" class="py-24 px-6 bg-white relative">
+  <main class="relative pt-[128px] md:pt-[112px]">
+    
+    <section id="o-nas" class="py-24 px-6 bg-white relative z-10">
       <div class="max-w-5xl mx-auto text-center">
         <h1 class="text-4xl md:text-6xl font-black text-slate-900 mb-8 leading-tight uppercase tracking-tight">
-          Fundacja <span class="text-emerald-600">Znaj Granice</span>
+          Fundacja <span class="text-emerald-600 text-shadow-sm">Znaj Granice</span>
         </h1>
         <p class="text-xl md:text-2xl text-slate-700 leading-relaxed font-medium mb-12">
           Niezależna organizacja pozarządowa, która w sposób strategiczny i systemowy zajmuje się problematyką uzależnień behawioralnych.
@@ -30,52 +31,52 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <section id="dzialania" class="py-24 px-6 bg-slate-900 text-white relative">
+    <section id="dzialania" class="py-24 px-6 bg-slate-900 text-white relative z-0">
       <div class="max-w-6xl mx-auto">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
           <h2 class="text-4xl font-black uppercase tracking-tighter">Obszary<br/><span class="text-emerald-500">Działania</span></h2>
-          <p class="text-slate-400 max-w-sm font-medium italic">Dostosowujemy model pomocy i rozwoju, dzięki którym możemy dostosować model pomocy i rozwoju.</p>
+          <p class="text-slate-400 max-w-sm font-medium italic">Dostosowujemy model pomocy i rozwoju w trzech kluczowych filarach.</p>
         </div>
         
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-emerald-500 transition-colors group">
+        <div class="grid md:grid-cols-3 gap-8 relative">
+          <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-emerald-500 transition-all duration-300 group hover:-translate-y-2">
             <div class="w-12 h-12 bg-emerald-500 rounded-xl mb-6 flex items-center justify-center font-black text-slate-900 text-xl">01</div>
             <h3 class="text-2xl font-black mb-6 uppercase italic group-hover:text-emerald-400 transition">Dla Graczy</h3>
             <ul class="space-y-4 text-slate-300 text-sm leading-relaxed">
-              <li><strong class="text-white uppercase text-[11px] block mb-1">Wsparcie</strong> Profesjonalne wsparcie i leczenie dla osób uzależnionych oraz ich rodzin.</li>
-              <li><strong class="text-white uppercase text-[11px] block mb-1">Profilaktyka</strong> Tworzenie i upowszechnianie programów edukacyjnych i profilaktycznych.</li>
-              <li><strong class="text-white uppercase text-[11px] block mb-1">Terapia</strong> Budowa sieci certyfikowanych specjalistów i ośrodków.</li>
+              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Wsparcie</strong> Profesjonalne wsparcie i leczenie dla osób uzależnionych oraz ich rodzin.</li>
+              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Profilaktyka</strong> Tworzenie i upowszechnianie programów edukacyjnych i profilaktycznych.</li>
+              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Terapia</strong> Budowa sieci certyfikowanych specjalistów i ośrodków.</li>
             </ul>
           </div>
 
-          <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-emerald-500 transition-colors group">
+          <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-emerald-500 transition-all duration-300 group hover:-translate-y-2">
             <div class="w-12 h-12 bg-emerald-500 rounded-xl mb-6 flex items-center justify-center font-black text-slate-900 text-xl">02</div>
-            <h3 class="text-2xl font-black mb-6 uppercase italic group-hover:text-emerald-400 transition">Działalność Społeczna</h3>
+            <h3 class="text-2xl font-black mb-6 uppercase italic group-hover:text-emerald-400 transition text-white">Społeczna</h3>
             <ul class="space-y-4 text-slate-300 text-sm leading-relaxed">
-              <li><strong class="text-white uppercase text-[11px] block mb-1">Badania</strong> Zamawianie i prowadzenie ogólnopolskich badań nad hazardem.</li>
-              <li><strong class="text-white uppercase text-[11px] block mb-1">Kampanie</strong> Ogólnopolskie i regionalne akcje dotyczące uzależnienia.</li>
-              <li><strong class="text-white uppercase text-[11px] block mb-1">Szkolenia</strong> Certyfikacja pedagogów, kuratorów, związków i organizacji.</li>
+              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Badania</strong> Zamawianie i prowadzenie ogólnopolskich badań nad hazardem.</li>
+              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Kampanie</strong> Ogólnopolskie i regionalne akcje informacyjne o uzależnieniu.</li>
+              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Szkolenia</strong> Certyfikacja pedagogów, kuratorów i organizacji.</li>
             </ul>
           </div>
 
-          <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-emerald-500 transition-colors group">
+          <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-emerald-500 transition-all duration-300 group hover:-translate-y-2">
             <div class="w-12 h-12 bg-emerald-500 rounded-xl mb-6 flex items-center justify-center font-black text-slate-900 text-xl">03</div>
-            <h3 class="text-2xl font-black mb-6 uppercase italic group-hover:text-emerald-400 transition">Dla Biznesu</h3>
+            <h3 class="text-2xl font-black mb-6 uppercase italic group-hover:text-emerald-400 transition text-white">Dla Biznesu</h3>
             <ul class="space-y-4 text-slate-300 text-sm leading-relaxed">
-              <li><strong class="text-white uppercase text-[11px] block mb-1">Audyt</strong> Audyty odpowiedzialnej gry i zgodności z ustawą hazardową.</li>
-              <li><strong class="text-white uppercase text-[11px] block mb-1">Edukacja</strong> Szkolenia dla działów Compliance i CSR.</li>
-              <li><strong class="text-white uppercase text-[11px] block mb-1">Wydarzenia</strong> Webinary, konferencje i spotkania branżowe z ekspertami.</li>
+              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Audyt</strong> Audyty odpowiedzialnej gry i zgodności z ustawą hazardową.</li>
+              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Edukacja</strong> Szkolenia dla działów Compliance i CSR (odpowiedzialność biznesu).</li>
+              <li><strong class="text-white uppercase text-[11px] block mb-1 tracking-widest">Wydarzenia</strong> Webinary, konferencje i spotkania branżowe z ekspertami.</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="misja" class="py-24 px-6 bg-emerald-50 text-center">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-sm font-bold text-emerald-600 uppercase tracking-[0.4em] mb-6">Misja Fundacji</h2>
-        <p class="text-2xl md:text-3xl font-black text-slate-900 italic leading-snug">
-          "Dążymy do bycia niezależnym i wiarygodnym liderem, który w sposób systemowy zmienia podejście do profilaktyki uzależnień w Polsce."
+    <section id="misja" class="py-32 px-6 bg-white relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-emerald-600 font-bold uppercase tracking-[0.3em] mb-8 text-sm">Misja Fundacji</h2>
+        <p class="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter leading-tight">
+          Niezależny lider w dziedzinie przeciwdziałania <span class="text-emerald-600">uzależnieniom behawioralnym</span>.
         </p>
       </div>
     </section>
@@ -83,3 +84,9 @@ import Footer from '../components/Footer.astro';
 
   <Footer />
 </Layout>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
