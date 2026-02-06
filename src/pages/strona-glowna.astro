@@ -25,7 +25,7 @@ const team = [
   {
     name: "Edward Kukliński",
     role: "Członek Zarządu Fundacji",
-    image: "https://picsum.photos/400/500?random=22",
+    image: "https://picsum.photos/400/500?random=23",
     manifest: "Swoje wieloletnie doświadczenie w koordynacji projektów i zarządzaniu operacyjnym zdobywał, realizując złożone zadania z zakresu administracji, HR oraz komunikacji mediowej. Specjalizuje się w budowaniu struktur organizacyjnych od podstaw, nadzorując procesy od planowania strategicznego po bieżące działania sekretariatu. W Fundacji „Znaj Granice” odpowiada za sprawne funkcjonowanie biura, koordynację projektów statutowych oraz relacje z partnerami i mediami. To on dba o to, by wizja Fundacji przekładała się na skuteczne działania operacyjne, wspierając rozwój kadr oraz budowę infrastruktury Ośrodka „Granica”.",
     email: "edek.k.buziaczek.pl@znajgranice.pl",
     linkedIn: "#"
@@ -49,10 +49,10 @@ const team = [
           </h1>
           <p class="text-xl md:text-2xl text-slate-700 leading-relaxed font-medium mb-12 text-justify md:text-center">
             Idea Fundacji Znaj Granice nie powstała za biurkiem teoretyków. 
-			Wyrasta z doświadczenia, które rzadko wychodzi poza gabinety zarządów branży igaming. 
-			Wiemy, jak zaprojektowane są systemy, które nie pozwalają odejść od ekranu. 
-			Rozumiemy algorytmy, które testują silną wolę. 
-			Dlatego chcemy pomagać skuteczniej niż ktokolwiek inny.
+            Wyrasta z doświadczenia, które rzadko wychodzi poza gabinety zarządów branży igaming. 
+            Wiemy, jak zaprojektowane są systemy, które nie pozwalają odejść od ekranu. 
+            Rozumiemy algorytmy, które testują silną wolę. 
+            Dlatego chcemy pomagać skuteczniej niż ktokolwiek inny.
           </p>
           
           <div class="inline-block bg-slate-900 text-white p-10 rounded-[2rem] border-b-8 border-emerald-500 text-left shadow-2xl">
@@ -68,12 +68,12 @@ const team = [
             <h2 class="text-2xl font-black uppercase text-slate-900">Historia Fundatora</h2>
             <p>
               Przez 15 lat poznawałem rynek hazardowy w Polsce i za granicą. 
-			   Zajmując stanowiska kierownicze, odpowiadałem za strategie, które miały jeden cel: wzrost i zysk. 
-			  Tworzyłem mechanizmy, które przyciągają graczy i wiem, jak trudno jest się z nich wyrwać, gdy rozrywka przeradza się w problem.
+               Zajmując stanowiska kierownicze, odpowiadałem za strategie, które miały jeden cel: wzrost i zysk. 
+              Tworzyłem mechanizmy, które przyciągają graczy i wiem, jak trudno jest się z nich wyrwać, gdy rozrywka przeradza się w problem.
             </p>
             <p>
               Mając wpływ na przekaz reklamowy, kładłem nacisk na zasady Odpowiedzialnej Gry. Czy to wystarczyło?
-			  Teraz przechodzę na drugą stronę, by wykorzystać własne dowiadczenie dla bezpiecznej rozrywki.
+              Teraz przechodzę na drugą stronę, by wykorzystać własne dowiadczenie dla bezpiecznej rozrywki.
             </p>
           </div>
           <div class="relative bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
@@ -107,27 +107,41 @@ const team = [
 
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {team.map((member) => (
-              <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100 group">
+              <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100 flex flex-col h-full group">
                 <div class="aspect-[4/5] overflow-hidden">
                   <img src={member.image} alt={member.name} class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
                 </div>
-                <div class="p-8">
-                  <p class="text-emerald-600 font-bold text-xs uppercase tracking-widest mb-2">{member.role}</p>
-                  <h3 class="text-2xl font-black text-slate-900 mb-4">{member.name}</h3>
-                  <p class="text-slate-600 text-sm leading-relaxed italic mb-6">"{member.manifest}"</p>
-                  <div class="pt-6 border-t border-slate-100">
-                    <a href={`mailto:${member.email}`} class="text-slate-900 font-bold text-sm hover:text-emerald-600 transition flex items-center gap-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div class="p-8 flex flex-col flex-grow">
+                  <p class="text-emerald-600 font-bold text-[10px] uppercase tracking-[0.2em] mb-2">{member.role}</p>
+                  <h3 class="text-2xl font-black text-slate-900 mb-6 uppercase tracking-tighter">{member.name}</h3>
+                  
+                  <div class="mb-8">
+                    <a href={`mailto:${member.email}`} class="text-slate-900 font-bold text-sm hover:text-emerald-600 transition flex items-center gap-2 mb-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                       {member.email}
                     </a>
+
+                    <details class="group/bio">
+                        <summary class="list-none cursor-pointer flex items-center gap-2 text-xs font-black uppercase tracking-widest text-emerald-600 hover:text-slate-900 transition">
+                            <span>Bio / Manifest</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition group-open/bio:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </summary>
+                        <div class="mt-4 pt-4 border-t border-slate-50">
+                            <p class="text-slate-600 text-sm leading-relaxed text-justify">
+                                {member.manifest}
+                            </p>
+                        </div>
+                    </details>
                   </div>
                 </div>
               </div>
             ))}
 
-            <div class="bg-emerald-600 rounded-3xl p-8 flex flex-col justify-center text-white shadow-xl relative overflow-hidden group">
+            <div class="bg-emerald-600 rounded-3xl p-8 flex flex-col justify-center text-white shadow-xl relative overflow-hidden group min-h-[400px]">
                 <div class="absolute -right-8 -bottom-8 opacity-10 group-hover:scale-110 transition duration-500">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-64 w-64" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -135,7 +149,7 @@ const team = [
                 </div>
                 <h3 class="text-3xl font-black uppercase tracking-tighter mb-4 leading-none">Dołącz do nas</h3>
                 <p class="text-emerald-100 mb-8 font-medium">Masz wiedzę, czas lub energię, by wspierać naszą misję? Szukamy wolontariuszy.</p>
-                <a href="#kontakt" class="bg-white text-emerald-600 text-center py-4 rounded-full font-black uppercase tracking-widest hover:bg-slate-900 hover:text-white transition shadow-lg">
+                <a href="#kontakt" class="bg-white text-emerald-600 text-center py-4 rounded-full font-black uppercase tracking-widest hover:bg-slate-900 hover:text-white transition shadow-lg relative z-10">
                     Zostań Wolontariuszem
                 </a>
             </div>
@@ -220,5 +234,10 @@ const team = [
 <style>
   html {
     scroll-behavior: smooth;
+  }
+  
+  /* Usuwamy domyślną strzałkę details w niektórych przeglądarkach */
+  summary::-webkit-details-marker {
+    display: none;
   }
 </style>
