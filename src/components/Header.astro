@@ -16,7 +16,10 @@
       <a href="#dzialania" data-nav-link class="nav-link flex items-center h-full hover:text-emerald-600 transition whitespace-nowrap">Działania</a>
       <a href="#partnerzy" data-nav-link class="nav-link flex items-center h-full hover:text-emerald-600 transition whitespace-nowrap">Partnerzy</a>
       <a href="#kontakt" data-nav-link class="nav-link flex items-center h-full hover:text-emerald-600 transition whitespace-nowrap">Kontakt</a>
-      <a href="#darowizna" class="bg-emerald-600 text-white px-8 py-4 rounded-full text-lg shadow-xl hover:bg-slate-900 transition shrink-0 ml-2">Wspieram</a>
+      
+      <button id="open-support" class="bg-emerald-600 text-white px-8 py-3 rounded-full text-sm shadow-xl hover:bg-slate-900 transition shrink-0 ml-2 cursor-pointer font-black uppercase tracking-widest">
+        Wspieram
+      </button>
     </div>
 
     <button id="hamburger" class="xl:hidden p-2 text-slate-900 relative z-[1001]" aria-label="Menu">
@@ -37,34 +40,101 @@
         <a href="#dzialania" class="mobile-link">Działania</a>
         <a href="#partnerzy" class="mobile-link">Partnerzy</a>
         <a href="#kontakt" class="mobile-link">Kontakt</a>
-        <a href="#darowizna" class="bg-emerald-600 text-white px-8 py-4 rounded-full text-lg shadow-xl mobile-link">Wspieram</a>
+        <button id="open-support-mobile" class="bg-emerald-600 text-white px-8 py-4 rounded-full text-lg shadow-xl font-black uppercase tracking-tighter">Wspieram</button>
       </nav>
     </div>
   </div>
 </nav>
 
+<div id="support-overlay" class="fixed inset-0 z-[10000] bg-slate-900/95 backdrop-blur-md flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 p-6">
+  <button id="close-support" class="absolute top-10 right-10 text-white hover:text-emerald-400 transition cursor-pointer" aria-label="Zamknij">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+
+  <div class="max-w-4xl w-full text-center">
+    <p class="text-emerald-400 font-bold uppercase tracking-[0.3em] mb-4">Wybierz formę pomocy</p>
+    <h2 class="text-4xl md:text-6xl font-black text-white mb-12 uppercase tracking-tighter leading-none">
+      Twoje wsparcie ma <span class="text-emerald-500 text-outline">znaczenie</span>
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <a href="/darowizna-jednorazowa" class="group bg-white/5 border border-white/10 p-8 rounded-[2rem] hover:bg-emerald-600 transition-all duration-500 text-left">
+        <div class="w-12 h-12 bg-emerald-500 rounded-xl mb-6 flex items-center justify-center text-slate-900">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h3 class="text-2xl font-black text-white mb-2 uppercase">Darowizna</h3>
+        <p class="text-slate-400 group-hover:text-emerald-50 text-sm leading-relaxed">Szybka wpłata online, która zasili nasze bieżące działania statutowe i pomoc potrzebującym.</p>
+      </a>
+
+      <a href="/zostan-wolontariuszem" class="group bg-white/5 border border-white/10 p-8 rounded-[2rem] hover:bg-emerald-600 transition-all duration-500 text-left">
+        <div class="w-12 h-12 bg-emerald-500 rounded-xl mb-6 flex items-center justify-center text-slate-900">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+        </div>
+        <h3 class="text-2xl font-black text-white mb-2 uppercase">Wolontariat</h3>
+        <p class="text-slate-400 group-hover:text-emerald-50 text-sm leading-relaxed">Podziel się swoją wiedzą, doświadczeniem lub czasem. Każda para rąk do pracy przybliża nas do celu.</p>
+      </a>
+    </div>
+  </div>
+</div>
+
 <script>
+  // ELEMENTY MENU
   const btn = document.getElementById('hamburger');
   const menu = document.getElementById('mobile-menu');
-  const links = document.querySelectorAll('.mobile-link');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
   const openIcon = document.querySelector('.open-icon');
   const closeIcon = document.querySelector('.close-icon');
 
+  // ELEMENTY OVERLAYA
+  const openSupportBtn = document.getElementById('open-support');
+  const openSupportMobileBtn = document.getElementById('open-support-mobile');
+  const closeSupportBtn = document.getElementById('close-support');
+  const overlay = document.getElementById('support-overlay');
+
+  // FUNKCJE MENU
   function toggleMenu() {
-    menu.classList.toggle('translate-x-full');
-    openIcon.classList.toggle('hidden');
-    closeIcon.classList.toggle('hidden');
+    menu?.classList.toggle('translate-x-full');
+    openIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
     document.body.classList.toggle('overflow-hidden');
   }
 
-  btn?.addEventListener('click', toggleMenu);
-  links.forEach(link => link.addEventListener('click', toggleMenu));
+  // FUNKCJE OVERLAYA
+  function openOverlay() {
+    overlay?.classList.remove('opacity-0', 'pointer-events-none');
+    overlay?.classList.add('opacity-100', 'pointer-events-auto');
+    document.body.classList.add('overflow-hidden');
+    if (!menu?.classList.contains('translate-x-full')) toggleMenu(); // Zamknij menu jeśli otwarte
+  }
 
-  // --- LOGIKA PODKREŚLANIA (Bez @apply w CSS) ---
+  function closeOverlay() {
+    overlay?.classList.add('opacity-0', 'pointer-events-none');
+    overlay?.classList.remove('opacity-100', 'pointer-events-auto');
+    document.body.classList.remove('overflow-hidden');
+  }
+
+  // EVENT LISTENERY
+  btn?.addEventListener('click', toggleMenu);
+  mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+  openSupportBtn?.addEventListener('click', openOverlay);
+  openSupportMobileBtn?.addEventListener('click', openOverlay);
+  closeSupportBtn?.addEventListener('click', closeOverlay);
+
+  // Zamykanie Escapem
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeOverlay();
+  });
+
+  // --- LOGIKA PODKREŚLANIA (Scroll Spy) ---
   const navLinks = document.querySelectorAll('[data-nav-link]');
   const sections = document.querySelectorAll('section[id]');
-  
-  // Definiujemy klasy jako stałe (String)
   const activeClasses = ['text-slate-900', 'font-black', 'border-b-2', 'border-emerald-500'];
 
   const observerOptions = {
@@ -89,7 +159,6 @@
 
   sections.forEach(section => observer.observe(section));
 
-  // Obsługa powrotu na górę
   window.addEventListener('scroll', () => {
     if (window.scrollY < 100) {
       navLinks.forEach(link => link.classList.remove(...activeClasses));
