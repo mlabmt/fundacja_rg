@@ -3,6 +3,26 @@ import Layout from '../layouts/Layout.astro';
 import TopBar from '../components/TopBar.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+// TABLICA PRACOWNIKÓW - Tutaj łatwo dodasz kolejne osoby w przyszłości
+const team = [
+  {
+    name: "Imię Nazwisko",
+    role: "Fundator",
+    image: "https://picsum.photos/400/500?random=21",
+    manifest: "Dziś wykorzystuję wiedzę o mechanizmach branży hazardowej, by budować realną wolność dla tych, którzy zgubili się w grze.",
+    email: "kontakt@znajgranice.pl",
+    linkedIn: "#"
+  },
+  {
+    name: "Imię Nazwisko",
+    role: "Psycholog / Terapeuta",
+    image: "https://picsum.photos/400/500?random=22",
+    manifest: "Pomagam odnaleźć balans między światem realnym a cyfrowym, budując zdrowe nawyki i odporność na nowoczesne pułapki dopaminowe.",
+    email: "terapia@znajgranice.pl",
+    linkedIn: "#"
+  }
+];
 ---
 
 <Layout title="Fundacja Znaj Granice">
@@ -17,10 +37,10 @@ import Footer from '../components/Footer.astro';
       <div class="max-w-6xl mx-auto">
         <div class="text-center max-w-5xl mx-auto mb-20">
           <h1 class="text-4xl md:text-6xl font-black text-slate-900 mb-8 leading-tight uppercase tracking-tight">
-            Znamy system <span class="text-emerald-600">od środka</span>
+            O nas: Znamy system <span class="text-emerald-600">od środka</span>
           </h1>
           <p class="text-xl md:text-2xl text-slate-700 leading-relaxed font-medium mb-12 text-justify md:text-center">
-            Fundacja Znaj Granice nie powstała za biurkiem teoretyków. Powstała z doświadczenia, które rzadko wychodzi poza gabinety zarządów branży igaming. Wiemy, jak zaprojektowane są systemy, które nie dają Ci odejść od ekranu. Rozumiemy algorytmy, które testują Twoją silną wolę. Właśnie dlatego potrafimy pomagać skuteczniej niż ktokolwiek inny. Naszą misją nie jest walka z rozrywką, ale walka o to, by człowiek nie stał się jej ofiarą.
+            Fundacja Znaj Granice nie powstała za biurkiem teoretyków. Powstała z doświadczenia, które rzadko wychodzi poza gabinety zarządów branży igaming. Wiemy, jak zaprojektowane są systemy, które nie dają Ci odejść od ekranu. Rozumiemy algorytmy, które testują Twoją silną wolę. Właśnie dlatego potrafimy pomagać skuteczniej niż ktokolwiek inny.
           </p>
           
           <div class="inline-block bg-slate-900 text-white p-10 rounded-[2rem] border-b-8 border-emerald-500 text-left shadow-2xl">
@@ -38,7 +58,7 @@ import Footer from '../components/Footer.astro';
               Przez 15 lat budowałem rynek hazardowy w Polsce i za granicą. Zajmując stanowiska kierownicze, odpowiadałem za strategie, które miały jeden cel: wzrost i zysk. Widziałem mechanizmy, które przyciągają graczy i wiem, jak trudno jest się z nich wyrwać, gdy rozrywka zamienia się w przymus.
             </p>
             <p>
-              Już wtedy, mając wpływ na przekaz reklamowy, kładłem nacisk na zasady Odpowiedzialnej Gry. Jednak czułem, że to za mało. Dziś przechodzę na drugą stronę, by wykorzystać tę wiedzę w służbie zdrowia publicznego. W Fundacji „Znaj Granice” łączymy ekspercką wiedzę o branży hazardowej z profesjonalną terapią uzależnień.
+              Już wtedy, mając wpływ na przekaz reklamowy, kładłem nacisk na zasady Odpowiedzialnej Gry. Jednak czułem, że to za mało. Dziś przechodzę na drugą stronę, by wykorzystać tę wiedzę w służbie zdrowia publicznego.
             </p>
           </div>
           <div class="relative bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
@@ -55,36 +75,57 @@ import Footer from '../components/Footer.astro';
                 </li>
                 <li class="flex gap-3">
                     <span class="text-emerald-600 font-bold">●</span>
-                    <p><strong>Dla branży i państwa:</strong> Doradzamy, jak tworzyć realnie bezpieczne środowisko gry, a nie tylko „papierowe” procedury.</p>
+                    <p><strong>Dla branży i państwa:</strong> Doradzamy, jak tworzyć realnie bezpieczne środowisko gry.</p>
                 </li>
             </ul>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="bg-slate-900 rounded-[3rem] p-8 md:p-16 text-white">
-          <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl font-black uppercase mb-8">Dlaczego to robimy?</h2>
-            <p class="text-slate-300 text-lg mb-12">
-                Łączymy klasyczną terapię substancjalną z walką z hazardem oraz nowoczesną profilaktyką higieny cyfrowej. Jako pierwsi w Polsce tak głośno mówimy, że zdrowa psychika w XXI wieku zależy od balansu między światem realnym a cyfrowym.
-            </p>
-            
-            <div class="grid md:grid-cols-3 gap-8 text-left">
-              <div class="p-6 bg-slate-800 rounded-2xl border border-slate-700">
-                <h3 class="text-emerald-500 font-bold mb-2">Terapia</h3>
-                <p class="text-sm text-slate-400 font-medium italic">Budujemy autorski Ośrodek „Granica”.</p>
+    <section id="zespol" class="py-24 px-6 bg-slate-50 relative z-10">
+        <div class="max-w-6xl mx-auto">
+          <div class="mb-16">
+            <h2 class="text-emerald-600 font-bold uppercase tracking-[0.3em] mb-4 text-sm">Nasi Eksperci</h2>
+            <p class="text-4xl font-black text-slate-900 uppercase tracking-tighter">Ludzie, którzy <span class="text-emerald-600">pomagają</span></p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {team.map((member) => (
+              <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100 group">
+                <div class="aspect-[4/5] overflow-hidden">
+                  <img src={member.image} alt={member.name} class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                </div>
+                <div class="p-8">
+                  <p class="text-emerald-600 font-bold text-xs uppercase tracking-widest mb-2">{member.role}</p>
+                  <h3 class="text-2xl font-black text-slate-900 mb-4">{member.name}</h3>
+                  <p class="text-slate-600 text-sm leading-relaxed italic mb-6">"{member.manifest}"</p>
+                  <div class="pt-6 border-t border-slate-100">
+                    <a href={`mailto:${member.email}`} class="text-slate-900 font-bold text-sm hover:text-emerald-600 transition flex items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                      {member.email}
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div class="p-6 bg-slate-800 rounded-2xl border border-slate-700">
-                <h3 class="text-emerald-500 font-bold mb-2">Technologia</h3>
-                <p class="text-sm text-slate-400 font-medium italic">Wdrażamy systemy samowykluczenia online.</p>
-              </div>
-              <div class="p-6 bg-slate-800 rounded-2xl border border-slate-700">
-                <h3 class="text-emerald-500 font-bold mb-2">Zmiana</h3>
-                <p class="text-sm text-slate-400 font-medium italic">Realnie zmieniamy zasady gry rynkowej.</p>
-              </div>
+            ))}
+
+            <div class="bg-emerald-600 rounded-3xl p-8 flex flex-col justify-center text-white shadow-xl relative overflow-hidden group">
+                <div class="absolute -right-8 -bottom-8 opacity-10 group-hover:scale-110 transition duration-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-64 w-64" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                </div>
+                <h3 class="text-3xl font-black uppercase tracking-tighter mb-4 leading-none">Dołącz do nas</h3>
+                <p class="text-emerald-100 mb-8 font-medium">Masz wiedzę, czas lub energię, by wspierać naszą misję? Szukamy wolontariuszy.</p>
+                <a href="#kontakt" class="bg-white text-emerald-600 text-center py-4 rounded-full font-black uppercase tracking-widest hover:bg-slate-900 hover:text-white transition shadow-lg">
+                    Zostań Wolontariuszem
+                </a>
             </div>
           </div>
         </div>
-      </div>
     </section>
 
     <section id="dzialania" class="py-24 px-6 bg-slate-900 text-white relative z-0">
@@ -99,9 +140,9 @@ import Footer from '../components/Footer.astro';
             <div class="w-12 h-12 bg-emerald-500 rounded-xl mb-6 flex items-center justify-center font-black text-slate-900 text-xl">01</div>
             <h3 class="text-2xl font-black mb-6 uppercase italic group-hover:text-emerald-400 transition">Dla Graczy</h3>
             <ul class="space-y-4 text-slate-300 text-sm leading-relaxed">
-              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Wsparcie</strong> Profesjonalne wsparcie i leczenie dla osób uzależnionych oraz ich rodzin.</li>
-              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Profilaktyka</strong> Tworzenie i upowszechnianie programów edukacyjnych i profilaktycznych.</li>
-              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Terapia</strong> Budowa sieci certyfikowanych specjalistów i ośrodków.</li>
+              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Wsparcie</strong> Profesjonalne wsparcie i leczenie.</li>
+              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Profilaktyka</strong> Tworzenie programów edukacyjnych.</li>
+              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Terapia</strong> Budowa sieci specjalistów.</li>
             </ul>
           </div>
 
@@ -109,9 +150,9 @@ import Footer from '../components/Footer.astro';
             <div class="w-12 h-12 bg-emerald-500 rounded-xl mb-6 flex items-center justify-center font-black text-slate-900 text-xl">02</div>
             <h3 class="text-2xl font-black mb-6 uppercase italic group-hover:text-emerald-400 transition text-white">Społeczna</h3>
             <ul class="space-y-4 text-slate-300 text-sm leading-relaxed">
-              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Badania</strong> Zamawianie i prowadzenie ogólnopolskich badań nad hazardem.</li>
-              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Kampanie</strong> Ogólnopolskie i regionalne akcje informacyjne o uzależnieniu.</li>
-              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Szkolenia</strong> Certyfikacja pedagogów, kuratorów i organizacji.</li>
+              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Badania</strong> Prowadzenie badań nad hazardem.</li>
+              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Kampanie</strong> Akcje informacyjne o uzależnieniu.</li>
+              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Szkolenia</strong> Certyfikacja pedagogów i organizacji.</li>
             </ul>
           </div>
 
@@ -119,9 +160,9 @@ import Footer from '../components/Footer.astro';
             <div class="w-12 h-12 bg-emerald-500 rounded-xl mb-6 flex items-center justify-center font-black text-slate-900 text-xl">03</div>
             <h3 class="text-2xl font-black mb-6 uppercase italic group-hover:text-emerald-400 transition text-white">Dla Biznesu</h3>
             <ul class="space-y-4 text-slate-300 text-sm leading-relaxed">
-              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Audyt</strong> Audyty odpowiedzialnej gry i zgodności z ustawą hazardową.</li>
-              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Edukacja</strong> Szkolenia dla działów Compliance i CSR (odpowiedzialność biznesu).</li>
-              <li><strong class="text-white uppercase text-[11px] block mb-1 tracking-widest">Wydarzenia</strong> Webinary, konferencje i spotkania branżowe z ekspertami.</li>
+              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Audyt</strong> Audyty odpowiedzialnej gry.</li>
+              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Edukacja</strong> Szkolenia Compliance i CSR.</li>
+              <li><strong class="text-white uppercase text-[11px] block mb-1 tracking-widest">Wydarzenia</strong> Webinary i konferencje branżowe.</li>
             </ul>
           </div>
         </div>
@@ -132,20 +173,11 @@ import Footer from '../components/Footer.astro';
       <div class="max-w-6xl mx-auto text-center">
         <h2 class="text-emerald-600 font-bold uppercase tracking-[0.4em] mb-12 text-sm">Partnerzy i Wsparcie</h2>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-12 items-center opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-          <div class="flex justify-center p-4 border border-slate-100 rounded-xl">
-            <img src="https://picsum.photos/200/80?random=10" alt="Partner 1" class="h-12 object-contain" />
-          </div>
-          <div class="flex justify-center p-4 border border-slate-100 rounded-xl">
-            <img src="https://picsum.photos/200/80?random=11" alt="Partner 2" class="h-12 object-contain" />
-          </div>
-          <div class="flex justify-center p-4 border border-slate-100 rounded-xl">
-            <img src="https://picsum.photos/200/80?random=12" alt="Partner 3" class="h-12 object-contain" />
-          </div>
-          <div class="flex justify-center p-4 border border-slate-100 rounded-xl">
-            <img src="https://picsum.photos/200/80?random=13" alt="Partner 4" class="h-12 object-contain" />
-          </div>
+          <div class="flex justify-center p-4 border border-slate-100 rounded-xl"><img src="https://picsum.photos/200/80?random=10" alt="Partner 1" class="h-12 object-contain" /></div>
+          <div class="flex justify-center p-4 border border-slate-100 rounded-xl"><img src="https://picsum.photos/200/80?random=11" alt="Partner 2" class="h-12 object-contain" /></div>
+          <div class="flex justify-center p-4 border border-slate-100 rounded-xl"><img src="https://picsum.photos/200/80?random=12" alt="Partner 3" class="h-12 object-contain" /></div>
+          <div class="flex justify-center p-4 border border-slate-100 rounded-xl"><img src="https://picsum.photos/200/80?random=13" alt="Partner 4" class="h-12 object-contain" /></div>
         </div>
-        <p class="mt-12 text-slate-400 text-sm font-medium">Dołącz do grona organizacji wspierających budowę bezpiecznego jutra.</p>
       </div>
     </section>
 
@@ -154,14 +186,11 @@ import Footer from '../components/Footer.astro';
       
       <div class="max-w-6xl mx-auto text-center">
         <h2 class="text-emerald-600 font-bold uppercase tracking-[0.4em] mb-12 text-sm">Misja Fundacji</h2>
-        
         <div class="space-y-8">
             <p class="text-3xl md:text-6xl font-black text-slate-900 tracking-tighter leading-[1.1] max-w-5xl mx-auto">
                 Wierzymy, że każde uzależnienie ma swoją granicę, za którą zaczyna się powrót do wolności.
             </p>
-            
             <div class="w-24 h-1.5 bg-emerald-500 mx-auto rounded-full"></div>
-            
             <p class="text-xl md:text-3xl font-medium text-emerald-700 max-w-4xl mx-auto leading-relaxed italic">
                 Realne wsparcie osób dotkniętych uzależnieniami oraz budowanie zdrowego społeczeństwa w dobie wyzwań cyfrowych.
             </p>
