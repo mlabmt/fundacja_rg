@@ -1,99 +1,131 @@
 ---
+
 // src/components/Header.astro
+
 ---
+
 <nav class="bg-white border-b border-slate-200">
-  <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center relative">
-    <a href="/" class="flex flex-col group relative z-[1001] shrink-0">
-      <span class="text-xl font-black tracking-tighter text-slate-900 leading-none group-hover:text-emerald-600 transition uppercase">ZNAJ GRANICE</span>
-      <span class="hidden xl:block text-[9px] uppercase tracking-[0.2em] font-bold text-emerald-600 mt-1 whitespace-nowrap">Fundacja Przeciwdziałania Uzależnieniu od Hazardu</span>
+
+  <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
+
+    <a href="/" class="flex flex-col group relative z-[1001]">
+
+      <span class="text-xl font-black tracking-tighter text-slate-900 leading-none group-hover:text-emerald-600 transition">ZNAJ GRANICE</span>
+
+      <span class="text-[9px] uppercase tracking-[0.2em] font-bold text-emerald-600 mt-1">Fundacja Przeciwdziałania Uzależnieniu od Hazardu</span>
+
     </a>
 
-    <div id="desktop-links" class="hidden xl:flex gap-8 items-center font-bold text-[13px] uppercase tracking-wide text-slate-600 h-full">
-      <a href="/" data-nav-link class="nav-link flex items-center h-full hover:text-emerald-600 transition whitespace-nowrap">Główna</a>
-      <a href="#o-nas" data-nav-link class="nav-link flex items-center h-full hover:text-emerald-600 transition whitespace-nowrap">O nas</a>
-      <a href="#zespol" data-nav-link class="nav-link flex items-center h-full hover:text-emerald-600 transition whitespace-nowrap">Zespół</a>
-      <a href="#misja" data-nav-link class="nav-link flex items-center h-full hover:text-emerald-600 transition whitespace-nowrap">Misja</a>
-      <a href="#dzialania" data-nav-link class="nav-link flex items-center h-full hover:text-emerald-600 transition whitespace-nowrap">Działania</a>
-      <a href="#partnerzy" data-nav-link class="nav-link flex items-center h-full hover:text-emerald-600 transition whitespace-nowrap">Partnerzy</a>
-      <a href="#kontakt" data-nav-link class="nav-link flex items-center h-full hover:text-emerald-600 transition whitespace-nowrap">Kontakt</a>
-      <a href="#darowizna" class="bg-emerald-600 text-white px-8 py-4 rounded-full text-lg shadow-xl hover:bg-slate-900 transition shrink-0 ml-2">Wspieram</a>
-    </div>
 
-    <button id="hamburger" class="xl:hidden p-2 text-slate-900 relative z-[1001]" aria-label="Menu">
+
+ <div class="hidden lg:flex gap-8 items-center font-bold text-[13px] uppercase tracking-wide text-slate-600">
+
+  <a href="/" class="hover:text-emerald-600 transition">Główna</a>
+
+  <a href="#o-nas" class="hover:text-emerald-600 transition">O nas</a>
+
+   <a href="#zespol" class="hover:text-emerald-600 transition">Zespół</a>
+
+  <a href="#misja" class="hover:text-emerald-600 transition font-black text-slate-900 border-b-2 border-emerald-500">Misja</a>
+
+  <a href="#dzialania" class="hover:text-emerald-600 transition">Działania</a>
+
+  <a href="#partnerzy" class="hover:text-emerald-600 transition">Partnerzy</a>
+
+  <a href="#kontakt" class="hover:text-emerald-600 transition">Kontakt</a>
+
+   <a href="#darowizna" class="bg-emerald-600 text-white px-8 py-4 rounded-full text-lg shadow-xl mobile-link">Wspieram</a>
+
+</div>
+
+
+
+    <button id="hamburger" class="lg:hidden p-2 text-slate-900 relative z-[1001]" aria-label="Menu">
+
       <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 open-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+
       </svg>
+
       <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 close-icon hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+
       </svg>
+
     </button>
 
-    <div id="mobile-menu" class="fixed inset-0 bg-white z-[1000] flex flex-col items-center justify-center gap-8 translate-x-full transition-transform duration-300 xl:hidden">
+
+
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[1000] flex flex-col items-center justify-center gap-8 translate-x-full transition-transform duration-300 lg:hidden">
+
       <nav class="flex flex-col items-center gap-6 font-black text-2xl uppercase tracking-tighter text-slate-900">
+
         <a href="/" class="mobile-link">Główna</a>
+
         <a href="#o-nas" class="mobile-link">O nas</a>
+
         <a href="#zespol" class="mobile-link">Zespół</a>
+
         <a href="#misja" class="mobile-link">Misja</a>
+
         <a href="#dzialania" class="mobile-link">Działania</a>
+
         <a href="#partnerzy" class="mobile-link">Partnerzy</a>
+
         <a href="#kontakt" class="mobile-link">Kontakt</a>
+
         <a href="#darowizna" class="bg-emerald-600 text-white px-8 py-4 rounded-full text-lg shadow-xl mobile-link">Wspieram</a>
+
       </nav>
+
     </div>
+
   </div>
+
 </nav>
 
+
+
 <script>
+
   const btn = document.getElementById('hamburger');
+
   const menu = document.getElementById('mobile-menu');
+
   const links = document.querySelectorAll('.mobile-link');
+
   const openIcon = document.querySelector('.open-icon');
+
   const closeIcon = document.querySelector('.close-icon');
 
+
+
   function toggleMenu() {
+
     menu.classList.toggle('translate-x-full');
+
     openIcon.classList.toggle('hidden');
+
     closeIcon.classList.toggle('hidden');
-    document.body.classList.toggle('overflow-hidden');
+
+    document.body.classList.toggle('overflow-hidden'); // Blokada scrolla tła
+
   }
 
-  btn?.addEventListener('click', toggleMenu);
-  links.forEach(link => link.addEventListener('click', toggleMenu));
 
-  // --- LOGIKA PODKREŚLANIA (Bez @apply w CSS) ---
-  const navLinks = document.querySelectorAll('[data-nav-link]');
-  const sections = document.querySelectorAll('section[id]');
-  
-  // Definiujemy klasy jako stałe (String)
-  const activeClasses = ['text-slate-900', 'font-black', 'border-b-2', 'border-emerald-500'];
 
-  const observerOptions = {
-    root: null,
-    rootMargin: '-20% 0px -70% 0px',
-    threshold: 0.1
-  };
+  btn.addEventListener('click', toggleMenu);
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        navLinks.forEach(link => {
-          link.classList.remove(...activeClasses);
-          if (link.getAttribute('href') === `#${id}`) {
-            link.classList.add(...activeClasses);
-          }
-        });
-      }
-    });
-  }, observerOptions);
 
-  sections.forEach(section => observer.observe(section));
 
-  // Obsługa powrotu na górę
-  window.addEventListener('scroll', () => {
-    if (window.scrollY < 100) {
-      navLinks.forEach(link => link.classList.remove(...activeClasses));
-      navLinks[0].classList.add(...activeClasses);
-    }
+  // Zamknij menu po kliknięciu w link
+
+  links.forEach(link => {
+
+    link.addEventListener('click', toggleMenu);
+
   });
+
 </script>
