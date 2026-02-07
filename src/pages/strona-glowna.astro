@@ -33,12 +33,12 @@ const team = [
 ];
 
 const partners = [
-  { name: "Superbet", logo: "https://placehold.co/200x80/f1f5f9/0f172a?text=EXTRABET" },
-  { name: "Betclic", logo: "https://placehold.co/200x80/f1f5f9/0f172a?text=BETCLAAANG" },
-  { name: "STS", logo: "https://placehold.co/200x80/f1f5f9/0f172a?text=DRD" },
-  { name: "Fortuna", logo: "https://placehold.co/200x80/f1f5f9/0f172a?text=BOGACTWO" },
-  { name: "Playtech", logo: "https://placehold.co/200x80/f1f5f9/0f172a?text=PLAYMEDIA" },
-  { name: "EGBA", logo: "https://placehold.co/200x80/f1f5f9/0f172a?text=BARBIE" }
+  { name: "Superbet", logo: "https://placehold.co/200x80/f1f5f9/0f172a?text=SUPERBET" },
+  { name: "Betclic", logo: "https://placehold.co/200x80/f1f5f9/0f172a?text=BETCLIC" },
+  { name: "STS", logo: "https://placehold.co/200x80/f1f5f9/0f172a?text=STS" },
+  { name: "Fortuna", logo: "https://placehold.co/200x80/f1f5f9/0f172a?text=FORTUNA" },
+  { name: "Playtech", logo: "https://placehold.co/200x80/f1f5f9/0f172a?text=PLAYTECH" },
+  { name: "EGBA", logo: "https://placehold.co/200x80/f1f5f9/0f172a?text=EGBA" }
 ];
 ---
 
@@ -50,12 +50,76 @@ const partners = [
 
   <main class="relative pt-[128px] md:pt-[112px]">
     
-    <section id="o-nas" class="py-20 px-6 bg-white relative z-10">
+    <section id="test-samooceny" class="py-16 md:py-24 px-6 bg-slate-900 text-white relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-1/3 h-full bg-emerald-600/10 skew-x-12 translate-x-20"></div>
+      
+      <div class="max-w-6xl mx-auto relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="text-emerald-400 font-bold uppercase tracking-[0.3em] mb-4 text-sm">Narzędzie Diagnostyczne</p>
+            <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9] mb-8">
+              Sprawdź swoje <br/><span class="text-emerald-500">granice</span>
+            </h1>
+            <p class="text-xl text-slate-300 font-medium max-w-lg leading-relaxed">
+              Krótki, anonimowy test oparty na standardach klinicznych. Pozwoli Ci ocenić, czy Twoja relacja z hazardem wymaga uwagi.
+            </p>
+            <div class="mt-10 flex flex-wrap gap-4">
+               <div class="flex items-center gap-2 text-sm font-bold text-slate-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  100% Anonimowo
+               </div>
+               <div class="flex items-center gap-2 text-sm font-bold text-slate-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  Tylko 2 minuty
+               </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl text-slate-900 relative">
+            <div id="quiz-container">
+              <div id="quiz-intro">
+                <h3 class="text-2xl font-black uppercase tracking-tight mb-4">Gotowy do testu?</h3>
+                <p class="text-slate-600 mb-8 font-medium">Odpowiedz szczerze na kilka pytań, aby otrzymać darmową analizę Twojej sytuacji.</p>
+                <button onclick="window.startQuiz()" class="w-full bg-emerald-600 text-white py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-slate-900 transition-all shadow-lg cursor-pointer">
+                  Rozpocznij Test
+                </button>
+              </div>
+              <div id="quiz-questions" class="hidden">
+                <div class="mb-6 h-2 bg-slate-100 rounded-full overflow-hidden">
+                   <div id="quiz-progress" class="h-full bg-emerald-500 transition-all duration-500" style="width: 0%"></div>
+                </div>
+                <p id="question-text" class="text-xl font-bold text-slate-900 mb-8 leading-snug">Ładowanie pytania...</p>
+                <div class="grid gap-3">
+                   <button onclick="window.answer(true)" class="w-full text-left p-5 border-2 border-slate-100 rounded-2xl font-bold hover:border-emerald-500 hover:bg-emerald-50 transition cursor-pointer flex justify-between items-center">
+                      TAK <span class="text-emerald-500">→</span>
+                   </button>
+                   <button onclick="window.answer(false)" class="w-full text-left p-5 border-2 border-slate-100 rounded-2xl font-bold hover:border-slate-900 hover:bg-slate-50 transition cursor-pointer flex justify-between items-center">
+                      NIE <span class="text-slate-400">→</span>
+                   </button>
+                </div>
+              </div>
+              <div id="quiz-result" class="hidden text-center">
+                 <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                 </div>
+                 <h3 class="text-2xl font-black uppercase mb-4">Wynik Analizy</h3>
+                 <p id="result-text" class="text-slate-600 mb-8 font-medium italic"></p>
+                 <a href="#kontakt" class="block w-full bg-slate-900 text-white py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-emerald-600 transition shadow-lg">
+                    Chcę porozmawiać
+                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="o-nas" class="py-24 px-6 bg-white relative z-10">
       <div class="max-w-6xl mx-auto">
         <div class="text-center max-w-5xl mx-auto mb-16">
-          <h1 class="text-4xl md:text-6xl font-black text-slate-900 mb-8 leading-tight uppercase tracking-tight">
+          <h2 class="text-4xl md:text-6xl font-black text-slate-900 mb-8 leading-tight uppercase tracking-tight">
             Znamy system <span class="text-emerald-600">od środka</span>
-          </h1>
+          </h2>
           <p class="text-xl md:text-2xl text-slate-700 leading-relaxed font-medium mb-12 text-justify md:text-center">
             Idea Fundacji Znaj Granice nie powstała za biurkiem teoretyków. 
             Wyrasta z doświadczenia, które rzadko wychodzi poza gabinety zarządów branży igaming. 
@@ -242,6 +306,57 @@ const partners = [
 
   <Footer />
 </Layout>
+
+<script is:inline>
+  const questions = [
+    "Czy zdarza Ci się poświęcać na hazard więcej czasu niż planowałeś?",
+    "Czy odczuwasz potrzebę grania coraz wyższymi stawkami dla tych samych emocji?",
+    "Czy hazard stał się sposobem na ucieczkę od problemów lub gorszego nastroju?",
+    "Czy kiedykolwiek próbowałeś ukryć skalę swojego grania przed bliskimi?",
+    "Czy odczuwasz irytację lub niepokój, gdy próbujesz przestać grać?"
+  ];
+
+  let currentQuestion = 0;
+  let score = 0;
+
+  window.startQuiz = function() {
+    document.getElementById('quiz-intro').classList.add('hidden');
+    document.getElementById('quiz-questions').classList.remove('hidden');
+    showQuestion();
+  }
+
+  function showQuestion() {
+    const progress = (currentQuestion / questions.length) * 100;
+    document.getElementById('quiz-progress').style.width = `${progress}%`;
+    document.getElementById('question-text').innerText = questions[currentQuestion];
+  }
+
+  window.answer = function(val) {
+    if(val) score++;
+    currentQuestion++;
+
+    if(currentQuestion < questions.length) {
+      showQuestion();
+    } else {
+      showResult();
+    }
+  }
+
+  function showResult() {
+    document.getElementById('quiz-questions').classList.add('hidden');
+    document.getElementById('quiz-result').classList.remove('hidden');
+    
+    let text = "";
+    if(score <= 1) {
+      text = "Twoje odpowiedzi sugerują niskie ryzyko, ale pamiętaj o zachowaniu czujności i trzymaniu się swoich granic.";
+    } else if (score <= 3) {
+      text = "Uwaga: Wykazujesz pewne oznaki utraty kontroli. To dobry moment, by porozmawiać ze specjalistą i zapobiec rozwojowi problemu.";
+    } else {
+      text = "Twoje wyniki wskazują na wysokie ryzyko uzależnienia. Zalecamy niezwłoczny kontakt z naszymi konsultantami. Nie jesteś z tym sam.";
+    }
+    document.getElementById('result-text').innerText = text;
+  }
+</script>
 
 <style>
   html {
