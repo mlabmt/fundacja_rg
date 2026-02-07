@@ -18,7 +18,7 @@ const team = [
     name: "Jarosław Elżakowski",
     role: "Wiceprezes Fundacji",
     image: "https://picsum.photos/400/500?random=22",
-    manifest: "Psycholog, Specjalista terapii uzależnień. W zawodzie od 2012 roku, był m.in. tu:  Ośrodek Leczenia Uzależnień SPZOZ, Wojewódzki Szpital Specjalistyczny im. Stefana Kardynała Wyszyńskiego, Centrum Psychoedukacji i Pomocy Psychologicznej, Ośrodek Psychoterapii i Rozwoju, Wojewódzki Ośrodek Leczenia Uzależnienia od Alkoholu i Współuzależnienia w Lublinie w ramach Poradni i Oddziału Dziennego, w Całodobowym Oddziale Terapii Uzależnienia od Alkoholu Szpitala Neuropsychiatrycznego.",
+    manifest: "Psycholog, Specjalista terapii uzależnień. W zawodzie od 2012 roku, był m.in. tu: Ośrodek Leczenia Uzależnień SPZOZ, Wojewódzki Szpital Specjalistyczny im. Stefana Kardynała Wyszyńskiego, Centrum Psychoedukacji i Pomocy Psychologicznej, Ośrodek Psychoterapii i Rozwoju, Wojewódzki Ośrodek Leczenia Uzależnienia od Alkoholu i Współuzależnienia w Lublinie w ramach Poradni i Oddziału Dziennego, w Całodobowym Oddziale Terapii Uzależnienia od Alkoholu Szpitala Neuropsychiatrycznego.",
     email: "elek@znajgranice.org",
     linkedIn: "#"
   },
@@ -133,7 +133,6 @@ const partners = [
             Wyrasta z doświadczenia, które rzadko wychodzi poza gabinety zarządów branży igaming. 
             Wiemy, jak zaprojektowane są systemy, które nie pozwalają odejść od ekranu. 
             Rozumiemy algorytmy, które testują silną wolę. 
-            Dlatego chcemy pomagać skuteczniej niż ktokolwiek inny.
           </p>
           
           <div class="inline-block bg-slate-900 text-white p-10 rounded-[2rem] border-b-8 border-emerald-500 text-left shadow-2xl">
@@ -150,10 +149,8 @@ const partners = [
             <p>
               Przez 15 lat poznawałem rynek hazardowy w Polsce i za granicą. 
                Zajmując stanowiska kierownicze, odpowiadałem za strategie, które miały jeden cel: wzrost i zysk. 
-              Tworzyłem mechanizmy, które przyciągają graczy i wiem, jak trudno jest się z nich wyrwać, gdy rozrywka przeradza się w problem.
             </p>
             <p>
-              Mając wpływ na przekaz reklamowy, kładłem nacisk na zasady Odpowiedzialnej Gry. Czy to wystarczyło?
               Teraz przechodzę na drugą stronę, by wykorzystać własne dowiadczenie dla bezpiecznej rozrywki.
             </p>
           </div>
@@ -168,10 +165,6 @@ const partners = [
                 <li class="flex gap-3">
                     <span class="text-emerald-600 font-bold">●</span>
                     <p><strong>Dla rodzin:</strong> Wspieramy i tłumaczymy mechanizmy, którym ulegli ich bliscy.</p>
-                </li>
-                <li class="flex gap-3">
-                    <span class="text-emerald-600 font-bold">●</span>
-                    <p><strong>Dla branży:</strong> Doradzamy, jak realnie tworzyć bezpieczne środowisko gry.</p>
                 </li>
             </ul>
           </div>
@@ -198,26 +191,16 @@ const partners = [
                   
                   <div class="mb-8">
                     <a href={`mailto:${member.email}`} class="text-slate-900 font-bold text-sm hover:text-emerald-600 transition flex items-center gap-2 mb-6">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                       {member.email}
                     </a>
 
                     <button 
-                      onclick={`window.openMemberProfile({
-                        name: '${member.name}',
-                        role: '${member.role}',
-                        img: '${member.image}',
-                        bio: '${member.manifest.replace(/'/g, "\\'")}',
-                        linkedin: '${member.linkedIn}'
-                      })`}
+                      onclick={`window.openMemberProfile({ name: '${member.name}', role: '${member.role}', img: '${member.image}', bio: '${member.manifest.replace(/'/g, "\\'")}', linkedin: '${member.linkedIn}' })`}
                       class="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-emerald-600 hover:text-slate-900 transition cursor-pointer"
                     >
                       <span>Kto?</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                     </button>
                   </div>
                 </div>
@@ -225,12 +208,7 @@ const partners = [
             ))}
 
             <div class="bg-emerald-600 rounded-3xl p-8 flex flex-col justify-center text-white shadow-xl relative overflow-hidden group min-h-[400px]">
-                <div class="absolute -right-8 -bottom-8 opacity-10 group-hover:scale-110 transition duration-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-64 w-64" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                </div>
-                <h3 class="text-3xl font-black uppercase tracking-tighter mb-4 leading-none">Dołącz do nas</h3>
+                <h3 class="text-3xl font-black uppercase tracking-tighter mb-4 leading-none text-white">Dołącz do nas</h3>
                 <p class="text-emerald-100 mb-8 font-medium">Masz wiedzę, czas lub energię?</p>
                 <a href="#kontakt" class="bg-white text-emerald-600 text-center py-4 rounded-full font-black uppercase tracking-widest hover:bg-slate-900 hover:text-white transition shadow-lg relative z-10">
                     Zostań Wolontariuszem
@@ -240,66 +218,7 @@ const partners = [
         </div>
     </section>
 
-    <section id="dzialania" class="py-24 px-6 bg-slate-900 text-white relative z-0">
-      <div class="max-w-6xl mx-auto">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
-          <h2 class="text-4xl font-black uppercase tracking-tighter">Obszary<br/><span class="text-emerald-500">Działania</span></h2>
-          <p class="text-slate-400 max-w-sm font-medium italic">Cele Fundacji realizujemy w 3 obszarach, pozwalających na dostosowanie modelu pomocy i rozwoju.</p>
-        </div>
-        
-        <div class="grid md:grid-cols-3 gap-8 relative">
-          <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-emerald-500 transition-all duration-300 group hover:-translate-y-2">
-            <div class="w-12 h-12 bg-emerald-500 rounded-xl mb-6 flex items-center justify-center font-black text-slate-900 text-xl">01</div>
-            <h3 class="text-2xl font-black mb-6 uppercase italic group-hover:text-emerald-400 transition">Terapeutyczny</h3>
-            <ul class="space-y-4 text-slate-300 text-sm leading-relaxed">
-              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Wsparcie</strong> Rozwój profesjonalnego wsparcia i leczenia dla osób uzależnionych oraz ich rodzin.</li>
-              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Profilaktyka</strong> Tworzenie i upowszechnianie programów edukacyjnych i profilaktycznych.</li>
-              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Terapia</strong> Budowa sieci certyfikowanych specjalistów i ośrodków terapeutycznych.</li>
-            </ul>
-          </div>
-
-          <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-emerald-500 transition-all duration-300 group hover:-translate-y-2">
-            <div class="w-12 h-12 bg-emerald-500 rounded-xl mb-6 flex items-center justify-center font-black text-slate-900 text-xl">02</div>
-            <h3 class="text-2xl font-black mb-6 uppercase italic group-hover:text-emerald-400 transition text-white">Społeczny</h3>
-            <ul class="space-y-4 text-slate-300 text-sm leading-relaxed">
-              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Badania</strong> Zamawianie i prowadzenie ogólnopolskich badań nad hazardem.</li>
-              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Kampanie</strong> Ogólnopolskie i regionalne dotyczące uzależnienia od hazardu. </li>
-              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Edukacja</strong> Materiały dla pedagogów, kuratorów, związków i organizacji.</li>
-            </ul>
-          </div>
-
-          <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-emerald-500 transition-all duration-300 group hover:-translate-y-2">
-            <div class="w-12 h-12 bg-emerald-500 rounded-xl mb-6 flex items-center justify-center font-black text-slate-900 text-xl">03</div>
-            <h3 class="text-2xl font-black mb-6 uppercase italic group-hover:text-emerald-400 transition text-white">Biznesowy</h3>
-            <ul class="space-y-4 text-slate-300 text-sm leading-relaxed">
-              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Certyfikacja</strong> Audyty odpowiedzialnej gry i zgodności z ustawą hazardową.</li>
-              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Szkolenia</strong> Ze szczególnym uwzględnieniem działów compliance i CSR. </li>
-              <li><strong class="text-white uppercase text-[11px] block mb-1 tracking-widest">Wydarzenia</strong> Webinary, konferencje, spotkania branżowe z udziałem ekspertów w dziedzinie bezpiecznej gry. </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="partnerzy" class="py-20 px-6 bg-white relative z-10">
-      <div class="max-w-6xl mx-auto text-center">
-        <h2 class="text-emerald-600 font-bold uppercase tracking-[0.4em] mb-12 text-sm">Partnerzy</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-          {partners.map(partner => (
-            <div class="flex justify-center p-6 border border-slate-100 rounded-2xl hover:shadow-lg hover:border-emerald-100 transition-all">
-              <img src={partner.logo} alt={partner.name} class="h-10 object-contain" />
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
     <section id="kontakt" class="py-32 px-6 bg-slate-950 text-white relative overflow-hidden">
-      <div class="absolute top-0 left-0 w-full h-full opacity-10">
-        <div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-emerald-600 rounded-full blur-[120px]"></div>
-        <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-emerald-900 rounded-full blur-[120px]"></div>
-      </div>
-
       <div class="max-w-6xl mx-auto relative z-10">
         <div class="grid lg:grid-cols-2 gap-20">
           <div>
@@ -309,74 +228,25 @@ const partners = [
             </h3>
             <p class="text-xl text-slate-400 font-medium mb-12 max-w-md">
               Każda minuta zwłoki to kolejna przegrana walka. Jesteśmy tu, by dać Ci narzędzia do zwycięstwa. 
-              <strong>Rozmowa to pierwszy krok.</strong>
             </p>
-            
-            <div class="space-y-8">
-              <div class="flex items-start gap-6 group">
-                <div class="w-14 h-14 bg-emerald-600/20 rounded-2xl flex items-center justify-center text-emerald-500 group-hover:bg-emerald-600 group-hover:text-white transition-all">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                </div>
-                <div>
-                  <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1">Napisz do nas</p>
-                  <a href="mailto:kontakt@znajgranice.org" class="text-2xl font-black hover:text-emerald-500 transition">kontakt@znajgranice.org</a>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-6 group">
-                <div class="w-14 h-14 bg-emerald-600/20 rounded-2xl flex items-center justify-center text-emerald-500 group-hover:bg-emerald-600 group-hover:text-white transition-all">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                </div>
-                <div>
-                  <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1">Ośrodek Terapii</p>
-                  <p class="text-2xl font-black">Ul. Graniczna 1, Lublin</p>
-                </div>
-              </div>
-            </div>
           </div>
 
           <div class="bg-white/5 backdrop-blur-xl p-8 md:p-12 rounded-[3rem] border border-white/10 shadow-3xl">
             <form action="#" method="POST" class="space-y-6">
               <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label class="block text-xs font-black uppercase tracking-widest text-emerald-500 mb-3">Twoje Imię</label>
-                  <input type="text" placeholder="Jak się nazywasz?" class="w-full bg-slate-900 border-2 border-slate-800 rounded-2xl py-4 px-6 focus:border-emerald-500 focus:outline-none transition text-white font-bold" />
-                </div>
-                <div>
-                  <label class="block text-xs font-black uppercase tracking-widest text-emerald-500 mb-3">Twój Email</label>
-                  <input type="email" placeholder="Gdzie odpisać?" class="w-full bg-slate-900 border-2 border-slate-800 rounded-2xl py-4 px-6 focus:border-emerald-500 focus:outline-none transition text-white font-bold" />
-                </div>
+                <input type="text" placeholder="Imię" class="w-full bg-slate-900 border-2 border-slate-800 rounded-2xl py-4 px-6 focus:border-emerald-500 focus:outline-none transition text-white font-bold" />
+                <input type="email" placeholder="Email" class="w-full bg-slate-900 border-2 border-slate-800 rounded-2xl py-4 px-6 focus:border-emerald-500 focus:outline-none transition text-white font-bold" />
               </div>
-              <div>
-                <label class="block text-xs font-black uppercase tracking-widest text-emerald-500 mb-3">Twoja wiadomość</label>
-                <textarea rows="4" placeholder="Opisz krótko swoją sytuację..." class="w-full bg-slate-900 border-2 border-slate-800 rounded-2xl py-4 px-6 focus:border-emerald-500 focus:outline-none transition text-white font-bold resize-none"></textarea>
-              </div>
-              <button type="submit" class="w-full bg-emerald-600 text-white py-6 rounded-2xl font-black uppercase tracking-[0.2em] hover:bg-white hover:text-slate-950 transition-all shadow-xl shadow-emerald-900/20 cursor-pointer">
+              <textarea rows="4" placeholder="Twoja wiadomość..." class="w-full bg-slate-900 border-2 border-slate-800 rounded-2xl py-4 px-6 focus:border-emerald-500 focus:outline-none transition text-white font-bold resize-none"></textarea>
+              <button type="submit" class="w-full bg-emerald-600 text-white py-6 rounded-2xl font-black uppercase tracking-[0.2em] hover:bg-white hover:text-slate-950 transition-all shadow-xl cursor-pointer">
                 Wyślij wiadomość
               </button>
-              <p class="text-center text-[10px] text-slate-500 uppercase tracking-widest font-bold">Zapewniamy pełną dyskrecję i anonimowość</p>
             </form>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="misja" class="py-32 px-6 bg-slate-50 relative z-10 overflow-hidden">
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-100/20 via-transparent to-transparent -z-10"></div>
-      
-      <div class="max-w-6xl mx-auto text-center">
-        <h2 class="text-emerald-600 font-bold uppercase tracking-[0.4em] mb-12 text-sm">Misja Fundacji</h2>
-        <div class="space-y-8">
-            <p class="text-3xl md:text-6xl font-black text-slate-900 tracking-tighter leading-[1.1] max-w-5xl mx-auto">
-                Wierzymy, że każde uzależnienie ma swoją granicę, za którą zaczyna się powrót do wolności.
-            </p>
-            <div class="w-24 h-1.5 bg-emerald-500 mx-auto rounded-full"></div>
-            <p class="text-xl md:text-3xl font-medium text-emerald-700 max-w-4xl mx-auto leading-relaxed italic">
-                Realne wsparcie osób dotkniętych uzależnieniami oraz budowanie zdrowego społeczeństwa w dobie wyzwań cyfrowych.
-            </p>
-        </div>
-      </div>
-    </section>
   </main>
 
   <Footer />
@@ -384,16 +254,16 @@ const partners = [
 
 <script is:inline>
   const questions = [
-    "Czy poświęcasz coraz więcej czasu na myślenie o grze? (planujesz kolejne zakłady, analizujesz wyniki, szukasz sposobów na zdobycie funduszy w trakcie innych zajęć).",
-    "Czy próbujesz grać za coraz wyższe stawki, aby poczuć ten sam poziom emocji co kiedyś?",
-    "Czy zdarzyło Ci się kłamać bliskim, aby ukryć to, jak często grasz lub ile pieniędzy na to wydajesz?",
-    "Czy po przegranej czujesz natychmiastowy przymus „odkucia się” i jak najszybszego powrotu do gry, by odrobić straty?",
-    "Czy masz za sobą próby ograniczenia lub zaprzestania gry, które zakończyły się niepowodzeniem?",
-    "Czy czujesz rozdrażnienie, niepokój lub złość, gdy próbujesz przestać grać lub gdy nie masz dostępu do gry?",
-    "Czy zdarza Ci się grać po to, aby uciec od problemów, poczucia winy, lęku lub by „wyłączyć myślenie”?",
-    "Czy z powodu hazardu zdarzyło Ci się zaniedbać obowiązki zawodowe, naukę lub ważne relacje z bliskimi?",
-    "Czy pieniądze na grę lub na spłatę długów hazardowych pochodziły od rodziny, znajomych lub z instytucji finansowych?",
-    "Czy czujesz, że hazard przestał być rozrywką, a stał się przymusem, który dominuje nad Twoim życiem?"
+    "Czy poświęcasz coraz więcej czasu na myślenie o grze?",
+    "Czy próbujesz grać za coraz wyższe stawki, aby poczuć ten sam poziom emocji?",
+    "Czy zdarzyło Ci się kłamać bliskim, aby ukryć to, jak często grasz?",
+    "Czy po przegranej czujesz natychmiastowy przymus „odkucia się”?",
+    "Czy masz za sobą próby ograniczenia gry, które zakończyły się niepowodzeniem?",
+    "Czy czujesz rozdrażnienie, gdy nie masz dostępu do gry?",
+    "Czy zdarza Ci się grać po to, aby uciec od problemów lub lęku?",
+    "Czy z powodu hazardu zdarzyło Ci się zaniedbać obowiązki zawodowe?",
+    "Czy pieniądze na grę pochodziły od rodziny lub znajomych?",
+    "Czy czujesz, że hazard przestał być rozrywką, a stał się przymusem?"
   ];
 
   let currentQuestion = 0;
@@ -431,44 +301,30 @@ const partners = [
     const title = document.getElementById('result-title');
     const resultText = document.getElementById('result-text');
     
-    // Reset ikon
     document.getElementById('icon-green').classList.add('hidden');
     document.getElementById('icon-orange').classList.add('hidden');
     document.getElementById('icon-red').classList.add('hidden');
 
     if (score === 0) {
-      // ZIELONY - Bez zagrożenia
-      iconContainer.className = "w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 bg-emerald-500 shadow-lg shadow-emerald-200";
+      iconContainer.className = "w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 bg-emerald-500";
       document.getElementById('icon-green').classList.remove('hidden');
-      title.className = "text-2xl font-black uppercase mb-4 text-emerald-600";
-      resultText.innerText = "Jest ok! Swoją relację z hazardem masz pod kontrolą. Pamiętaj, aby zawsze grać odpowiedzialnie i trzymać się wyznaczonych limitów.";
-    } 
-    else if (score >= 1 && score <= 3) {
-      // POMARAŃCZOWY - Sygnał ostrzegawczy
-      iconContainer.className = "w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 bg-amber-500 shadow-lg shadow-amber-200";
+      title.innerText = "Niskie ryzyko";
+      resultText.innerText = "Masz sytuację pod kontrolą. Graj odpowiedzialnie!";
+    } else if (score <= 3) {
+      iconContainer.className = "w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 bg-amber-500";
       document.getElementById('icon-orange').classList.remove('hidden');
-      title.className = "text-2xl font-black uppercase mb-4 text-amber-600";
-      resultText.innerText = "Uważaj! Twoja relacja z hazardem zaczyna być ryzykowna. Warto pogłębić wiedzę o mechanizmach gry, zanim granica zostanie przekroczona.";
-    } 
-    else if (score >= 4 && score <= 6) {
-      // CZERWONY (Jasny) - Hazard problemowy
-      iconContainer.className = "w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 bg-red-500 shadow-lg shadow-red-200";
+      title.innerText = "Sygnał ostrzegawczy";
+      resultText.innerText = "Twoja relacja z hazardem zaczyna być ryzykowna. Uważaj.";
+    } else {
+      iconContainer.className = "w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 bg-red-600 animate-pulse";
       document.getElementById('icon-red').classList.remove('hidden');
-      title.className = "text-2xl font-black uppercase mb-4 text-red-600";
-      resultText.innerText = "Skup się! Twoja gra nosi znamiona problemu z hazardem. Tracisz kontrolę nad czasem i finansami. To ostatni moment, by skorzystać z profesjonalnej konsultacji i postawić twarde granice.";
-    } 
-    else {
-      // CZERWONY (Głęboki) - Uzależnienie
-      iconContainer.className = "w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 bg-red-700 shadow-lg shadow-red-300 animate-pulse";
-      document.getElementById('icon-red').classList.remove('hidden');
-      title.className = "text-2xl font-black uppercase mb-4 text-red-700";
-      resultText.innerText = "SKUP SIĘ! Wysokie prawdopodobieństwo uzależnienia. Pamiętaj, to nie jest kwestia „słabej woli”, ale mechanizmów chemicznych mózgu, które znamy od podszewki. Skontaktuj się z nami – wiemy, jak Ci pomóc.";
+      title.innerText = "WYSOKIE RYZYKO";
+      resultText.innerText = "Wykryliśmy wysokie prawdopodobieństwo uzależnienia. Skontaktuj się z nami jak najszybciej.";
     }
   }
 </script>
 
 <style>
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
+  main { overflow-x: hidden; }
 </style>
