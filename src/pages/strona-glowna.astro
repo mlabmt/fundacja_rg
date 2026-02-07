@@ -50,71 +50,69 @@ const partners = [
 
   <main class="relative pt-[128px] md:pt-[112px]">
     
-    <section id="test-samooceny" class="py-16 md:py-24 px-6 bg-slate-900 text-white relative overflow-hidden">
-      <div class="absolute top-0 right-0 w-1/3 h-full bg-emerald-600/10 skew-x-12 translate-x-20"></div>
+    <section id="test-samooceny" class="py-16 md:py-32 px-6 bg-slate-950 text-white relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-1/3 h-full bg-emerald-600/5 skew-x-12 translate-x-20"></div>
       
       <div class="max-w-6xl mx-auto relative z-10">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <p class="text-emerald-400 font-bold uppercase tracking-[0.3em] mb-4 text-sm">Sprawdź czy już teraz</p>
-            <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9] mb-8">
+            <p class="text-emerald-500 font-black uppercase tracking-[0.4em] mb-6 text-sm">Sprawdź czy już teraz</p>
+            <h1 class="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85] mb-8">
               Potrzebujesz <br/><span class="text-emerald-500">pomocy?</span>
             </h1>
-            <p class="text-xl text-slate-300 font-medium max-w-lg leading-relaxed">
+            <p class="text-xl text-slate-400 font-medium max-w-lg leading-relaxed mb-10">
                 Kto ma kontrolę? Obstawianie czy ty? Nasz anonimowy test pozwoli ocenić Twoją relację z hazardem.
             </p>
-            <div class="mt-10 flex flex-wrap gap-4">
-               <div class="flex items-center gap-2 text-sm font-bold text-slate-400">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                  Anonimowo
+            <div class="flex flex-wrap gap-6">
+               <div class="flex items-center gap-3 text-xs font-black uppercase tracking-widest text-slate-500">
+                  <div class="w-2 h-2 rounded-full bg-emerald-500"></div> 100% Anonimowo
                </div>
-               <div class="flex items-center gap-2 text-sm font-bold text-slate-400">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                  Błyskawicznie
+               <div class="flex items-center gap-3 text-xs font-black uppercase tracking-widest text-slate-500">
+                  <div class="w-2 h-2 rounded-full bg-emerald-500"></div> Wynik w 2 minuty
                </div>
             </div>
           </div>
 
-          <div class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl text-slate-900 relative">
+          <div class="bg-white rounded-[3rem] p-8 md:p-12 shadow-3xl text-slate-900 relative border border-white/10">
             <div id="quiz-container">
               <div id="quiz-intro">
-                <h3 class="text-2xl font-black uppercase tracking-tight mb-4">Startujesz?</h3>
-                <p class="text-slate-600 mb-8 font-medium">Odpowiedz szczerze na 10 pytań </p>
-                <button onclick="window.startQuiz()" class="w-full bg-emerald-600 text-white py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-slate-900 transition-all shadow-lg cursor-pointer">
-                  Sprawdzam
+                <h3 class="text-3xl font-black uppercase tracking-tighter mb-4">Gotowy na prawdę?</h3>
+                <p class="text-slate-600 mb-8 font-medium">Odpowiedz szczerze na 10 krótkich pytań.</p>
+                <button onclick="window.startQuiz()" class="w-full bg-emerald-600 text-white py-6 rounded-2xl font-black uppercase tracking-widest hover:bg-slate-900 transition-all shadow-xl cursor-pointer">
+                  Rozpocznij test
                 </button>
               </div>
 
               <div id="quiz-questions" class="hidden">
-                <div class="flex justify-between items-end mb-4">
+                <div class="flex justify-between items-end mb-6">
                     <span id="question-counter" class="text-xs font-black uppercase tracking-widest text-emerald-600">Pytanie 1 z 10</span>
                 </div>
-                <div class="mb-8 h-2 bg-slate-100 rounded-full overflow-hidden">
+                <div class="mb-10 h-3 bg-slate-100 rounded-full overflow-hidden">
                    <div id="quiz-progress" class="h-full bg-emerald-500 transition-all duration-500" style="width: 0%"></div>
                 </div>
-                <p id="question-text" class="text-xl font-bold text-slate-900 mb-8 leading-snug min-h-[100px]">Ładowanie pytania...</p>
-                <div class="grid gap-3">
-                   <button onclick="window.answer(true)" class="w-full text-left p-5 border-2 border-slate-100 rounded-2xl font-bold hover:border-emerald-500 hover:bg-emerald-50 transition cursor-pointer flex justify-between items-center group">
-                      TAK <span class="text-emerald-500 group-hover:translate-x-1 transition">→</span>
+                <p id="question-text" class="text-2xl font-black text-slate-900 mb-10 leading-tight min-h-[120px]">Ładowanie pytania...</p>
+                <div class="grid gap-4">
+                   <button onclick="window.answer(true)" class="w-full text-left p-6 border-2 border-slate-100 rounded-2xl font-black uppercase tracking-widest hover:border-emerald-500 hover:bg-emerald-50 transition cursor-pointer flex justify-between items-center group">
+                      TAK <span class="text-emerald-500 group-hover:translate-x-2 transition">→</span>
                    </button>
-                   <button onclick="window.answer(false)" class="w-full text-left p-5 border-2 border-slate-100 rounded-2xl font-bold hover:border-slate-900 hover:bg-slate-50 transition cursor-pointer flex justify-between items-center group">
-                      NIE <span class="text-slate-400 group-hover:translate-x-1 transition">→</span>
+                   <button onclick="window.answer(false)" class="w-full text-left p-6 border-2 border-slate-100 rounded-2xl font-black uppercase tracking-widest hover:border-slate-900 hover:bg-slate-50 transition cursor-pointer flex justify-between items-center group">
+                      NIE <span class="text-slate-400 group-hover:translate-x-2 transition">→</span>
                    </button>
                 </div>
               </div>
 
               <div id="quiz-result" class="hidden text-center">
-                 <div id="result-icon-container" class="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 transition-colors duration-500">
+                 <div id="result-icon-container" class="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-8 transition-colors duration-500">
                     <div id="icon-green" class="hidden"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7" /></svg></div>
                     <div id="icon-orange" class="hidden"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg></div>
                     <div id="icon-red" class="hidden"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
                  </div>
-                 <h3 id="result-title" class="text-2xl font-black uppercase mb-4">TWÓJ WYNIK</h3>
-                 <p id="result-text" class="text-slate-700 mb-8 font-medium leading-relaxed"></p>
-                 <a href="#kontakt" class="block w-full bg-slate-900 text-white py-5 rounded-2xl font-black uppercase tracking-widest hover:opacity-90 transition shadow-lg">
-                    Potrzebuję pomocy!
+                 <h3 id="result-title" class="text-3xl font-black uppercase tracking-tighter mb-4">WYNIK</h3>
+                 <p id="result-text" class="text-slate-700 mb-10 font-medium leading-relaxed px-4"></p>
+                 <a href="#kontakt" class="block w-full bg-slate-950 text-white py-6 rounded-2xl font-black uppercase tracking-widest hover:bg-emerald-600 transition shadow-xl">
+                    Chcę o tym porozmawiać
                  </a>
-                 <button onclick="location.reload()" class="mt-4 text-xs font-bold text-slate-400 hover:text-slate-600 uppercase tracking-widest transition">Powtórz test</button>
+                 <button onclick="location.reload()" class="mt-6 text-xs font-bold text-slate-400 hover:text-slate-950 uppercase tracking-[0.2em] transition">Powtórz test</button>
               </div>
             </div>
           </div>
@@ -122,56 +120,54 @@ const partners = [
       </div>
     </section>
 
-    <section id="o-nas" class="py-24 px-6 bg-white relative z-10">
+    <section id="o-nas" class="py-32 px-6 bg-white relative z-10">
       <div class="max-w-6xl mx-auto">
-        <div class="text-center max-w-5xl mx-auto mb-16">
-          <h2 class="text-4xl md:text-6xl font-black text-slate-900 mb-8 leading-tight uppercase tracking-tight">
-            Znamy system <span class="text-emerald-600">od środka</span>
+        <div class="text-center max-w-5xl mx-auto mb-24">
+          <h2 class="text-5xl md:text-8xl font-black text-slate-950 mb-10 leading-[0.85] uppercase tracking-tighter">
+            Znamy system <br/><span class="text-emerald-600">od środka</span>
           </h2>
-          <p class="text-xl md:text-2xl text-slate-700 leading-relaxed font-medium mb-12 text-justify md:text-center">
+          <p class="text-xl md:text-2xl text-slate-700 leading-relaxed font-medium mb-16 max-w-4xl mx-auto">
             Idea Fundacji Znaj Granice nie powstała za biurkiem teoretyków. 
             Wyrasta z doświadczenia, które rzadko wychodzi poza gabinety zarządów branży igaming. 
             Wiemy, jak zaprojektowane są systemy, które nie pozwalają odejść od ekranu. 
-            Rozumiemy algorytmy, które testują silną wolę. 
-            Dlatego chcemy pomagać skuteczniej niż ktokolwiek inny.
           </p>
           
-          <div class="inline-block bg-slate-900 text-white p-10 rounded-[2rem] border-b-8 border-emerald-500 text-left shadow-2xl">
-            <p class="text-xs font-bold text-emerald-400 uppercase tracking-[0.3em] mb-3">Dewiza Fundacji</p>
-            <p class="text-xl md:text-2xl font-bold italic leading-snug">
+          <div class="inline-block bg-slate-950 text-white p-12 rounded-[3rem] border-b-[12px] border-emerald-500 text-left shadow-3xl">
+            <p class="text-xs font-black text-emerald-500 uppercase tracking-[0.4em] mb-4">Nasza Misja</p>
+            <p class="text-2xl md:text-4xl font-black italic tracking-tighter leading-tight">
               Znaj Granice. Odzyskaj kontrolę. Wybierz życie.
             </p>
           </div>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-16 items-start">
-          <div class="space-y-6 text-slate-700 leading-relaxed">
-            <h2 class="text-2xl font-black uppercase text-slate-900">Historia Fundatora</h2>
-            <p>
+        <div class="grid md:grid-cols-2 gap-20 items-start">
+          <div class="space-y-8 text-slate-700 leading-relaxed">
+            <h2 class="text-3xl font-black uppercase tracking-tighter text-slate-950">Historia Fundatora</h2>
+            <p class="text-lg">
               Przez 15 lat poznawałem rynek hazardowy w Polsce i za granicą. 
-               Zajmując stanowiska kierownicze, odpowiadałem za strategie, które miały jeden cel: wzrost i zysk. 
+              Zajmując stanowiska kierownicze, odpowiadałem za strategie, które miały jeden cel: wzrost i zysk. 
               Tworzyłem mechanizmy, które przyciągają graczy i wiem, jak trudno jest się z nich wyrwać, gdy rozrywka przeradza się w problem.
             </p>
-            <p>
+            <p class="text-lg">
               Mając wpływ na przekaz reklamowy, kładłem nacisk na zasady Odpowiedzialnej Gry. Czy to wystarczyło?
               Teraz przechodzę na drugą stronę, by wykorzystać własne dowiadczenie dla bezpiecznej rozrywki.
             </p>
           </div>
-          <div class="relative bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
-            <img src="https://picsum.photos/600/400?random=1" alt="Ekspercka wiedza" class="w-full h-48 object-cover rounded-2xl mb-6 shadow-md" />
-            <h2 class="text-2xl font-black uppercase text-slate-900">Nasze podejście</h2>
-            <ul class="space-y-4">
-                <li class="flex gap-3">
-                    <span class="text-emerald-600 font-bold">●</span>
-                    <p><strong>Dla graczy:</strong> Jesteśmy punktem pomocy, do którego mogą zgłosić swój problem.</p>
+          <div class="relative bg-slate-50 p-10 rounded-[3rem] border border-slate-200 shadow-sm space-y-8">
+            <img src="https://picsum.photos/600/400?random=1" alt="Ekspercka wiedza" class="w-full h-64 object-cover rounded-[2rem] mb-6 shadow-xl" />
+            <h2 class="text-3xl font-black uppercase tracking-tighter text-slate-950">Nasze podejście</h2>
+            <ul class="space-y-5">
+                <li class="flex gap-4">
+                    <div class="w-6 h-6 bg-emerald-500 rounded-full flex-shrink-0 mt-1"></div>
+                    <p class="text-lg"><strong>Dla graczy:</strong> Jesteśmy punktem pomocy, do którego mogą zgłosić swój problem.</p>
                 </li>
-                <li class="flex gap-3">
-                    <span class="text-emerald-600 font-bold">●</span>
-                    <p><strong>Dla rodzin:</strong> Wspieramy i tłumaczymy mechanizmy, którym ulegli ich bliscy.</p>
+                <li class="flex gap-4">
+                    <div class="w-6 h-6 bg-emerald-500 rounded-full flex-shrink-0 mt-1"></div>
+                    <p class="text-lg"><strong>Dla rodzin:</strong> Wspieramy i tłumaczymy mechanizmy, którym ulegli ich bliscy.</p>
                 </li>
-                <li class="flex gap-3">
-                    <span class="text-emerald-600 font-bold">●</span>
-                    <p><strong>Dla branży:</strong> Doradzamy, jak realnie tworzyć bezpieczne środowisko gry.</p>
+                <li class="flex gap-4">
+                    <div class="w-6 h-6 bg-emerald-500 rounded-full flex-shrink-0 mt-1"></div>
+                    <p class="text-lg"><strong>Dla branży:</strong> Doradzamy, jak realnie tworzyć bezpieczne środowisko gry.</p>
                 </li>
             </ul>
           </div>
@@ -179,28 +175,28 @@ const partners = [
       </div>
     </section>
 
-    <section id="zespol" class="py-20 px-6 bg-slate-50 relative z-10">
+    <section id="zespol" class="py-32 px-6 bg-slate-50 relative z-10">
         <div class="max-w-6xl mx-auto">
-          <div class="mb-16">
-            <h2 class="text-emerald-600 font-bold uppercase tracking-[0.3em] mb-4 text-sm">Zespół</h2>
-            <p class="text-4xl font-black text-slate-900 uppercase tracking-tighter">Ludzie stawiający <span class="text-emerald-600">granice</span></p>
+          <div class="mb-20">
+            <h2 class="text-emerald-600 font-black uppercase tracking-[0.4em] mb-4 text-sm">Ludzie</h2>
+            <p class="text-5xl md:text-7xl font-black text-slate-950 uppercase tracking-tighter leading-none">Stawiamy <br/><span class="text-emerald-600">granice</span></p>
           </div>
 
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {team.map((member) => (
-              <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100 flex flex-col h-full group">
+              <div class="bg-white rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 flex flex-col h-full group transition-all hover:-translate-y-2">
                 <div class="aspect-[4/5] overflow-hidden">
-                  <img src={member.image} alt={member.name} class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                  <img src={member.image} alt={member.name} class="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
                 </div>
-                <div class="p-8 flex flex-col flex-grow">
-                  <p class="text-emerald-600 font-bold text-[10px] uppercase tracking-[0.2em] mb-2">{member.role}</p>
-                  <h3 class="text-2xl font-black text-slate-900 mb-6 uppercase tracking-tighter">{member.name}</h3>
+                <div class="p-10 flex flex-col flex-grow">
+                  <p class="text-emerald-600 font-black text-xs uppercase tracking-[0.3em] mb-3">{member.role}</p>
+                  <h3 class="text-3xl font-black text-slate-950 mb-8 uppercase tracking-tighter leading-none">{member.name}</h3>
                   
-                  <div class="mb-8">
-                    <a href={`mailto:${member.email}`} class="text-slate-900 font-bold text-sm hover:text-emerald-600 transition flex items-center gap-2 mb-6">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
+                  <div class="mt-auto">
+                    <a href={`mailto:${member.email}`} class="text-slate-950 font-black text-sm hover:text-emerald-600 transition flex items-center gap-3 mb-8">
+                      <div class="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                      </div>
                       {member.email}
                     </a>
 
@@ -212,27 +208,22 @@ const partners = [
                         bio: '${member.manifest.replace(/'/g, "\\'")}',
                         linkedin: '${member.linkedIn}'
                       })`}
-                      class="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-emerald-600 hover:text-slate-900 transition cursor-pointer"
+                      class="w-full py-4 border-2 border-slate-950 text-slate-950 rounded-xl font-black uppercase tracking-widest hover:bg-slate-950 hover:text-white transition cursor-pointer text-sm"
                     >
-                      <span>Kto?</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
+                      Poznaj historię
                     </button>
                   </div>
                 </div>
               </div>
             ))}
 
-            <div class="bg-emerald-600 rounded-3xl p-8 flex flex-col justify-center text-white shadow-xl relative overflow-hidden group min-h-[400px]">
-                <div class="absolute -right-8 -bottom-8 opacity-10 group-hover:scale-110 transition duration-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-64 w-64" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
+            <div class="bg-emerald-600 rounded-[3rem] p-10 flex flex-col justify-center text-white shadow-2xl relative overflow-hidden group min-h-[500px]">
+                <div class="absolute -right-12 -bottom-12 opacity-10 group-hover:scale-125 transition duration-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-80 w-80" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
                 </div>
-                <h3 class="text-3xl font-black uppercase tracking-tighter mb-4 leading-none">Dołącz do nas</h3>
-                <p class="text-emerald-100 mb-8 font-medium">Masz wiedzę, czas lub energię?</p>
-                <a href="#kontakt" class="bg-white text-emerald-600 text-center py-4 rounded-full font-black uppercase tracking-widest hover:bg-slate-900 hover:text-white transition shadow-lg relative z-10">
+                <h3 class="text-4xl font-black uppercase tracking-tighter mb-6 leading-none">Dołącz do <br/>misji</h3>
+                <p class="text-emerald-100 mb-10 text-lg font-medium leading-relaxed">Masz wiedzę, czas lub energię, którą chcesz przekuć w realną zmianę?</p>
+                <a href="#kontakt" class="bg-white text-emerald-600 text-center py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-slate-950 hover:text-white transition shadow-xl relative z-10">
                     Zostań Wolontariuszem
                 </a>
             </div>
@@ -240,54 +231,46 @@ const partners = [
         </div>
     </section>
 
-    <section id="dzialania" class="py-24 px-6 bg-slate-900 text-white relative z-0">
+    <section id="dzialania" class="py-32 px-6 bg-slate-950 text-white relative z-0">
       <div class="max-w-6xl mx-auto">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
-          <h2 class="text-4xl font-black uppercase tracking-tighter">Obszary<br/><span class="text-emerald-500">Działania</span></h2>
-          <p class="text-slate-400 max-w-sm font-medium italic">Cele Fundacji realizujemy w 3 obszarach, pozwalających na dostosowanie modelu pomocy i rozwoju.</p>
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
+          <div>
+            <h2 class="text-emerald-500 font-black uppercase tracking-[0.4em] mb-6 text-sm">Co robimy</h2>
+            <h3 class="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85]">Obszary<br/><span class="text-emerald-500">Działania</span></h3>
+          </div>
+          <p class="text-slate-400 max-w-sm text-lg font-medium italic">Trzy filary, które pozwalają nam walczyć o wolność od uzależnień na każdym szczeblu.</p>
         </div>
         
-        <div class="grid md:grid-cols-3 gap-8 relative">
-          <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-emerald-500 transition-all duration-300 group hover:-translate-y-2">
-            <div class="w-12 h-12 bg-emerald-500 rounded-xl mb-6 flex items-center justify-center font-black text-slate-900 text-xl">01</div>
-            <h3 class="text-2xl font-black mb-6 uppercase italic group-hover:text-emerald-400 transition">Terapeutyczny</h3>
-            <ul class="space-y-4 text-slate-300 text-sm leading-relaxed">
-              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Wsparcie</strong> Rozwój profesjonalnego wsparcia i leczenia dla osób uzależnionych oraz ich rodzin.</li>
-              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Profilaktyka</strong> Tworzenie i upowszechnianie programów edukacyjnych i profilaktycznych.</li>
-              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Terapia</strong> Budowa sieci certyfikowanych specjalistów i ośrodków terapeutycznych.</li>
-            </ul>
-          </div>
-
-          <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-emerald-500 transition-all duration-300 group hover:-translate-y-2">
-            <div class="w-12 h-12 bg-emerald-500 rounded-xl mb-6 flex items-center justify-center font-black text-slate-900 text-xl">02</div>
-            <h3 class="text-2xl font-black mb-6 uppercase italic group-hover:text-emerald-400 transition text-white">Społeczny</h3>
-            <ul class="space-y-4 text-slate-300 text-sm leading-relaxed">
-              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Badania</strong> Zamawianie i prowadzenie ogólnopolskich badań nad hazardem.</li>
-              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Kampanie</strong> Ogólnopolskie i regionalne dotyczące uzależnienia od hazardu. </li>
-              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Edukacja</strong> Materiały dla pedagogów, kuratorów, związków i organizacji.</li>
-            </ul>
-          </div>
-
-          <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-emerald-500 transition-all duration-300 group hover:-translate-y-2">
-            <div class="w-12 h-12 bg-emerald-500 rounded-xl mb-6 flex items-center justify-center font-black text-slate-900 text-xl">03</div>
-            <h3 class="text-2xl font-black mb-6 uppercase italic group-hover:text-emerald-400 transition text-white">Biznesowy</h3>
-            <ul class="space-y-4 text-slate-300 text-sm leading-relaxed">
-              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Certyfikacja</strong> Audyty odpowiedzialnej gry i zgodności z ustawą hazardową.</li>
-              <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Szkolenia</strong> Ze szczególnym uwzględnieniem działów compliance i CSR. </li>
-              <li><strong class="text-white uppercase text-[11px] block mb-1 tracking-widest">Wydarzenia</strong> Webinary, konferencje, spotkania branżowe z udziałem ekspertów w dziedzinie bezpiecznej gry. </li>
-            </ul>
-          </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          {[
+            { id: "01", title: "Terapeutyczny", list: [["Wsparcie", "Rozwój profesjonalnego leczenia dla osób uzależnionych."], ["Profilaktyka", "Tworzenie nowoczesnych programów edukacyjnych."], ["Terapia", "Budowa sieci certyfikowanych specjalistów."]] },
+            { id: "02", title: "Społeczny", list: [["Badania", "Ogólnopolskie analizy nad rynkiem hazardu."], ["Kampanie", "Budowanie świadomości w skali kraju."], ["Edukacja", "Materiały dla pedagogów i organizacji."]] },
+            { id: "03", title: "Biznesowy", list: [["Certyfikacja", "Audyty zgodności z ustawą hazardową."], ["Szkolenia", "Dla działów compliance i CSR."], ["Wydarzenia", "Konferencje z udziałem światowych ekspertów."]] }
+          ].map(area => (
+            <div class="bg-white/5 backdrop-blur-xl p-10 rounded-[3rem] border border-white/10 hover:border-emerald-500 transition-all duration-500 group hover:-translate-y-3">
+              <div class="w-16 h-16 bg-emerald-500 rounded-2xl mb-8 flex items-center justify-center font-black text-slate-950 text-2xl">{area.id}</div>
+              <h3 class="text-3xl font-black mb-8 uppercase italic group-hover:text-emerald-400 transition">{area.title}</h3>
+              <ul class="space-y-6">
+                {area.list.map(item => (
+                  <li>
+                    <strong class="text-emerald-500 uppercase text-xs block mb-2 tracking-widest">{item[0]}</strong>
+                    <p class="text-slate-400 text-sm leading-relaxed">{item[1]}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </section>
 
-    <section id="partnerzy" class="py-20 px-6 bg-white relative z-10">
+    <section id="partnerzy" class="py-24 px-6 bg-white relative z-10">
       <div class="max-w-6xl mx-auto text-center">
-        <h2 class="text-emerald-600 font-bold uppercase tracking-[0.4em] mb-12 text-sm">Partnerzy</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+        <h2 class="text-slate-400 font-black uppercase tracking-[0.5em] mb-16 text-xs">Współpracujemy z najlepszymi</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-700">
           {partners.map(partner => (
-            <div class="flex justify-center p-6 border border-slate-100 rounded-2xl hover:shadow-lg hover:border-emerald-100 transition-all">
-              <img src={partner.logo} alt={partner.name} class="h-10 object-contain" />
+            <div class="flex justify-center p-8 border border-slate-100 rounded-3xl hover:shadow-2xl hover:border-emerald-100 transition-all">
+              <img src={partner.logo} alt={partner.name} class="h-8 object-contain" />
             </div>
           ))}
         </div>
@@ -296,84 +279,80 @@ const partners = [
 
     <section id="kontakt" class="py-32 px-6 bg-slate-950 text-white relative overflow-hidden">
       <div class="absolute top-0 left-0 w-full h-full opacity-10">
-        <div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-emerald-600 rounded-full blur-[120px]"></div>
-        <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-emerald-900 rounded-full blur-[120px]"></div>
+        <div class="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-emerald-600 rounded-full blur-[150px]"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-emerald-900 rounded-full blur-[150px]"></div>
       </div>
 
       <div class="max-w-6xl mx-auto relative z-10">
-        <div class="grid lg:grid-cols-2 gap-20">
+        <div class="grid lg:grid-cols-2 gap-24 items-center">
           <div>
-            <h2 class="text-emerald-500 font-black uppercase tracking-[0.3em] mb-6 text-sm">Kontakt</h2>
-            <h3 class="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85] mb-10">
-              Nie czekaj <br/>na <span class="text-emerald-500">koniec.</span>
+            <h2 class="text-emerald-500 font-black uppercase tracking-[0.4em] mb-6 text-sm">Kontakt</h2>
+            <h3 class="text-6xl md:text-9xl font-black uppercase tracking-tighter leading-[0.8] mb-12">
+              Czas na <br/><span class="text-emerald-500">ruch.</span>
             </h3>
-            <p class="text-xl text-slate-400 font-medium mb-12 max-w-md">
-              Każda minuta zwłoki to kolejna przegrana walka. Jesteśmy tu, by dać Ci narzędzia do zwycięstwa. 
-              <strong>Rozmowa to pierwszy krok.</strong>
+            <p class="text-2xl text-slate-300 font-medium mb-12 leading-tight">
+              Nie pozwól, by hazard pisał Twój scenariusz. <br/><strong>Odzyskaj pióro.</strong>
             </p>
             
-            <div class="space-y-8">
-              <div class="flex items-start gap-6 group">
-                <div class="w-14 h-14 bg-emerald-600/20 rounded-2xl flex items-center justify-center text-emerald-500 group-hover:bg-emerald-600 group-hover:text-white transition-all">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+            <div class="space-y-10">
+              <div class="flex items-center gap-8 group">
+                <div class="w-16 h-16 bg-emerald-600/20 rounded-2xl flex items-center justify-center text-emerald-500 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                 </div>
                 <div>
-                  <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1">Napisz do nas</p>
-                  <a href="mailto:kontakt@znajgranice.org" class="text-2xl font-black hover:text-emerald-500 transition">kontakt@znajgranice.org</a>
+                  <p class="text-xs font-black uppercase tracking-widest text-slate-500 mb-2">Bezpośredni email</p>
+                  <a href="mailto:kontakt@znajgranice.org" class="text-3xl font-black hover:text-emerald-500 transition tracking-tighter">kontakt@znajgranice.org</a>
                 </div>
               </div>
 
-              <div class="flex items-start gap-6 group">
-                <div class="w-14 h-14 bg-emerald-600/20 rounded-2xl flex items-center justify-center text-emerald-500 group-hover:bg-emerald-600 group-hover:text-white transition-all">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+              <div class="flex items-center gap-8 group">
+                <div class="w-16 h-16 bg-emerald-600/20 rounded-2xl flex items-center justify-center text-emerald-500 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                 </div>
                 <div>
-                  <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1">Ośrodek Terapii</p>
-                  <p class="text-2xl font-black">Ul. Graniczna 1, Lublin</p>
+                  <p class="text-xs font-black uppercase tracking-widest text-slate-500 mb-2">Główna siedziba</p>
+                  <p class="text-3xl font-black tracking-tighter">Lublin, Graniczna 1</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="bg-white/5 backdrop-blur-xl p-8 md:p-12 rounded-[3rem] border border-white/10 shadow-3xl">
-            <form action="#" method="POST" class="space-y-6">
-              <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label class="block text-xs font-black uppercase tracking-widest text-emerald-500 mb-3">Twoje Imię</label>
-                  <input type="text" placeholder="Jak się nazywasz?" class="w-full bg-slate-900 border-2 border-slate-800 rounded-2xl py-4 px-6 focus:border-emerald-500 focus:outline-none transition text-white font-bold" />
+          <div class="bg-white/5 backdrop-blur-2xl p-10 md:p-16 rounded-[4rem] border border-white/10 shadow-3xl relative">
+            <div class="absolute -top-6 -right-6 w-20 h-20 bg-emerald-600 rounded-3xl rotate-12 flex items-center justify-center shadow-xl">
+               <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>
+            </div>
+            <form action="#" method="POST" class="space-y-8">
+              <div class="grid gap-8">
+                <div class="relative">
+                  <input type="text" placeholder="Imię" class="w-full bg-slate-900/50 border-b-2 border-slate-800 py-4 px-2 focus:border-emerald-500 focus:outline-none transition text-white font-black text-xl placeholder:text-slate-700" />
                 </div>
-                <div>
-                  <label class="block text-xs font-black uppercase tracking-widest text-emerald-500 mb-3">Twój Email</label>
-                  <input type="email" placeholder="Gdzie odpisać?" class="w-full bg-slate-900 border-2 border-slate-800 rounded-2xl py-4 px-6 focus:border-emerald-500 focus:outline-none transition text-white font-bold" />
+                <div class="relative">
+                  <input type="email" placeholder="Twój Email" class="w-full bg-slate-900/50 border-b-2 border-slate-800 py-4 px-2 focus:border-emerald-500 focus:outline-none transition text-white font-black text-xl placeholder:text-slate-700" />
+                </div>
+                <div class="relative">
+                  <textarea rows="3" placeholder="Wiadomość" class="w-full bg-slate-900/50 border-b-2 border-slate-800 py-4 px-2 focus:border-emerald-500 focus:outline-none transition text-white font-black text-xl placeholder:text-slate-700 resize-none"></textarea>
                 </div>
               </div>
-              <div>
-                <label class="block text-xs font-black uppercase tracking-widest text-emerald-500 mb-3">Twoja wiadomość</label>
-                <textarea rows="4" placeholder="Opisz krótko swoją sytuację..." class="w-full bg-slate-900 border-2 border-slate-800 rounded-2xl py-4 px-6 focus:border-emerald-500 focus:outline-none transition text-white font-bold resize-none"></textarea>
-              </div>
-              <button type="submit" class="w-full bg-emerald-600 text-white py-6 rounded-2xl font-black uppercase tracking-[0.2em] hover:bg-white hover:text-slate-950 transition-all shadow-xl shadow-emerald-900/20 cursor-pointer">
-                Wyślij wiadomość
+              <button type="submit" class="w-full bg-emerald-600 text-white py-8 rounded-[2rem] font-black uppercase tracking-[0.3em] hover:bg-white hover:text-slate-950 transition-all shadow-2xl cursor-pointer text-lg">
+                Wyślij teraz
               </button>
-              <p class="text-center text-[10px] text-slate-500 uppercase tracking-widest font-bold">Zapewniamy pełną dyskrecję i anonimowość</p>
             </form>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="misja" class="py-32 px-6 bg-slate-50 relative z-10 overflow-hidden">
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-100/20 via-transparent to-transparent -z-10"></div>
-      
-      <div class="max-w-6xl mx-auto text-center">
-        <h2 class="text-emerald-600 font-bold uppercase tracking-[0.4em] mb-12 text-sm">Misja Fundacji</h2>
-        <div class="space-y-8">
-            <p class="text-3xl md:text-6xl font-black text-slate-900 tracking-tighter leading-[1.1] max-w-5xl mx-auto">
-                Wierzymy, że każde uzależnienie ma swoją granicę, za którą zaczyna się powrót do wolności.
-            </p>
-            <div class="w-24 h-1.5 bg-emerald-500 mx-auto rounded-full"></div>
-            <p class="text-xl md:text-3xl font-medium text-emerald-700 max-w-4xl mx-auto leading-relaxed italic">
-                Realne wsparcie osób dotkniętych uzależnieniami oraz budowanie zdrowego społeczeństwa w dobie wyzwań cyfrowych.
-            </p>
+    <section class="py-32 px-6 bg-white text-center relative z-10 overflow-hidden">
+      <div class="max-w-4xl mx-auto">
+        <p class="text-7xl md:text-9xl font-black text-slate-100 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 uppercase tracking-tighter select-none">Freedom</p>
+        <div class="relative z-10">
+          <h2 class="text-4xl md:text-6xl font-black text-slate-950 tracking-tighter leading-none mb-12 uppercase">
+            Każde uzależnienie ma swoją <span class="text-emerald-600">granicę.</span>
+          </h2>
+          <div class="w-32 h-2 bg-emerald-500 mx-auto rounded-full mb-12"></div>
+          <p class="text-2xl md:text-4xl font-medium text-slate-600 max-w-3xl mx-auto leading-tight italic">
+            Za nią zaczyna się Twoja wolność. <br/>Pomożemy Ci ją odnaleźć.
+          </p>
         </div>
       </div>
     </section>
@@ -431,38 +410,33 @@ const partners = [
     const title = document.getElementById('result-title');
     const resultText = document.getElementById('result-text');
     
-    // Reset ikon
     document.getElementById('icon-green').classList.add('hidden');
     document.getElementById('icon-orange').classList.add('hidden');
     document.getElementById('icon-red').classList.add('hidden');
 
     if (score === 0) {
-      // ZIELONY - Bez zagrożenia
-      iconContainer.className = "w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 bg-emerald-500 shadow-lg shadow-emerald-200";
+      iconContainer.className = "w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 bg-emerald-500 shadow-xl shadow-emerald-500/20";
       document.getElementById('icon-green').classList.remove('hidden');
-      title.className = "text-2xl font-black uppercase mb-4 text-emerald-600";
-      resultText.innerText = "Jest ok! Swoją relację z hazardem masz pod kontrolą. Pamiętaj, aby zawsze grać odpowiedzialnie i trzymać się wyznaczonych limitów.";
+      title.className = "text-3xl font-black uppercase mb-4 text-emerald-600";
+      resultText.innerText = "Swoją relację z hazardem masz pod kontrolą. Pamiętaj, aby zawsze grać odpowiedzialnie.";
     } 
     else if (score >= 1 && score <= 3) {
-      // POMARAŃCZOWY - Sygnał ostrzegawczy
-      iconContainer.className = "w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 bg-amber-500 shadow-lg shadow-amber-200";
+      iconContainer.className = "w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 bg-amber-500 shadow-xl shadow-amber-500/20";
       document.getElementById('icon-orange').classList.remove('hidden');
-      title.className = "text-2xl font-black uppercase mb-4 text-amber-600";
-      resultText.innerText = "Uważaj! Twoja relacja z hazardem zaczyna być ryzykowna. Warto pogłębić wiedzę o mechanizmach gry, zanim granica zostanie przekroczona.";
+      title.className = "text-3xl font-black uppercase mb-4 text-amber-600";
+      resultText.innerText = "Uważaj! Twoja relacja z hazardem zaczyna być ryzykowna. Warto pogłębić wiedzę o mechanizmach gry.";
     } 
     else if (score >= 4 && score <= 6) {
-      // CZERWONY (Jasny) - Hazard problemowy
-      iconContainer.className = "w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 bg-red-500 shadow-lg shadow-red-200";
+      iconContainer.className = "w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 bg-red-500 shadow-xl shadow-red-500/20";
       document.getElementById('icon-red').classList.remove('hidden');
-      title.className = "text-2xl font-black uppercase mb-4 text-red-600";
-      resultText.innerText = "Skup się! Twoja gra nosi znamiona problemu z hazardem. Tracisz kontrolę nad czasem i finansami. To ostatni moment, by skorzystać z profesjonalnej konsultacji i postawić twarde granice.";
+      title.className = "text-3xl font-black uppercase mb-4 text-red-600";
+      resultText.innerText = "Twoja gra nosi znamiona problemu. To ostatni moment, by postawić twarde granice.";
     } 
     else {
-      // CZERWONY (Głęboki) - Uzależnienie
-      iconContainer.className = "w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 bg-red-700 shadow-lg shadow-red-300 animate-pulse";
+      iconContainer.className = "w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 bg-red-700 shadow-xl shadow-red-700/20 animate-pulse";
       document.getElementById('icon-red').classList.remove('hidden');
-      title.className = "text-2xl font-black uppercase mb-4 text-red-700";
-      resultText.innerText = "SKUP SIĘ! Wysokie prawdopodobieństwo uzależnienia. Pamiętaj, to nie jest kwestia „słabej woli”, ale mechanizmów chemicznych mózgu, które znamy od podszewki. Skontaktuj się z nami – wiemy, jak Ci pomóc.";
+      title.className = "text-3xl font-black uppercase mb-4 text-red-700";
+      resultText.innerText = "Wysokie prawdopodobieństwo uzależnienia. Skontaktuj się z nami – wiemy dokładnie, co teraz czujesz i jak Ci pomóc.";
     }
   }
 </script>
@@ -470,5 +444,10 @@ const partners = [
 <style>
   html {
     scroll-behavior: smooth;
+  }
+  /* Dodatkowe ulepszenie czytelności dla 0-code usera */
+  ::selection {
+    background-color: #10b981;
+    color: white;
   }
 </style>
