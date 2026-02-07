@@ -4,7 +4,6 @@ import TopBar from '../components/TopBar.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-// TABLICA PRACOWNIKÓW
 const team = [
   {
     name: "Kamil Dworniczak",
@@ -18,7 +17,7 @@ const team = [
     name: "Jarosław Elżakowski",
     role: "Wiceprezes Fundacji",
     image: "https://picsum.photos/400/500?random=22",
-    manifest: "Psycholog, Specjalista terapii uzależnień. W zawodzie od 2012 roku, był m.in. tu: Ośrodek Leczenia Uzależnień SPZOZ, Wojewódzki Szpital Specjalistyczny im. Stefana Kardynała Wyszyńskiego, Centrum Psychoedukacji i Pomocy Psychologicznej, Ośrodek Psychoterapii i Rozwoju, Wojewódzki Ośrodek Leczenia Uzależnienia od Alkoholu i Współuzależnienia w Lublinie w ramach Poradni i Oddziału Dziennego, w Całodobowym Oddziale Terapii Uzależnienia od Alkoholu Szpitala Neuropsychiatrycznego.",
+    manifest: "Psycholog, Specjalista terapii uzależnień. W zawodzie od 2012 roku, był m.in. tu:  Ośrodek Leczenia Uzależnień SPZOZ, Wojewódzki Szpital Specjalistyczny im. Stefana Kardynała Wyszyńskiego, Centrum Psychoedukacji i Pomocy Psychologicznej, Ośrodek Psychoterapii i Rozwoju, Wojewódzki Ośrodek Leczenia Uzależnienia od Alkoholu i Współuzależnienia w Lublinie w ramach Poradni i Oddziału Dziennego, w Całodobowym Oddziale Terapii Uzależnienia od Alkoholu Szpitala Neuropsychiatrycznego.",
     email: "elek@znajgranice.org",
     linkedIn: "#"
   },
@@ -43,68 +42,62 @@ const partners = [
 ---
 
 <Layout title="Fundacja Znaj Granice">
-  <div class="fixed top-0 left-0 w-full z-[9999] shadow-2xl bg-white" style="isolation: isolate;">
+  <div class="fixed top-0 left-0 w-full z-[9999] bg-white border-b border-slate-100">
     <TopBar />
     <Header />
   </div>
 
-  <main class="relative pt-[128px] md:pt-[112px]">
+  <main class="pt-[100px] md:pt-[112px]">
     
-    <section id="test-samooceny" class="py-16 md:py-24 px-6 bg-slate-900 text-white relative overflow-hidden">
-      <div class="absolute top-0 right-0 w-1/3 h-full bg-emerald-600/10 skew-x-12 translate-x-20"></div>
-      
-      <div class="max-w-6xl mx-auto relative z-10">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
+    <section id="test-samooceny" class="py-16 md:py-24 px-4 bg-slate-900 text-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p class="text-emerald-400 font-bold uppercase tracking-[0.3em] mb-4 text-sm">Sprawdź czy już teraz</p>
-            <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9] mb-8">
-              Potrzebujesz <br/><span class="text-emerald-500">pomocy?</span>
+            <span class="inline-block px-4 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-6 border border-emerald-500/20">Test Samooceny</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+              Kiedy gra przestaje być <span class="text-emerald-500">rozrywką?</span>
             </h1>
-            <p class="text-xl text-slate-300 font-medium max-w-lg leading-relaxed">
-                Kto ma kontrolę? Obstawianie czy ty? Nasz anonimowy test pozwoli ocenić Twoją relację z hazardem.
+            <p class="text-lg text-slate-400 mb-8 max-w-md">
+              Anonimowy test, który pomoże Ci zrozumieć Twoją relację z hazardem. Zajmie tylko 2 minuty.
             </p>
+            <div class="flex gap-6 opacity-60">
+                <div class="flex items-center gap-2 text-sm">
+                    <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> 100% dyskrecji
+                </div>
+            </div>
           </div>
 
-          <div class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl text-slate-900 relative">
+          <div class="bg-white rounded-3xl p-8 md:p-10 shadow-2xl text-slate-900">
             <div id="quiz-container">
               <div id="quiz-intro">
-                <h3 class="text-2xl font-black uppercase tracking-tight mb-4">Startujesz?</h3>
-                <p class="text-slate-600 mb-8 font-medium">Odpowiedz szczerze na 10 pytań </p>
-                <button onclick="window.startQuiz()" class="w-full bg-emerald-600 text-white py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-slate-900 transition-all shadow-lg cursor-pointer">
-                  Sprawdzam
+                <h3 class="text-2xl font-bold mb-4">Rozpocznij test</h3>
+                <p class="text-slate-600 mb-8">Wybierz odpowiedź, która najlepiej opisuje Twoje odczucia w ciągu ostatnich 12 miesięcy.</p>
+                <button onclick="window.startQuiz()" class="w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-emerald-600 transition-all cursor-pointer">
+                  Zacznij teraz
                 </button>
               </div>
 
               <div id="quiz-questions" class="hidden">
-                <div class="flex justify-between items-end mb-4">
-                    <span id="question-counter" class="text-xs font-black uppercase tracking-widest text-emerald-600">Pytanie 1 z 10</span>
+                <div class="flex justify-between items-center mb-4">
+                    <span id="question-counter" class="text-xs font-bold text-emerald-600 uppercase">Pytanie 1/10</span>
                 </div>
                 <div class="mb-8 h-2 bg-slate-100 rounded-full overflow-hidden">
-                   <div id="quiz-progress" class="h-full bg-emerald-500 transition-all duration-500" style="width: 0%"></div>
+                   <div id="quiz-progress" class="h-full bg-emerald-500 transition-all duration-300" style="width: 10%"></div>
                 </div>
-                <p id="question-text" class="text-xl font-bold text-slate-900 mb-8 leading-snug min-h-[100px]">Ładowanie pytania...</p>
-                <div class="grid gap-3">
-                   <button onclick="window.answer(true)" class="w-full text-left p-5 border-2 border-slate-100 rounded-2xl font-bold hover:border-emerald-500 hover:bg-emerald-50 transition cursor-pointer flex justify-between items-center group">
-                     TAK <span class="text-emerald-500 group-hover:translate-x-1 transition">→</span>
-                   </button>
-                   <button onclick="window.answer(false)" class="w-full text-left p-5 border-2 border-slate-100 rounded-2xl font-bold hover:border-slate-900 hover:bg-slate-50 transition cursor-pointer flex justify-between items-center group">
-                     NIE <span class="text-slate-400 group-hover:translate-x-1 transition">→</span>
-                   </button>
+                <p id="question-text" class="text-xl font-semibold text-slate-800 mb-8 min-h-[80px]">Ładowanie...</p>
+                <div class="grid grid-cols-2 gap-4">
+                   <button onclick="window.answer(true)" class="p-4 border-2 border-slate-100 rounded-xl font-bold hover:border-emerald-500 hover:bg-emerald-50 transition cursor-pointer">TAK</button>
+                   <button onclick="window.answer(false)" class="p-4 border-2 border-slate-100 rounded-xl font-bold hover:border-slate-800 hover:bg-slate-50 transition cursor-pointer">NIE</button>
                 </div>
               </div>
 
               <div id="quiz-result" class="hidden text-center">
-                 <div id="result-icon-container" class="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 transition-colors duration-500">
-                    <div id="icon-green" class="hidden"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7" /></svg></div>
-                    <div id="icon-orange" class="hidden"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg></div>
-                    <div id="icon-red" class="hidden"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                 <div id="result-icon-container" class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg id="icon-check" class="w-8 h-8 text-white hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                  </div>
-                 <h3 id="result-title" class="text-2xl font-black uppercase mb-4">TWÓJ WYNIK</h3>
-                 <p id="result-text" class="text-slate-700 mb-8 font-medium leading-relaxed"></p>
-                 <a href="#kontakt" class="block w-full bg-slate-900 text-white py-5 rounded-2xl font-black uppercase tracking-widest hover:opacity-90 transition shadow-lg">
-                   Potrzebuję pomocy!
-                 </a>
-                 <button onclick="location.reload()" class="mt-4 text-xs font-bold text-slate-400 hover:text-slate-600 uppercase tracking-widest transition">Powtórz test</button>
+                 <h3 id="result-title" class="text-2xl font-bold mb-4">Twój wynik</h3>
+                 <p id="result-text" class="text-slate-600 mb-8"></p>
+                 <a href="#kontakt" class="block w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-emerald-600 transition-all">Skontaktuj się z nami</a>
               </div>
             </div>
           </div>
@@ -112,244 +105,164 @@ const partners = [
       </div>
     </section>
 
-    <section id="o-nas" class="py-24 px-6 bg-white relative z-10">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center max-w-5xl mx-auto mb-16">
-          <h2 class="text-4xl md:text-6xl font-black text-slate-900 mb-8 leading-tight uppercase tracking-tight">
-            Znamy system <span class="text-emerald-600">od środka</span>
-          </h2>
-          <p class="text-xl md:text-2xl text-slate-700 leading-relaxed font-medium mb-12 text-justify md:text-center">
-            Idea Fundacji Znaj Granice nie powstała za biurkiem teoretyków. 
-            Wyrasta z doświadczenia, które rzadko wychodzi poza gabinety zarządów branży igaming. 
-            Wiemy, jak zaprojektowane są systemy, które nie pozwalają odejść od ekranu. 
-          </p>
-          
-          <div class="inline-block bg-slate-900 text-white p-10 rounded-[2rem] border-b-8 border-emerald-500 text-left shadow-2xl">
-            <p class="text-xs font-bold text-emerald-400 uppercase tracking-[0.3em] mb-3">Dewiza Fundacji</p>
-            <p class="text-xl md:text-2xl font-bold italic leading-snug">
-              Znaj Granice. Odzyskaj kontrolę. Wybierz życie.
+    <section id="o-nas" class="py-24 px-4 bg-white">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-sm font-bold text-emerald-600 uppercase tracking-widest mb-4">O Fundacji</h2>
+        <h3 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 tracking-tight">Ekspercka wiedza, <br/>ludzkie podejście.</h3>
+        <p class="text-xl text-slate-600 leading-relaxed mb-12">
+            Nie jesteśmy teoretykami. Wyrastamy z wnętrza branży igamingowej, co pozwala nam realnie oceniać zagrożenia i skutecznie pomagać.
+        </p>
+        <div class="bg-slate-50 border border-slate-100 p-8 rounded-2xl text-left">
+            <h4 class="font-bold text-slate-900 mb-4 text-xl">Nasza Misja</h4>
+            <p class="text-slate-700 italic border-l-4 border-emerald-500 pl-6 text-lg">
+                "Znaj Granice to nie tylko nazwa, to narzędzie do odzyskiwania kontroli nad własnym życiem w świecie cyfrowych pokus."
             </p>
-          </div>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-16 items-start">
-          <div class="space-y-6 text-slate-700 leading-relaxed">
-            <h2 class="text-2xl font-black uppercase text-slate-900">Dlaczego my?</h2>
-            <p>
-              Przez lata poznawaliśmy rynek hazardowy zajmując stanowiska kierownicze. Teraz przechodzimy na drugą stronę, by wykorzystać tę wiedzę dla profilaktyki i terapii.
-            </p>
-            <p>
-              Rozumiemy mechanizmy uzależnień nie tylko z podręczników, ale z obserwacji systemów, które je generują.
-            </p>
-          </div>
-          <div class="relative bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm">
-            <h2 class="text-2xl font-black uppercase text-slate-900 mb-6">Nasze podejście</h2>
-            <ul class="space-y-4">
-                <li class="flex gap-3">
-                    <span class="text-emerald-600 font-bold">●</span>
-                    <p><strong>Dla graczy:</strong> Realna pomoc i wyznaczanie bezpiecznych granic.</p>
-                </li>
-                <li class="flex gap-3">
-                    <span class="text-emerald-600 font-bold">●</span>
-                    <p><strong>Dla rodzin:</strong> Wsparcie w zrozumieniu trudnej sytuacji bliskich.</p>
-                </li>
-            </ul>
-          </div>
         </div>
       </div>
     </section>
 
-    <section id="misja" class="py-24 px-6 bg-slate-900 text-white overflow-hidden">
+    <section id="dzialania" class="py-24 px-4 bg-slate-50 border-y border-slate-100">
       <div class="max-w-6xl mx-auto">
-        <div class="grid lg:grid-cols-3 gap-12">
-          <div class="lg:col-span-1">
-            <h2 class="text-emerald-500 font-bold uppercase tracking-[0.3em] mb-4 text-sm">Misja działania</h2>
-            <h3 class="text-4xl font-black uppercase tracking-tighter leading-none mb-8">Nasze trzy <br/><span class="text-emerald-500">filary</span></h3>
-          </div>
-          <div class="lg:col-span-2 grid md:grid-cols-3 gap-8">
-            <div class="bg-white/5 p-8 rounded-3xl border border-white/10">
-              <div class="text-4xl mb-4">🛡️</div>
-              <h4 class="font-black uppercase mb-4">Profilaktyka</h4>
-              <p class="text-sm text-slate-400">Edukujemy o zagrożeniach cyfrowych i mechanizmach gier, zanim staną się problemem.</p>
-            </div>
-            <div class="bg-white/5 p-8 rounded-3xl border border-white/10">
-              <div class="text-4xl mb-4">🏥</div>
-              <h4 class="font-black uppercase mb-4">Ośrodek</h4>
-              <p class="text-sm text-slate-400">Budujemy Ośrodek Terapii Uzależnień „Granica” – miejsce profesjonalnej regeneracji.</p>
-            </div>
-            <div class="bg-white/5 p-8 rounded-3xl border border-white/10">
-              <div class="text-4xl mb-4">🤝</div>
-              <h4 class="font-black uppercase mb-4">Wsparcie</h4>
-              <p class="text-sm text-slate-400">Oferujemy anonimowe konsultacje i pomoc psychologiczną dla osób w kryzysie.</p>
-            </div>
-          </div>
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-extrabold text-slate-900 uppercase tracking-tight">Jak działamy?</h2>
         </div>
-      </div>
-    </section>
-
-    <section id="zespol" class="py-20 px-6 bg-slate-50 relative z-10">
-        <div class="max-w-6xl mx-auto">
-          <div class="mb-16">
-            <h2 class="text-emerald-600 font-bold uppercase tracking-[0.3em] mb-4 text-sm">Zespół</h2>
-            <p class="text-4xl font-black text-slate-900 uppercase tracking-tighter">Ludzie stawiający <span class="text-emerald-600">granice</span></p>
-          </div>
-
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {team.map((member) => (
-              <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100 flex flex-col h-full group">
-                <div class="aspect-[4/5] overflow-hidden">
-                  <img src={member.image} alt={member.name} class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-                </div>
-                <div class="p-8 flex flex-col flex-grow">
-                  <p class="text-emerald-600 font-bold text-[10px] uppercase tracking-[0.2em] mb-2">{member.role}</p>
-                  <h3 class="text-2xl font-black text-slate-900 mb-6 uppercase tracking-tighter">{member.name}</h3>
-                  
-                  <div class="mb-8">
-                    <a href={`mailto:${member.email}`} class="text-slate-900 font-bold text-sm hover:text-emerald-600 transition flex items-center gap-2 mb-6">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                      {member.email}
-                    </a>
-
-                    <button 
-                      onclick={`window.openMemberProfile({ name: '${member.name}', role: '${member.role}', img: '${member.image}', bio: '${member.manifest.replace(/'/g, "\\'")}', linkedin: '${member.linkedIn}' })`}
-                      class="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-emerald-600 hover:text-slate-900 transition cursor-pointer"
-                    >
-                      <span>Kto?</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-
-            <div class="bg-emerald-600 rounded-3xl p-8 flex flex-col justify-center text-white shadow-xl relative overflow-hidden group min-h-[400px]">
-                <h3 class="text-3xl font-black uppercase tracking-tighter mb-4 leading-none text-white">Dołącz do nas</h3>
-                <p class="text-emerald-100 mb-8 font-medium">Masz wiedzę, czas lub energię?</p>
-                <a href="#kontakt" class="bg-white text-emerald-600 text-center py-4 rounded-full font-black uppercase tracking-widest hover:bg-slate-900 hover:text-white transition shadow-lg relative z-10">
-                    Zostań Wolontariuszem
-                </a>
-            </div>
-          </div>
-        </div>
-    </section>
-
-    <section class="py-20 bg-white border-y border-slate-100">
-      <div class="max-w-6xl mx-auto px-6">
-        <p class="text-center text-xs font-black text-slate-400 uppercase tracking-[0.4em] mb-12">Współpracujemy i Edukujemy</p>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
-          {partners.map(partner => (
-            <div class="flex justify-center">
-              <img src={partner.logo} alt={partner.name} class="h-10 w-auto object-contain" />
+        <div class="grid md:grid-cols-3 gap-8">
+          {[
+            { title: "Wsparcie Terapeutyczne", desc: "Tworzymy sieć specjalistów i ośrodki leczenia, które rozumieją mechanizmy nowoczesnego hazardu." },
+            { title: "Edukacja Społeczna", desc: "Prowadzimy kampanie uświadamiające i badania nad rynkiem hazardowym w Polsce." },
+            { title: "Doradztwo Biznesowe", desc: "Pomagamy operatorom wdrażać realne standardy Odpowiedzialnej Gry i CSR." }
+          ].map(item => (
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+              <div class="w-12 h-12 bg-emerald-500/10 text-emerald-600 rounded-lg flex items-center justify-center mb-6 font-bold">!</div>
+              <h4 class="text-xl font-bold mb-4 text-slate-900">{item.title}</h4>
+              <p class="text-slate-600 leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
       </div>
     </section>
 
-    <section id="kontakt" class="py-32 px-6 bg-slate-950 text-white relative overflow-hidden">
-      <div class="max-w-6xl mx-auto relative z-10">
-        <div class="grid lg:grid-cols-2 gap-20">
+    <section id="zespol" class="py-24 px-4 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="mb-16">
+          <h2 class="text-3xl font-extrabold text-slate-900 uppercase tracking-tight">Ludzie Fundacji</h2>
+          <p class="text-slate-500 mt-2">Zespół ekspertów i praktyków.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {team.map((member) => (
+            <div class="flex flex-col h-full bg-slate-50 rounded-2xl overflow-hidden border border-slate-100">
+              <img src={member.image} alt={member.name} class="w-full aspect-[4/5] object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+              <div class="p-6 flex flex-col flex-grow">
+                <span class="text-xs font-bold text-emerald-600 uppercase mb-2">{member.role}</span>
+                <h4 class="text-xl font-bold text-slate-900 mb-6">{member.name}</h4>
+                <button 
+                   onclick={`window.openMemberProfile({name:'${member.name}', role:'${member.role}', bio:'${member.manifest.replace(/'/g, "\\'")}', img:'${member.image}'})`}
+                   class="mt-auto text-sm font-bold text-slate-900 flex items-center gap-2 hover:text-emerald-600 transition cursor-pointer"
+                >
+                  Czytaj profil <span>→</span>
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt" class="py-24 px-4 bg-slate-900 text-white">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
           <div>
-            <h2 class="text-emerald-500 font-black uppercase tracking-[0.3em] mb-6 text-sm">Kontakt</h2>
-            <h3 class="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85] mb-10">
-              Nie czekaj <br/>na <span class="text-emerald-500">koniec.</span>
-            </h3>
+            <h2 class="text-3xl font-bold mb-6">Skontaktuj się z nami</h2>
+            <p class="text-slate-400 mb-12 text-lg">Jeśli potrzebujesz pomocy lub chcesz wesprzeć nasze działania – napisz. Odpowiadamy na każdą wiadomość.</p>
+            
+            <div class="space-y-6">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 bg-emerald-500/20 rounded flex items-center justify-center text-emerald-400">@</div>
+                    <span class="font-bold text-lg">kontakt@znajgranice.org</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 bg-emerald-500/20 rounded flex items-center justify-center text-emerald-400">#</div>
+                    <span class="font-bold text-lg">Lublin, ul. Graniczna 1</span>
+                </div>
+            </div>
           </div>
 
-          <div class="bg-white/5 backdrop-blur-xl p-8 md:p-12 rounded-[3rem] border border-white/10 shadow-3xl">
-            <form action="#" method="POST" class="space-y-6">
-              <div class="grid md:grid-cols-2 gap-6">
-                <input type="text" placeholder="Imię" class="w-full bg-slate-900 border-2 border-slate-800 rounded-2xl py-4 px-6 focus:border-emerald-500 focus:outline-none transition text-white font-bold" />
-                <input type="email" placeholder="Email" class="w-full bg-slate-900 border-2 border-slate-800 rounded-2xl py-4 px-6 focus:border-emerald-500 focus:outline-none transition text-white font-bold" />
-              </div>
-              <textarea rows="4" placeholder="Twoja wiadomość..." class="w-full bg-slate-900 border-2 border-slate-800 rounded-2xl py-4 px-6 focus:border-emerald-500 focus:outline-none transition text-white font-bold resize-none"></textarea>
-              <button type="submit" class="w-full bg-emerald-600 text-white py-6 rounded-2xl font-black uppercase tracking-[0.2em] hover:bg-white hover:text-slate-950 transition-all shadow-xl cursor-pointer">
-                Wyślij wiadomość
-              </button>
-            </form>
-          </div>
+          <form class="space-y-4 bg-white/5 p-8 rounded-2xl border border-white/10">
+            <input type="text" placeholder="Imię" class="w-full bg-slate-800 border-none p-4 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none" />
+            <input type="email" placeholder="Email" class="w-full bg-slate-800 border-none p-4 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none" />
+            <textarea rows="4" placeholder="Wiadomość" class="w-full bg-slate-800 border-none p-4 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none"></textarea>
+            <button class="w-full bg-emerald-600 py-4 rounded-lg font-bold hover:bg-emerald-500 transition-all cursor-pointer">Wyślij wiadomość</button>
+          </form>
         </div>
       </div>
     </section>
 
   </main>
-
   <Footer />
 </Layout>
 
 <script is:inline>
   const questions = [
     "Czy poświęcasz coraz więcej czasu na myślenie o grze?",
-    "Czy próbujesz grać za coraz wyższe stawki, aby poczuć ten sam poziom emocji?",
-    "Czy zdarzyło Ci się kłamać bliskim, aby ukryć to, jak często grasz?",
-    "Czy po przegranej czujesz natychmiastowy przymus „odkucia się”?",
-    "Czy masz za sobą próby ograniczenia gry, które zakończyły się niepowodzeniem?",
-    "Czy czujesz rozdrażnienie, gdy nie masz dostępu do gry?",
-    "Czy zdarza Ci się grać po to, aby uciec od problemów lub lęku?",
-    "Czy z powodu hazardu zdarzyło Ci się zaniedbać obowiązki zawodowe?",
-    "Czy pieniądze na grę pochodziły od rodziny lub znajomych?",
-    "Czy czujesz, że hazard przestał być rozrywką, a stał się przymusem?"
+    "Czy próbujesz grać za coraz wyższe stawki?",
+    "Czy kłamiesz bliskim w sprawie hazardu?",
+    "Czy po przegranej musisz się natychmiast odegrać?",
+    "Czy próby ograniczenia gry kończyły się fiaskiem?",
+    "Czy czujesz irytację, gdy nie możesz grać?",
+    "Czy grasz, żeby uciec od problemów?",
+    "Czy zaniedbałeś pracę/naukę przez hazard?",
+    "Czy pożyczasz pieniądze na spłatę długów z gry?",
+    "Czy hazard dominuje nad Twoim życiem?"
   ];
 
   let currentQuestion = 0;
   let score = 0;
 
-  window.startQuiz = function() {
+  window.startQuiz = () => {
     document.getElementById('quiz-intro').classList.add('hidden');
     document.getElementById('quiz-questions').classList.remove('hidden');
     showQuestion();
-  }
+  };
 
-  function showQuestion() {
-    const progress = (currentQuestion / questions.length) * 100;
-    document.getElementById('quiz-progress').style.width = `${progress}%`;
-    document.getElementById('question-counter').innerText = `Pytanie ${currentQuestion + 1} z ${questions.length}`;
+  const showQuestion = () => {
+    document.getElementById('question-counter').innerText = `Pytanie ${currentQuestion + 1}/10`;
     document.getElementById('question-text').innerText = questions[currentQuestion];
-  }
+    document.getElementById('quiz-progress').style.width = `${(currentQuestion + 1) * 10}%`;
+  };
 
-  window.answer = function(val) {
+  window.answer = (val) => {
     if(val) score++;
     currentQuestion++;
+    if(currentQuestion < questions.length) showQuestion();
+    else showResult();
+  };
 
-    if(currentQuestion < questions.length) {
-      showQuestion();
-    } else {
-      showResult();
-    }
-  }
-
-  function showResult() {
+  const showResult = () => {
     document.getElementById('quiz-questions').classList.add('hidden');
     document.getElementById('quiz-result').classList.remove('hidden');
-    
-    const iconContainer = document.getElementById('result-icon-container');
     const title = document.getElementById('result-title');
-    const resultText = document.getElementById('result-text');
+    const text = document.getElementById('result-text');
+    const iconContainer = document.getElementById('result-icon-container');
     
-    document.getElementById('icon-green').classList.add('hidden');
-    document.getElementById('icon-orange').classList.add('hidden');
-    document.getElementById('icon-red').classList.add('hidden');
+    document.getElementById('icon-check').classList.remove('hidden');
 
-    if (score === 0) {
-      iconContainer.className = "w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 bg-emerald-500";
-      document.getElementById('icon-green').classList.remove('hidden');
+    if(score <= 2) {
+      iconContainer.classList.add('bg-emerald-500');
       title.innerText = "Niskie ryzyko";
-      resultText.innerText = "Masz sytuację pod kontrolą. Graj odpowiedzialnie!";
-    } else if (score <= 3) {
-      iconContainer.className = "w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 bg-amber-500";
-      document.getElementById('icon-orange').classList.remove('hidden');
-      title.innerText = "Sygnał ostrzegawczy";
-      resultText.innerText = "Twoja relacja z hazardem zaczyna być ryzykowna. Uważaj.";
+      text.innerText = "Wydaje się, że masz kontrolę nad grą, ale zachowaj czujność.";
+    } else if(score <= 5) {
+      iconContainer.classList.add('bg-amber-500');
+      title.innerText = "Umiarkowane ryzyko";
+      text.innerText = "Twoja relacja z hazardem wymaga uwagi. Warto o tym porozmawiać.";
     } else {
-      iconContainer.className = "w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 bg-red-600 animate-pulse";
-      document.getElementById('icon-red').classList.remove('hidden');
-      title.innerText = "WYSOKIE RYZYKO";
-      resultText.innerText = "Wykryliśmy wysokie prawdopodobieństwo uzależnienia. Skontaktuj się z nami jak najszybciej.";
+      iconContainer.classList.add('bg-red-600');
+      title.innerText = "Wysokie ryzyko";
+      text.innerText = "Hazard może być poważnym problemem w Twoim życiu. Skontaktuj się z nami.";
     }
-  }
+  };
 </script>
 
 <style>
   html { scroll-behavior: smooth; }
-  main { overflow-x: hidden; }
 </style>
