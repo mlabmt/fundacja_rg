@@ -16,14 +16,28 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to Hostinger
+      # WYSYŁKA DO: strona-glowna
+      - name: Deploy to Strona Główna
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: ./
+          server-dir: /strona-glowna/
+          protocol: ftp
+          port: 21
+          clean: true
+
+      # WYSYŁKA DO: sprawdzajka
+      - name: Deploy to Sprawdzajka
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: /sprawdzajka/
           protocol: ftp
           port: 21
           clean: true
