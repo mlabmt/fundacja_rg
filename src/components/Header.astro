@@ -2,196 +2,195 @@
 // src/components/Header.astro
 ---
 <nav class="bg-white border-b border-slate-200 sticky top-0 z-[5000]">
-  <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center relative">
-    
-    <a href="/" class="flex flex-col group relative z-[1001] shrink-0">
-      <span class="text-xl md:text-2xl font-black tracking-tighter text-slate-900 leading-[0.85] md:leading-none group-hover:text-emerald-600 transition uppercase">
-        Znaj<br class="sm:hidden" /> Granice
-      </span>
-      <span class="hidden xl:flex flex-col text-[9px] uppercase tracking-[0.2em] font-bold text-emerald-600 mt-1 whitespace-nowrap leading-tight">
-        <span>Fundacja Przeciwdziałania</span>
-        <span>Uzależnieniu od Hazardu</span>
-      </span>
-    </a>
+  <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center relative">
+    <a href="/" class="flex flex-col group relative z-[1001] shrink-0">
+      <span class="text-xl font-black tracking-tighter text-slate-900 leading-none group-hover:text-emerald-600 transition uppercase">ZNAJ GRANICE</span>
+      <span class="hidden xl:flex flex-col text-[9px] uppercase tracking-[0.2em] font-bold text-emerald-600 mt-1 whitespace-nowrap leading-tight">
+        <span>Fundacja Przeciwdziałania</span>
+        <span>Uzależnieniu od Hazardu</span>
+      </span>
+    </a>
 
-    <div id="desktop-links" class="hidden xl:flex gap-8 items-center font-bold text-[13px] uppercase tracking-wide text-slate-600 h-full">
-      <a href="/" data-nav-link class="nav-link flex items-center h-full hover:text-emerald-600 transition whitespace-nowrap">Główna</a>
-      <a href="#o-nas" data-nav-link class="nav-link flex items-center h-full hover:text-emerald-600 transition whitespace-nowrap">O nas</a>
-      <a href="#zespol" data-nav-link class="nav-link flex items-center h-full hover:text-emerald-600 transition whitespace-nowrap">Zespół</a>
-      <a href="#misja" data-nav-link class="nav-link flex items-center h-full hover:text-emerald-600 transition whitespace-nowrap">Misja</a>
-      <a href="#dzialania" data-nav-link class="nav-link flex items-center h-full hover:text-emerald-600 transition whitespace-nowrap">Działania</a>
-      <a href="#partnerzy" data-nav-link class="nav-link flex items-center h-full hover:text-emerald-600 transition whitespace-nowrap">Partnerzy</a>
-      <a href="#kontakt" data-nav-link class="nav-link flex items-center h-full hover:text-emerald-600 transition whitespace-nowrap">Kontakt</a>
-      
-      <button id="open-support" class="bg-emerald-600 text-white px-8 py-3 rounded-full text-sm shadow-xl hover:bg-slate-900 transition shrink-0 ml-2 cursor-pointer font-black uppercase tracking-widest">
-        Wspieram
-      </button>
-    </div>
+    <div id="desktop-links" class="hidden xl:flex gap-8 items-center font-bold text-[13px] uppercase tracking-wide text-slate-600 h-full">
+      <a href="/" data-nav-link class="nav-link flex items-center h-full hover:text-emerald-600 transition whitespace-nowrap">Główna</a>
+      <a href="#o-nas" data-nav-link class="nav-link flex items-center h-full hover:text-emerald-600 transition whitespace-nowrap">O nas</a>
+      <a href="#zespol" data-nav-link class="nav-link flex items-center h-full hover:text-emerald-600 transition whitespace-nowrap">Zespół</a>
+      <a href="#misja" data-nav-link class="nav-link flex items-center h-full hover:text-emerald-600 transition whitespace-nowrap">Misja</a>
+      <a href="#dzialania" data-nav-link class="nav-link flex items-center h-full hover:text-emerald-600 transition whitespace-nowrap">Działania</a>
+      <a href="#partnerzy" data-nav-link class="nav-link flex items-center h-full hover:text-emerald-600 transition whitespace-nowrap">Partnerzy</a>
+      <a href="#kontakt" data-nav-link class="nav-link flex items-center h-full hover:text-emerald-600 transition whitespace-nowrap">Kontakt</a>
+      
+      <button id="open-support" class="bg-emerald-600 text-white px-8 py-3 rounded-full text-sm shadow-xl hover:bg-slate-900 transition shrink-0 ml-2 cursor-pointer font-black uppercase tracking-widest">
+        Wspieram
+      </button>
+    </div>
 
-    <button id="hamburger" class="xl:hidden p-2 text-slate-900 relative z-[1001]" aria-label="Menu">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 open-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 close-icon hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-      </svg>
-    </button>
+    <button id="hamburger" class="xl:hidden p-2 text-slate-900 relative z-[1001]" aria-label="Menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 open-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 close-icon hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
 
-    <div id="mobile-menu" class="fixed inset-0 bg-white z-[1000] flex flex-col items-center justify-center gap-8 translate-x-full transition-transform duration-300 xl:hidden">
-      <nav class="flex flex-col items-center gap-6 font-black text-2xl uppercase tracking-tighter text-slate-900">
-        <a href="/" class="mobile-link">Główna</a>
-        <a href="#o-nas" class="mobile-link">O nas</a>
-        <a href="#zespol" class="mobile-link">Zespół</a>
-        <a href="#misja" class="mobile-link">Misja</a>
-        <a href="#dzialania" class="mobile-link">Działania</a>
-        <a href="#partnerzy" class="mobile-link">Partnerzy</a>
-        <a href="#kontakt" class="mobile-link">Kontakt</a>
-        <button id="open-support-mobile" class="bg-emerald-600 text-white px-8 py-4 rounded-full text-lg shadow-xl font-black uppercase tracking-tighter">Wspieram</button>
-      </nav>
-    </div>
-  </div>
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[1000] flex flex-col items-center justify-center gap-8 translate-x-full transition-transform duration-300 xl:hidden">
+      <nav class="flex flex-col items-center gap-6 font-black text-2xl uppercase tracking-tighter text-slate-900">
+        <a href="/" class="mobile-link">Główna</a>
+        <a href="#o-nas" class="mobile-link">O nas</a>
+        <a href="#zespol" class="mobile-link">Zespół</a>
+        <a href="#misja" class="mobile-link">Misja</a>
+        <a href="#dzialania" class="mobile-link">Działania</a>
+        <a href="#partnerzy" class="mobile-link">Partnerzy</a>
+        <a href="#kontakt" class="mobile-link">Kontakt</a>
+        <button id="open-support-mobile" class="bg-emerald-600 text-white px-8 py-4 rounded-full text-lg shadow-xl font-black uppercase tracking-tighter">Wspieram</button>
+      </nav>
+    </div>
+  </div>
 </nav>
 
 <div id="support-overlay" class="fixed inset-0 z-[10000] bg-slate-900/95 backdrop-blur-md flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 p-6">
-  <button id="close-support" class="absolute top-10 right-10 text-white hover:text-emerald-400 transition cursor-pointer" aria-label="Zamknij">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-    </svg>
-  </button>
-  <div class="max-w-4xl w-full text-center">
-    <p class="text-emerald-400 font-bold uppercase tracking-[0.3em] mb-4">Wybierz formę pomocy</p>
-    <h2 class="text-4xl md:text-6xl font-black text-white mb-12 uppercase tracking-tighter leading-none">Twoje wsparcie ma <span class="text-emerald-500">znaczenie</span></h2>
-    <div class="grid md:grid-cols-2 gap-6">
-      <a href="/darowizna" class="group bg-white/5 border border-white/10 p-8 rounded-[2rem] hover:bg-emerald-600 transition-all duration-500 text-left">
-        <h3 class="text-2xl font-black text-white mb-2 uppercase">Darowizna</h3>
-        <p class="text-slate-400 group-hover:text-emerald-50 text-sm">Wpłata online na działania statutowe i pomoc potrzebującym.</p>
-      </a>
-      <a href="/wolontariat" class="group bg-white/5 border border-white/10 p-8 rounded-[2rem] hover:bg-emerald-600 transition-all duration-500 text-left">
-        <h3 class="text-2xl font-black text-white mb-2 uppercase">Wolontariat</h3>
-        <p class="text-slate-400 group-hover:text-emerald-50 text-sm">Możesz pomóc swoją wiedzą, czasem lub doświadczeniem.</p>
-      </a>
-    </div>
-  </div>
+  <button id="close-support" class="absolute top-10 right-10 text-white hover:text-emerald-400 transition cursor-pointer" aria-label="Zamknij">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+  <div class="max-w-4xl w-full text-center">
+    <p class="text-emerald-400 font-bold uppercase tracking-[0.3em] mb-4">Wybierz formę pomocy</p>
+    <h2 class="text-4xl md:text-6xl font-black text-white mb-12 uppercase tracking-tighter leading-none">Twoje wsparcie ma <span class="text-emerald-500">znaczenie</span></h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <a href="/darowizna" class="group bg-white/5 border border-white/10 p-8 rounded-[2rem] hover:bg-emerald-600 transition-all duration-500 text-left">
+        <h3 class="text-2xl font-black text-white mb-2 uppercase">Darowizna</h3>
+        <p class="text-slate-400 group-hover:text-emerald-50 text-sm">Wpłata online na działania statutowe i pomoc potrzebującym.</p>
+      </a>
+      <a href="/wolontariat" class="group bg-white/5 border border-white/10 p-8 rounded-[2rem] hover:bg-emerald-600 transition-all duration-500 text-left">
+        <h3 class="text-2xl font-black text-white mb-2 uppercase">Wolontariat</h3>
+        <p class="text-slate-400 group-hover:text-emerald-50 text-sm">Możesz pomóc swoją wiedzą, czasem lub doświadczeniem.</p>
+      </a>
+    </div>
+  </div>
 </div>
 
 <div id="profile-drawer" class="fixed inset-y-0 right-0 w-full md:w-[500px] bg-white z-[11000] shadow-2xl translate-x-full transition-transform duration-500 ease-in-out overflow-y-auto">
-  <div class="relative p-8 md:p-12">
-    <button id="close-profile" class="absolute top-6 right-6 text-slate-400 hover:text-slate-900 transition cursor-pointer">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-    </button>
-    <div id="profile-content" class="mt-12"></div>
-  </div>
+  <div class="relative p-8 md:p-12">
+    <button id="close-profile" class="absolute top-6 right-6 text-slate-400 hover:text-slate-900 transition cursor-pointer">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+    </button>
+    <div id="profile-content" class="mt-12">
+      </div>
+  </div>
 </div>
 <div id="profile-overlay" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-[10500] opacity-0 pointer-events-none transition-opacity duration-500"></div>
 
 <script>
-  // ELEMENTY DOM
-  const btn = document.getElementById('hamburger');
-  const menu = document.getElementById('mobile-menu');
-  const mobileLinks = document.querySelectorAll('.mobile-link');
-  const openIcon = document.querySelector('.open-icon');
-  const closeIcon = document.querySelector('.close-icon');
+  // ELEMENTY DOM
+  const btn = document.getElementById('hamburger');
+  const menu = document.getElementById('mobile-menu');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+  const openIcon = document.querySelector('.open-icon');
+  const closeIcon = document.querySelector('.close-icon');
 
-  const openSupportBtn = document.getElementById('open-support');
-  const openSupportMobileBtn = document.getElementById('open-support-mobile');
-  const closeSupportBtn = document.getElementById('close-support');
-  const supportOverlay = document.getElementById('support-overlay');
+  const openSupportBtn = document.getElementById('open-support');
+  const openSupportMobileBtn = document.getElementById('open-support-mobile');
+  const closeSupportBtn = document.getElementById('close-support');
+  const supportOverlay = document.getElementById('support-overlay');
 
-  const drawer = document.getElementById('profile-drawer');
-  const profileOverlay = document.getElementById('profile-overlay');
-  const closeProfileBtn = document.getElementById('close-profile');
+  const drawer = document.getElementById('profile-drawer');
+  const profileOverlay = document.getElementById('profile-overlay');
+  const closeProfileBtn = document.getElementById('close-profile');
 
-  // --- LOGIKA MENU MOBILNEGO ---
-  function toggleMenu() {
-    menu?.classList.toggle('translate-x-full');
-    openIcon?.classList.toggle('hidden');
-    closeIcon?.classList.toggle('hidden');
-    document.body.classList.toggle('overflow-hidden');
-  }
+  // --- LOGIKA MENU MOBILNEGO ---
+  function toggleMenu() {
+    menu?.classList.toggle('translate-x-full');
+    openIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+    document.body.classList.toggle('overflow-hidden');
+  }
 
-  // --- LOGIKA OVERLAY WSPARCIA ---
-  function openSupport() {
-    supportOverlay?.classList.remove('opacity-0', 'pointer-events-none');
-    supportOverlay?.classList.add('opacity-100', 'pointer-events-auto');
-    document.body.classList.add('overflow-hidden');
-    if (!menu?.classList.contains('translate-x-full')) toggleMenu();
-  }
+  // --- LOGIKA OVERLAY WSPARCIA ---
+  function openSupport() {
+    supportOverlay?.classList.remove('opacity-0', 'pointer-events-none');
+    supportOverlay?.classList.add('opacity-100', 'pointer-events-auto');
+    document.body.classList.add('overflow-hidden');
+    if (!menu?.classList.contains('translate-x-full')) toggleMenu();
+  }
 
-  // --- LOGIKA DRAWERA PROFILU ---
-  function openProfile(data) {
-    const content = document.getElementById('profile-content');
-    if(content) {
-      content.innerHTML = `
-        <div class="flex flex-col items-start gap-6 mb-10">
-          <div class="w-40 h-40 bg-emerald-100 rounded-[2.5rem] overflow-hidden">
-             <img src="${data.img || '#'}" alt="${data.name}" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
-          </div>
-          <div>
-            <h2 class="text-4xl font-black text-slate-900 leading-tight uppercase tracking-tighter">${data.name}</h2>
-            <p class="text-emerald-600 font-bold uppercase text-sm tracking-widest mt-2">${data.role}</p>
-          </div>
-        </div>
-        <div class="prose prose-slate prose-lg">
-          <p class="text-slate-600 leading-relaxed font-medium">${data.bio}</p>
-        </div>
-        <div class="mt-12 pt-8 border-t border-slate-100">
-            <p class="text-xs uppercase font-bold text-slate-400 tracking-widest mb-4">Kontakt / Media</p>
-            <a href="${data.linkedin || '#'}" class="inline-flex items-center gap-2 text-slate-900 hover:text-emerald-600 transition font-bold">
-              LinkedIn Profile →
-            </a>
-        </div>
-      `;
-    }
-    drawer?.classList.remove('translate-x-full');
-    profileOverlay?.classList.replace('opacity-0', 'opacity-100');
-    profileOverlay?.classList.replace('pointer-events-none', 'pointer-events-auto');
-    document.body.classList.add('overflow-hidden');
-  }
+  // --- LOGIKA DRAWERA PROFILU ---
+  function openProfile(data) {
+    const content = document.getElementById('profile-content');
+    if(content) {
+      content.innerHTML = `
+        <div class="flex flex-col items-start gap-6 mb-10">
+          <div class="w-40 h-40 bg-emerald-100 rounded-[2.5rem] overflow-hidden">
+             <img src="${data.img || '#'}" alt="${data.name}" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+          </div>
+          <div>
+            <h2 class="text-4xl font-black text-slate-900 leading-tight uppercase tracking-tighter">${data.name}</h2>
+            <p class="text-emerald-600 font-bold uppercase text-sm tracking-widest mt-2">${data.role}</p>
+          </div>
+        </div>
+        <div class="prose prose-slate prose-lg">
+          <p class="text-slate-600 leading-relaxed font-medium">${data.bio}</p>
+        </div>
+        <div class="mt-12 pt-8 border-t border-slate-100">
+           <p class="text-xs uppercase font-bold text-slate-400 tracking-widest mb-4">Kontakt / Media</p>
+           <a href="${data.linkedin || '#'}" class="inline-flex items-center gap-2 text-slate-900 hover:text-emerald-600 transition font-bold">
+             LinkedIn Profile →
+           </a>
+        </div>
+      `;
+    }
+    drawer?.classList.remove('translate-x-full');
+    profileOverlay?.classList.replace('opacity-0', 'opacity-100');
+    profileOverlay?.classList.replace('pointer-events-none', 'pointer-events-auto');
+    document.body.classList.add('overflow-hidden');
+  }
 
-  // --- FUNKCJE ZAMYKANIA ---
-  function closeAll() {
-    supportOverlay?.classList.replace('opacity-100', 'opacity-0');
-    supportOverlay?.classList.replace('pointer-events-auto', 'pointer-events-none');
-    drawer?.classList.add('translate-x-full');
-    profileOverlay?.classList.replace('opacity-100', 'opacity-0');
-    profileOverlay?.classList.replace('pointer-events-auto', 'pointer-events-none');
-    document.body.classList.remove('overflow-hidden');
-  }
+  // --- FUNKCJE ZAMYKANIA ---
+  function closeAll() {
+    supportOverlay?.classList.replace('opacity-100', 'opacity-0');
+    supportOverlay?.classList.replace('pointer-events-auto', 'pointer-events-none');
+    drawer?.classList.add('translate-x-full');
+    profileOverlay?.classList.replace('opacity-100', 'opacity-0');
+    profileOverlay?.classList.replace('pointer-events-auto', 'pointer-events-none');
+    document.body.classList.remove('overflow-hidden');
+  }
 
-  // LISTENERY
-  btn?.addEventListener('click', toggleMenu);
-  mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
-  openSupportBtn?.addEventListener('click', openSupport);
-  openSupportMobileBtn?.addEventListener('click', openSupport);
-  closeSupportBtn?.addEventListener('click', closeAll);
-  closeProfileBtn?.addEventListener('click', closeAll);
-  profileOverlay?.addEventListener('click', closeAll);
+  // LISTENERY
+  btn?.addEventListener('click', toggleMenu);
+  mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+  openSupportBtn?.addEventListener('click', openSupport);
+  openSupportMobileBtn?.addEventListener('click', openSupport);
+  closeSupportBtn?.addEventListener('click', closeAll);
+  closeProfileBtn?.addEventListener('click', closeAll);
+  profileOverlay?.addEventListener('click', closeAll);
 
-  window.openMemberProfile = openProfile;
+  // Rejestracja globalna dla komponentu Team
+  window.openMemberProfile = openProfile;
 
-  // --- LOGIKA PODKREŚLANIA MENU (Scroll Spy) ---
-  const navLinks = document.querySelectorAll('[data-nav-link]');
-  const sections = document.querySelectorAll('section[id]');
-  const activeClasses = ['text-slate-900', 'font-black', 'border-b-2', 'border-emerald-500'];
+  // --- LOGIKA PODKREŚLANIA MENU (Scroll Spy) ---
+  const navLinks = document.querySelectorAll('[data-nav-link]');
+  const sections = document.querySelectorAll('section[id]');
+  const activeClasses = ['text-slate-900', 'font-black', 'border-b-2', 'border-emerald-500'];
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        navLinks.forEach(link => {
-          link.classList.remove(...activeClasses);
-          if (link.getAttribute('href') === `#${id}`) link.classList.add(...activeClasses);
-        });
-      }
-    });
-  }, { threshold: 0.2, rootMargin: '-20% 0px -60% 0px' });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          link.classList.remove(...activeClasses);
+          if (link.getAttribute('href') === `#${id}`) link.classList.add(...activeClasses);
+        });
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '-20% 0px -60% 0px' });
 
-  sections.forEach(s => observer.observe(s));
+  sections.forEach(s => observer.observe(s));
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY < 100) {
-      navLinks.forEach(link => link.classList.remove(...activeClasses));
-      navLinks[0].classList.add(...activeClasses);
-    }
-  });
+  window.addEventListener('scroll', () => {
+    if (window.scrollY < 100) {
+      navLinks.forEach(link => link.classList.remove(...activeClasses));
+      navLinks[0].classList.add(...activeClasses);
+    }
+  });
 </script>
