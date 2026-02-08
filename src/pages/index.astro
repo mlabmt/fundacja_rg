@@ -1,15 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout>
+<Layout title="Znaj Granice - Już wkrótce">
   <div class="min-h-screen bg-slate-900 flex items-center justify-center px-6">
     <div class="text-center">
       <div class="inline-block p-3 rounded-2xl bg-emerald-500/10 mb-6">
         <div class="w-12 h-12 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
       </div>
-      <h1 class="text-white text-3xl font-bold mb-4 tracking-tighter uppercase">Znaj Granice</h1>
-      <p class="text-slate-400 max-w-xs mx-auto">Fundacja Przeciwdziałania<br> Uzależnieniu od Hazardu</p>
       
+      <div class="flex flex-col items-center">
+        <span class="text-4xl md:text-5xl font-black tracking-tighter text-white leading-[0.85] md:leading-none transition uppercase">
+          ZNAJ<br class="sm:hidden" /> GRANICE
+        </span>
+        <span class="flex flex-col text-[10px] uppercase tracking-[0.2em] font-bold text-emerald-500 mt-4 whitespace-nowrap leading-tight">
+          <span>Fundacja Przeciwdziałania</span>
+          <span>Uzależnieniu od Hazardu</span>
+        </span>
+      </div>
       <div class="mt-12 pt-12 border-t border-slate-800">
          <p class="text-[10px] text-slate-500 uppercase tracking-[0.3em]">Niedługo zaczynamy!</p>
       </div>
