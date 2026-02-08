@@ -4,87 +4,294 @@ import TopBar from '../components/TopBar.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const partners = ["Superbet", "Betclic", "STS", "Fortuna", "Playtech", "EGBA"];
+// TABLICA PRACOWNIKÓW
+const team = [
+  {
+    name: "Kamil Dworniczak",
+    role: "Prezes Fundacji",
+    image: "https://picsum.photos/400/500?random=21",
+    manifest: "Doświadczenie zawodowe zdobywa od 2011 roku, piastując kluczowe stanowiska u czołowych operatorów hazardowych w Polsce i za granicą. Odpowiadał za strategie wzrostu, marketing oraz systemy retencji graczy, promując przy tym standardy Odpowiedzialnej Gry. Jako fundator „Znaj Granice”, wykorzystuje unikalną wiedzę o mechanizmach branży do budowy nowoczesnych systemów profilaktyki, higieny cyfrowej oraz flagowego projektu Fundacji – Ośrodka Terapii Uzależnień „Granica”.",
+    email: "pankamski@znajgranice.org",
+    linkedIn: "#"
+  },
+  {
+    name: "Jarosław Elżakowski",
+    role: "Wiceprezes Fundacji",
+    image: "https://picsum.photos/400/500?random=22",
+    manifest: "Psycholog, Specjalista terapii uzależnień. W zawodzie od 2012 roku, był m.in. tu: Ośrodek Leczenia Uzależnień SPZOZ, Wojewódzki Szpital Specjalistyczny im. Stefana Kardynała Wyszyńskiego, Centrum Psychoedukacji i Pomocy Psychologicznej, Ośrodek Psychoterapii i Rozwoju, Wojewódzki Ośrodek Leczenia Uzależnienia od Alkoholu i Współuzależnienia w Lublinie w ramach Poradni i Oddziału Dziennego, w Całodobowym Oddziale Terapii Uzależnienia od Alkoholu Szpitala Neuropsychiatrycznego.",
+    email: "elek.nietoperek@znajgranice.org",
+    linkedIn: "#"
+  },
+  {
+    name: "Edward Kukliński",
+    role: "Członek Zarządu Fundacji",
+    image: "https://picsum.photos/400/500?random=23",
+    manifest: "Doświadczenie w koordynacji projektów i zarządzaniu operacyjnym zdobywał, realizując zadania z zakresu administracji, HR oraz komunikacji medialnej. Specjalizuje się w budowaniu struktur organizacyjnych od podstaw, nadzoruje procesy - od planowania strategicznego po bieżące działania sekretariatu. W Fundacji „Znaj Granice” odpowiada za sprawne funkcjonowanie baru, biura, koordynację projektów statutowych oraz relacje z partnerami i mediami. Walczy o to, by wizja Fundacji przekładała się na skuteczne działania operacyjne, wspierając rozwój kadr oraz budowę infrastruktury Ośrodka „Granica”.",
+    email: "edek.k.buziaczek@znajgranice.org",
+    linkedIn: "#"
+  }
+];
+
+const partners = [
+  { name: "Superbet", logo: "https://placehold.co/200x80/f1f5f9/0f172a?text=SUPERBET" },
+  { name: "Betclic", logo: "https://placehold.co/200x80/f1f5f9/0f172a?text=BETCLIC" },
+  { name: "STS", logo: "https://placehold.co/200x80/f1f5f9/0f172a?text=STS" },
+  { name: "Fortuna", logo: "https://placehold.co/200x80/f1f5f9/0f172a?text=FORTUNA" },
+  { name: "Playtech", logo: "https://placehold.co/200x80/f1f5f9/0f172a?text=PLAYTECH" },
+  { name: "EGBA", logo: "https://placehold.co/200x80/f1f5f9/0f172a?text=EGBA" }
+];
 ---
 
 <Layout title="Fundacja Znaj Granice">
-  <div class="fixed top-0 left-0 w-full z-[9999] bg-white">
+  <div class="fixed top-0 left-0 w-full z-[9999] shadow-2xl bg-white" style="isolation: isolate;">
     <TopBar />
     <Header />
   </div>
 
-  <main class="relative pt-[112px]">
+  <main class="relative pt-[128px] md:pt-[112px]">
     
-    <section id="test" class="py-20 px-6 bg-slate-900 text-white text-center">
-      <div class="max-w-4xl mx-auto">
-        <h1 class="text-4xl md:text-6xl font-black uppercase mb-8 leading-tight">
-          Znajdź swoją <span class="text-emerald-500">granicę</span>
-        </h1>
-        <div id="q-box" class="bg-white text-slate-900 p-8 rounded-[2.5rem] max-w-xl mx-auto shadow-2xl">
-          <p id="t" class="text-xl font-bold mb-8 text-slate-700">Czy chcesz sprawdzić, czy hazard jest dla Ciebie bezpieczny?</p>
-          <div id="btns" class="flex flex-col sm:row justify-center gap-4">
-            <button onclick="start()" class="bg-emerald-600 text-white px-12 py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-emerald-500 transition-all">Rozpocznij Test</button>
+    <section id="test-samooceny" class="py-16 md:py-24 px-6 bg-slate-900 text-white relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-1/3 h-full bg-emerald-600/10 skew-x-12 translate-x-20"></div>
+      
+      <div class="max-w-6xl mx-auto relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <p class="text-emerald-400 font-bold uppercase tracking-[0.3em] mb-4 text-sm">Sprawdź czy już teraz</p>
+            <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9] mb-8">
+              Potrzebujesz <br/><span class="text-emerald-500">pomocy?</span>
+            </h1>
+            <p class="text-xl text-slate-300 font-medium max-w-lg leading-relaxed">
+                Test sprawdzi jak wygląda Twoja gra.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl text-slate-900 relative">
+            <div id="quiz-container">
+              <div id="quiz-intro">
+                <h3 class="text-2xl font-black uppercase tracking-tight mb-4">dowiedz się jak grasz</h3>
+                <p class="text-slate-600 mb-8 font-medium">Odpowiedz szczerze na 10 pytań </p>
+                <button type="button" onclick="window.startQuiz()" class="w-full bg-emerald-600 text-white py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-slate-900 transition-all shadow-lg cursor-pointer">
+                  Sprawdzam
+                </button>
+              </div>
+
+              <div id="quiz-questions" class="hidden">
+                <div class="flex justify-between items-end mb-4">
+                    <span id="question-counter" class="text-xs font-black uppercase tracking-widest text-emerald-600">Pytanie 1 z 10</span>
+                </div>
+                <div class="mb-8 h-2 bg-slate-100 rounded-full overflow-hidden">
+                   <div id="quiz-progress" class="h-full bg-emerald-500 transition-all duration-500" style="width: 0%"></div>
+                </div>
+                <p id="question-text" class="text-xl font-bold text-slate-900 mb-8 leading-snug min-h-[100px]">Ładowanie pytania...</p>
+                <div class="grid gap-3">
+                   <button type="button" onclick="window.answer(true)" class="w-full text-left p-5 border-2 border-slate-100 rounded-2xl font-bold hover:border-emerald-500 hover:bg-emerald-50 transition cursor-pointer flex justify-between items-center group">
+                     TAK <span class="text-emerald-500 group-hover:translate-x-1 transition">→</span>
+                   </button>
+                   <button type="button" onclick="window.answer(false)" class="w-full text-left p-5 border-2 border-slate-100 rounded-2xl font-bold hover:border-slate-900 hover:bg-slate-50 transition cursor-pointer flex justify-between items-center group">
+                     NIE <span class="text-slate-400 group-hover:translate-x-1 transition">→</span>
+                   </button>
+                </div>
+              </div>
+
+              <div id="quiz-result" class="hidden text-center">
+                 <div id="result-icon-container" class="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 transition-colors duration-500">
+                    <div id="icon-green" class="hidden"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7" /></svg></div>
+                    <div id="icon-orange" class="hidden"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg></div>
+                    <div id="icon-red" class="hidden"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                 </div>
+                 <h3 id="result-title" class="text-2xl font-black uppercase mb-4">TWÓJ WYNIK</h3>
+                 <p id="result-text" class="text-slate-700 mb-8 font-medium leading-relaxed"></p>
+                 <a href="#kontakt" class="block w-full bg-slate-900 text-white py-5 rounded-2xl font-black uppercase tracking-widest hover:opacity-90 transition shadow-lg">
+                   Co dalej?
+                 </a>
+                 <button type="button" onclick="location.reload()" class="mt-4 text-xs font-bold text-slate-400 hover:text-slate-600 uppercase tracking-widest transition">Powtórz test</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="misja" class="hidden md:block py-24 px-6 bg-white text-center border-b border-slate-100">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-emerald-600 font-bold uppercase tracking-widest mb-6 text-xs">Misja Fundacji</h2>
-        <p class="text-3xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
-          Wierzymy, że każde uzależnienie ma swoją granicę.
+    <section id="o-nas" class="hidden md:block py-24 px-6 bg-white relative z-10">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-5xl mx-auto mb-16">
+          <h2 class="text-4xl md:text-6xl font-black text-slate-900 mb-8 leading-tight uppercase tracking-tight">
+            Znamy system <span class="text-emerald-600">od środka</span>
+          </h2>
+          <p class="text-xl md:text-2xl text-slate-700 leading-relaxed font-medium mb-12 text-justify md:text-center">
+            Idea Fundacji Znaj Granice nie powstała za biurkiem teoretyków. 
+            Wyrasta z doświadczenia, które rzadko wychodzi poza gabinety zarządów branży igaming. 
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="zespol" class="hidden md:block py-20 px-6 bg-slate-50 relative z-10">
+        <div class="max-w-6xl mx-auto">
+          <div class="mb-16">
+            <h2 class="text-emerald-600 font-bold uppercase tracking-[0.3em] mb-4 text-sm">Zespół</h2>
+            <p class="text-4xl font-black text-slate-900 uppercase tracking-tighter">Ludzie stawiający <span class="text-emerald-600">granice</span></p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {team.map((member) => (
+              <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100 flex flex-col h-full group">
+                <div class="aspect-[4/5] overflow-hidden">
+                  <img src={member.image} alt={member.name} class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                  <p class="text-emerald-600 font-bold text-[10px] uppercase tracking-[0.2em] mb-2">{member.role}</p>
+                  <h3 class="text-2xl font-black text-slate-900 mb-6 uppercase tracking-tighter">{member.name}</h3>
+                  <div class="mb-8">
+                    <button 
+                      type="button"
+                      onclick={`window.openMemberProfile({
+                        name: "${member.name}",
+                        role: "${member.role}",
+                        img: "${member.image}",
+                        bio: "${member.manifest.replace(/"/g, '&quot;')}",
+                        linkedin: "${member.linkedIn}"
+                      })`}
+                      class="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-emerald-600 hover:text-slate-900 transition cursor-pointer"
+                    >
+                      <span>Kto to jest?</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+    </section>
+
+    <section id="dzialania" class="hidden md:block py-24 px-6 bg-slate-900 text-white relative z-0">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-black uppercase tracking-tighter mb-20">Obszary<br/><span class="text-emerald-500">Działania</span></h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700">
+            <h3 class="text-2xl font-black mb-6 uppercase italic text-emerald-400">Terapeutyczny</h3>
+            <p class="text-slate-300 text-sm">Rozwój profesjonalnego wsparcia i leczenia dla osób uzależnionych.</p>
+          </div>
+          <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700">
+            <h3 class="text-2xl font-black mb-6 uppercase italic text-emerald-400">Społeczny</h3>
+            <p class="text-slate-300 text-sm">Badania nad hazardem i ogólnopolskie kampanie edukacyjne.</p>
+          </div>
+          <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700">
+            <h3 class="text-2xl font-black mb-6 uppercase italic text-emerald-400">Biznesowy</h3>
+            <p class="text-slate-300 text-sm">Audyty odpowiedzialnej gry i szkolenia dla działów compliance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="partnerzy" class="hidden md:block py-20 px-6 bg-white relative z-10">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-emerald-600 font-bold uppercase tracking-[0.4em] mb-12 text-sm">Partnerzy</h2>
+        <div class="grid grid-cols-6 gap-6 items-center opacity-70 grayscale">
+          {partners.map(partner => (
+            <div class="flex justify-center p-6 border border-slate-100 rounded-2xl">
+              <img src={partner.logo} alt={partner.name} class="h-10 object-contain" />
+            </div>
+          ))}
+        </div>       
+      </div>
+    </section>
+
+    <section id="misja" class="hidden md:block py-16 px-6 bg-slate-50 relative z-10">
+       <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-emerald-600 font-bold uppercase tracking-[0.4em] mb-6 text-xs">Misja Fundacji</h2>
+        <p class="text-2xl md:text-4xl font-black text-slate-900 tracking-tighter">
+          Wierzymy, że każde uzależnienie ma swoją granicę, za którą zaczyna się powrót do wolności.
         </p>
-        <div class="w-16 h-1 bg-emerald-500 mx-auto"></div>
       </div>
     </section>
 
-    <section id="partnerzy" class="hidden md:block py-12 bg-slate-50">
-      <div class="flex flex-wrap justify-center gap-10 opacity-40 grayscale font-black uppercase tracking-widest text-xs">
-        {partners.map(p => <span>{p}</span>)}
+    <section id="kontakt" class="py-24 px-6 bg-slate-900 text-white relative z-10">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-20">
+          <div>
+            <h2 class="text-emerald-500 font-bold uppercase tracking-[0.3em] mb-4 text-sm">Kontakt</h2>
+            <h3 class="text-5xl font-black uppercase tracking-tighter mb-10 leading-none">
+              Jesteśmy tu<br/><span class="text-emerald-500 text-4xl">by Cię wysłuchać</span>
+            </h3>
+            <div class="space-y-8">
+              <div class="flex items-start gap-6">
+                <div class="w-12 h-12 bg-emerald-600/20 rounded-xl flex items-center justify-center shrink-0 border border-emerald-500/30">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                </div>
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Napisz do nas</p>
+                  <p class="text-xl font-bold">kontakt@znajgranice.org</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-slate-800/50 p-8 md:p-12 rounded-[2.5rem] border border-slate-700 shadow-2xl">
+            <form action="#" class="space-y-6">
+              <input type="text" placeholder="Imię / Nick" class="w-full bg-slate-900 border border-slate-700 rounded-2xl p-4 focus:border-emerald-500 outline-none text-white" />
+              <textarea rows="4" placeholder="Opisz krótko swoją sytuację..." class="w-full bg-slate-900 border border-slate-700 rounded-2xl p-4 focus:border-emerald-500 outline-none text-white resize-none"></textarea>
+              <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-black uppercase tracking-[0.2em] py-5 rounded-2xl transition-all">
+                Wyślij Wiadomość
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
-
-    <section id="kontakt" class="py-24 px-6 bg-slate-900 text-white text-center">
-      <p class="text-emerald-500 font-bold uppercase tracking-[0.4em] mb-4 text-xs text-center">Potrzebujesz pomocy?</p>
-      <a href="mailto:kontakt@znajgranice.org" class="text-2xl md:text-5xl font-black hover:text-emerald-400 transition-all uppercase tracking-tighter">
-        kontakt@znajgranice.org
-      </a>
-    </section>
-
   </main>
-  
+
   <Footer />
 </Layout>
 
 <script is:inline>
-  const qs = [
-    "Czy myślisz o hazardzie w trakcie innych zajęć?",
-    "Czy potrzebujesz grać za coraz większe kwoty?",
-    "Czy kłamałeś kiedyś, by ukryć czas lub pieniądze wydane na grę?",
-    "Czy po przegranej czujesz silną potrzebę natychmiastowego odegrania się?"
+  const questions = [
+    "Czy poświęcasz coraz więcej czasu na myślenie o grze?",
+    "Czy próbujesz grać za coraz wyższe stawki?",
+    "Czy kłamałeś bliskim, by ukryć grę?",
+    "Czy po przegranej czujesz przymus odkucia się?",
+    "Czy próby ograniczenia gry kończyły się porażką?",
+    "Czy czujesz rozdrażnienie, gdy nie grasz?",
+    "Czy grasz, by uciec od problemów?",
+    "Czy hazard wpłynął na Twoją pracę lub relacje?",
+    "Czy pożyczałeś pieniądze na grę?",
+    "Czy hazard dominuje nad Twoim życiem?"
   ];
-  let i = 0, s = 0;
-  
-  window.start = () => { 
-    document.getElementById('btns').innerHTML = `
-      <button onclick="a(1)" class="bg-emerald-500 text-white px-10 py-4 rounded-xl font-black hover:bg-emerald-600 transition-all">TAK</button>
-      <button onclick="a(0)" class="bg-slate-100 text-slate-500 px-10 py-4 rounded-xl font-black hover:bg-slate-200 transition-all">NIE</button>
-    `; 
-    up(); 
+
+  let currentQuestion = 0;
+  let score = 0;
+
+  window.startQuiz = function() {
+    currentQuestion = 0; score = 0;
+    document.getElementById('quiz-intro').classList.add('hidden');
+    document.getElementById('quiz-result').classList.add('hidden');
+    document.getElementById('quiz-questions').classList.remove('hidden');
+    showQuestion();
   }
-  
-  function up() { document.getElementById('t').innerText = qs[i]; }
-  
-  window.a = (v) => { 
-    s += v; i++; 
-    if(i < qs.length) up(); 
-    else { 
-      document.getElementById('q-box').innerHTML = `
-        <h3 class="text-2xl font-black text-slate-900 mb-4 uppercase">Test zakończony</h3>
-        <p class="text-lg font-medium text-slate-600 mb-8">${s > 0 ? 'Twoje odpowiedzi mogą sugerować początek problemu. Nie czekaj, napisz do nas.' : 'Twoja relacja z hazardem wydaje się być pod kontrolą.'}</p>
-        <button onclick="location.reload()" class="text-xs font-black uppercase text-emerald-600 border-b-2 border-emerald-600 pb-1">Zacznij od nowa</button>
-      `; 
-    }
+
+  function showQuestion() {
+    document.getElementById('quiz-progress').style.width = `${(currentQuestion / questions.length) * 100}%`;
+    document.getElementById('question-counter').innerText = `Pytanie ${currentQuestion + 1} z ${questions.length}`;
+    document.getElementById('question-text').innerText = questions[currentQuestion];
+  }
+
+  window.answer = function(val) {
+    if(val) score++;
+    currentQuestion++;
+    if(currentQuestion < questions.length) showQuestion();
+    else showResult();
+  }
+
+  function showResult() {
+    document.getElementById('quiz-questions').classList.add('hidden');
+    document.getElementById('quiz-result').classList.remove('hidden');
+    const resultText = document.getElementById('result-text');
+    
+    if (score === 0) resultText.innerText = "Twoja relacja z hazardem wydaje się być pod kontrolą.";
+    else if (score <= 3) resultText.innerText = "Uważaj! Twoja gra zaczyna być ryzykowna.";
+    else resultText.innerText = "Twoja gra nosi znamiona problemu. Skontaktuj się z nami.";
   }
 </script>
