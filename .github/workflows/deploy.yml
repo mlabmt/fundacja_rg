@@ -1,20 +1,29 @@
-name: Deploy
-on: [push]
+name: Deploy Website
+on:
+  push:
+    branches:
+      - main
 jobs:
-  deploy:
+  build_and_deploy:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        dir: [strona-glowna, sprawdzajka]
     steps:
-      - uses: actions/checkout@v4
-      - run: npm install && npm run build
-      - uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to Hostinger
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: ./${{ matrix.dir }}/
-          # ZMIANA: Usunęliśmy 'clean' i daliśmy to poniżej, żeby GitHub nie szukał starych folderów
-          dangerous-clean-slate: false
+          server-dir: ./
+          protocol: ftp
+          port: 21
+          clean: true
