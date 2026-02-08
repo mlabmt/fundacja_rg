@@ -15,87 +15,76 @@ const partners = ["Superbet", "Betclic", "STS", "Fortuna", "Playtech", "EGBA"];
 
   <main class="relative pt-[112px]">
     
-    <section class="relative py-24 px-6 bg-slate-900 text-white overflow-hidden">
-      <div class="max-w-6xl mx-auto relative z-10">
-        <div class="flex flex-col items-center text-center">
-          <span class="text-emerald-500 font-bold uppercase tracking-[0.3em] mb-6 animate-fade-in">
-            Oficjalny Portal Fundacji
-          </span>
-          <h1 class="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-[0.9] mb-10">
-            Grasz o życie,<br/>
-            <span class="text-emerald-500 italic">nie o pieniądze.</span>
-          </h1>
-          <div class="flex flex-wrap justify-center gap-4">
-            <a href="#misja" class="bg-emerald-600 text-white px-10 py-4 rounded-full font-black uppercase tracking-widest hover:bg-white hover:text-slate-900 transition-all duration-300">
-              Nasza Misja
-            </a>
-            <a href="#kontakt" class="border-2 border-white/20 text-white px-10 py-4 rounded-full font-black uppercase tracking-widest hover:bg-white/10 transition-all duration-300">
-              Kontakt
-            </a>
+    <section id="test" class="py-20 px-6 bg-slate-900 text-white text-center">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-6xl font-black uppercase mb-8 leading-tight">
+          Znajdź swoją <span class="text-emerald-500">granicę</span>
+        </h1>
+        <div id="q-box" class="bg-white text-slate-900 p-8 rounded-[2.5rem] max-w-xl mx-auto shadow-2xl">
+          <p id="t" class="text-xl font-bold mb-8 text-slate-700">Czy chcesz sprawdzić, czy hazard jest dla Ciebie bezpieczny?</p>
+          <div id="btns" class="flex flex-col sm:row justify-center gap-4">
+            <button onclick="start()" class="bg-emerald-600 text-white px-12 py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-emerald-500 transition-all">Rozpocznij Test</button>
           </div>
         </div>
       </div>
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-600/10 blur-[120px] rounded-full"></div>
     </section>
 
-    <section id="misja" class="py-32 px-6 bg-white">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-slate-400 font-bold uppercase tracking-[0.2em] mb-12 text-sm text-left border-l-4 border-emerald-500 pl-6">
-          O nas
-        </h2>
-        <p class="text-3xl md:text-5xl font-black text-slate-900 leading-tight tracking-tighter text-left">
-          Fundacja <span class="text-emerald-600">Znaj Granice</span> powstała, by edukować i wspierać w świecie, gdzie hazard staje się codziennością. Wierzymy, że każde uzależnienie ma swoją granicę, za którą zaczyna się <span class="italic underline decoration-emerald-500 underline-offset-8">wolność.</span>
+    <section id="misja" class="hidden md:block py-24 px-6 bg-white text-center border-b border-slate-100">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-emerald-600 font-bold uppercase tracking-widest mb-6 text-xs">Misja Fundacji</h2>
+        <p class="text-3xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
+          Wierzymy, że każde uzależnienie ma swoją granicę.
         </p>
+        <div class="w-16 h-1 bg-emerald-500 mx-auto"></div>
       </div>
     </section>
 
-    <section class="py-16 bg-slate-50 border-y border-slate-100 overflow-hidden">
-      <div class="max-w-6xl mx-auto px-6">
-        <p class="text-center text-[10px] font-black uppercase tracking-[0.5em] text-slate-400 mb-12">
-          Współpracujemy i monitorujemy
-        </p>
-        <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-30 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-700">
-          {partners.map(p => (
-            <span class="text-2xl font-black text-slate-900 tracking-tighter cursor-default">{p}</span>
-          ))}
-        </div>
+    <section id="partnerzy" class="hidden md:block py-12 bg-slate-50">
+      <div class="flex flex-wrap justify-center gap-10 opacity-40 grayscale font-black uppercase tracking-widest text-xs">
+        {partners.map(p => <span>{p}</span>)}
       </div>
     </section>
 
-    <section id="kontakt" class="py-32 px-6 bg-slate-900 text-white relative">
-      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
-        <div class="text-left">
-          <h2 class="text-5xl md:text-7xl font-black uppercase leading-none mb-4">
-            Potrzebujesz<br/><span class="text-emerald-500">rozmowy?</span>
-          </h2>
-          <p class="text-slate-400 text-xl max-w-md">
-            Nasi eksperci są dostępni dla operatorów, graczy i ich rodzin. Działamy anonimowo i profesjonalnie.
-          </p>
-        </div>
-        <div class="shrink-0">
-          <a href="mailto:kontakt@znajgranice.org" class="text-2xl md:text-4xl font-black text-white hover:text-emerald-500 transition-colors border-b-4 border-emerald-600 pb-2">
-            kontakt@znajgranice.org
-          </a>
-        </div>
-      </div>
+    <section id="kontakt" class="py-24 px-6 bg-slate-900 text-white text-center">
+      <p class="text-emerald-500 font-bold uppercase tracking-[0.4em] mb-4 text-xs text-center">Potrzebujesz pomocy?</p>
+      <a href="mailto:kontakt@znajgranice.org" class="text-2xl md:text-5xl font-black hover:text-emerald-400 transition-all uppercase tracking-tighter">
+        kontakt@znajgranice.org
+      </a>
     </section>
 
   </main>
-
+  
   <Footer />
 </Layout>
 
-<style>
-  html {
-    scroll-behavior: smooth;
+<script is:inline>
+  const qs = [
+    "Czy myślisz o hazardzie w trakcie innych zajęć?",
+    "Czy potrzebujesz grać za coraz większe kwoty?",
+    "Czy kłamałeś kiedyś, by ukryć czas lub pieniądze wydane na grę?",
+    "Czy po przegranej czujesz silną potrzebę natychmiastowego odegrania się?"
+  ];
+  let i = 0, s = 0;
+  
+  window.start = () => { 
+    document.getElementById('btns').innerHTML = `
+      <button onclick="a(1)" class="bg-emerald-500 text-white px-10 py-4 rounded-xl font-black hover:bg-emerald-600 transition-all">TAK</button>
+      <button onclick="a(0)" class="bg-slate-100 text-slate-500 px-10 py-4 rounded-xl font-black hover:bg-slate-200 transition-all">NIE</button>
+    `; 
+    up(); 
   }
   
-  @keyframes fade-in {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+  function up() { document.getElementById('t').innerText = qs[i]; }
+  
+  window.a = (v) => { 
+    s += v; i++; 
+    if(i < qs.length) up(); 
+    else { 
+      document.getElementById('q-box').innerHTML = `
+        <h3 class="text-2xl font-black text-slate-900 mb-4 uppercase">Test zakończony</h3>
+        <p class="text-lg font-medium text-slate-600 mb-8">${s > 0 ? 'Twoje odpowiedzi mogą sugerować początek problemu. Nie czekaj, napisz do nas.' : 'Twoja relacja z hazardem wydaje się być pod kontrolą.'}</p>
+        <button onclick="location.reload()" class="text-xs font-black uppercase text-emerald-600 border-b-2 border-emerald-600 pb-1">Zacznij od nowa</button>
+      `; 
+    }
   }
-
-  .animate-fade-in {
-    animation: fade-in 1s ease-out forwards;
-  }
-</style>
+</script>
