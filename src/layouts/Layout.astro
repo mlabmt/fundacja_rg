@@ -1,26 +1,81 @@
 ---
-import '../styles/global.css';
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="pl">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="description" content="Fundacja Znaj Granice - wsparcie w uzależnieniach cyfrowych i hazardowych." />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Fundacja Znaj Granice</title>
+		<title>{title}</title>
+
+		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-0PTF4Y41C9"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-0PTF4Y41C9');
+		</script>
 	</head>
-	<body>
+	<body class="bg-white selection:bg-emerald-100 selection:text-emerald-900 min-h-screen">
 		<slot />
 	</body>
 </html>
 
-<style>
-	html, body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
+<style is:global>
+	/* Globalne ustawienia dostępności i wyglądu */
+	:root {
+		--accent: 16, 185, 129;
+		--accent-dark: 5, 150, 105;
+	}
+
+	html {
+		font-family: 'Inter', system-ui, sans-serif;
+		background: #ffffff;
 		scroll-behavior: smooth;
+		/* Zapewnia lepszą czytelność czcionek */
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	body {
+		margin: 0;
+		padding: 0;
+		line-height: 1.5;
+	}
+
+	/* Poprawa widoczności focusa dla osób poruszających się klawiaturą */
+	:focus-visible {
+		outline: 3px solid #10b981;
+		outline-offset: 2px;
+	}
+
+	/* Ustawienie bazowej wielkości czcionki dla lepszej dostępności */
+	p {
+		font-size: 1rem;
+		margin-bottom: 1.25rem;
+	}
+
+	/* Stylizacja scrollbara dla lepszego kontrastu */
+	::-webkit-scrollbar {
+		width: 10px;
+	}
+	::-webkit-scrollbar-track {
+		background: #f1f5f9;
+	}
+	::-webkit-scrollbar-thumb {
+		background: #10b981;
+		border-radius: 5px;
+	}
+	::-webkit-scrollbar-thumb:hover {
+		background: #059669;
 	}
 </style>

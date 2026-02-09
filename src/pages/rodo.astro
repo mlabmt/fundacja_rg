@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/TopBar.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="RODO - Fundacja Znaj Granice">
+  <div class="fixed top-0 left-0 w-full z-[9999] shadow-2xl bg-white">
+    <TopBar />
+    <Header />
+  </div>
+
+  <main class="pt-[150px] pb-24 px-6">
+    <div class="max-w-3xl mx-auto prose prose-slate">
+      <h1 class="text-4xl font-black uppercase mb-8">Obowiązek Informacyjny (RODO)</h1>
+      
+      <div class="space-y-8 text-slate-700 leading-relaxed">
+        <section>
+          <h2 class="text-xl font-bold text-slate-900 uppercase">1. Administrator Danych</h2>
+          <p>Administratorem Twoich danych osobowych jest <strong>Fundacja Znaj Granice</strong> z siedzibą w [Wpisz Miasto], KRS: [Wpisz numer], NIP: [Wpisz numer].</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-slate-900 uppercase">2. Cel Przetwarzania</h2>
+          <p>Twoje dane przetwarzane są w celu:</p>
+          <ul class="list-disc ml-6">
+            <li>Odpowiedzi na zapytania przesłane przez formularz kontaktowy lub e-mail.</li>
+            <li>Realizacji celów statutowych fundacji (wsparcie operatorów, profilaktyka).</li>
+            <li>Obsługi darowizn i obowiązków księgowych.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-slate-900 uppercase">3. Twoje Prawa</h2>
+          <p>Masz prawo do dostępu do swoich danych, ich sprostowania, usunięcia ("prawo do bycia zapomnianym"), ograniczenia przetwarzania oraz wniesienia sprzeciwu.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-slate-900 uppercase">4. Kontakt</h2>
+          <p>W sprawach związanych z ochroną danych możesz skontaktować się z nami pod adresem: <span class="text-emerald-600 font-bold">kontakt@znajgranice.org</span></p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
