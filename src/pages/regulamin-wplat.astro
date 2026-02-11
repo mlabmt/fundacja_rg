@@ -1,52 +1,89 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import TopBar from '../components/TopBar.astro';
-import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Regulamin Wpłat - Fundacja Znaj Granice">
-  <div class="fixed top-0 left-0 w-full z-[9999] shadow-2xl bg-white">
-    <TopBar />
-    <Header />
-  </div>
+<Layout title="Regulamin Darowizn - Fundacja Znaj Granice">
+	<main class="bg-white min-h-screen">
+		<section class="bg-slate-900 py-20 px-6">
+			<div class="max-w-4xl mx-auto">
+				<a href="/" class="text-emerald-500 hover:text-emerald-400 transition-colors font-bold uppercase tracking-widest text-sm flex items-center gap-2 mb-8">
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+					Powrót do strony głównej
+				</a>
+				<h1 class="text-4xl md:text-6xl font-black text-white tracking-tighter">
+					REGULAMIN <span class="text-emerald-500">DAROWIZN</span>
+				</h1>
+				<p class="text-slate-400 mt-6 text-xl max-w-2xl">
+					Przejrzyste zasady wspierania działań statutowych Fundacji Znaj Granice.
+				</p>
+			</div>
+		</section>
 
-  <main class="pt-[150px] pb-24 px-6">
-    <div class="max-w-3xl mx-auto">
-      <h1 class="text-4xl font-black uppercase mb-8 text-slate-900">Regulamin <span class="text-emerald-600">Darowizn</span></h1>
-      
-      <div class="space-y-10 text-slate-700 leading-relaxed">
-        <section>
-          <h2 class="text-xl font-bold text-slate-900 uppercase mb-4">1. Postanowienia ogólne</h2>
-          <p>Niniejszy regulamin określa zasady dokonywania wpłat (darowizn) na rzecz Fundacji Znaj Granice za pośrednictwem strony internetowej.</p>
-        </section>
+		<section class="py-20 px-6">
+			<div class="max-w-4xl mx-auto prose prose-slate prose-lg">
+				
+				<div class="space-y-12 text-slate-700 leading-relaxed">
+					
+					<section>
+						<h2 class="text-2xl font-black text-slate-900 uppercase tracking-tight mb-4">1. Postanowienia ogólne</h2>
+						<p>
+							Niniejszy regulamin określa zasady dokonywania wpłat (darowizn) na rzecz <strong>Fundacji Znaj Granice</strong> za pośrednictwem strony internetowej. Fundacja działa na rzecz wspierania operatorów i flagowania nieprawidłowości, dbając o standardy higieny cyfrowej.
+						</p>
+					</section>
 
-        <section>
-          <h2 class="text-xl font-bold text-slate-900 uppercase mb-4">2. Cele statutowe</h2>
-          <p>Wszystkie wpłacone środki zostają przeznaczone na realizację celów statutowych Fundacji, w tym w szczególności na budowę Ośrodka Terapii Uzależnień „Granica”, profilaktykę higieny cyfrowej oraz wsparcie operatorów w zakresie bezpiecznej gry.</p>
-        </section>
+					<section>
+						<h2 class="text-2xl font-black text-slate-900 uppercase tracking-tight mb-4">2. Cele statutowe</h2>
+						<p>
+							Wszystkie wpłacone środki zostają przeznaczone na realizację celów statutowych Fundacji, w tym w szczególności na:
+						</p>
+						<ul class="list-disc pl-6 space-y-2 mt-4 font-medium">
+							<li>Budowę Ośrodka Terapii Uzależnień „Granica”.</li>
+							<li>Profilaktykę higieny cyfrowej.</li>
+							<li>Wsparcie operatorów w zakresie bezpiecznej gry i flagowanie błędów.</li>
+						</ul>
+					</section>
 
-        <section class="bg-emerald-50 p-8 rounded-3xl border border-emerald-100">
-          <h2 class="text-xl font-bold text-slate-900 uppercase mb-4">3. Metody płatności</h2>
-          <p>Wpłaty mogą być realizowane poprzez:</p>
-          <ul class="list-disc ml-6 space-y-2 mt-2 font-medium">
-            <li>Przelew tradycyjny na konto bankowe Fundacji.</li>
-            <li>Szybkie płatności elektroniczne (jeśli zintegrowane).</li>
-          </ul>
-        </section>
+					<section class="bg-emerald-50 p-8 rounded-3xl border border-emerald-100">
+						<h2 class="text-xl font-bold text-slate-900 uppercase mb-4">3. Metody płatności</h2>
+						<p>Wpłaty mogą być realizowane poprzez:</p>
+						<ul class="list-disc pl-6 space-y-2 mt-2 font-medium">
+							<li>Przelew tradycyjny na konto bankowe Fundacji.</li>
+							<li>Szybkie płatności elektroniczne (jeśli zintegrowane w serwisie).</li>
+						</ul>
+					</section>
 
-        <section>
-          <h2 class="text-xl font-bold text-slate-900 uppercase mb-4">4. Reklamacje i zwroty</h2>
-          <p>Darczyńca ma prawo do złożenia reklamacji w przypadku wystąpienia błędów technicznych w procesie płatności. Zgłoszenia prosimy kierować na <span class="text-emerald-600 font-bold">kontakt@znajgranice.org</span>. Darowizny jako świadczenia nieodpłatne co do zasady nie podlegają zwrotowi.</p>
-        </section>
+					<section>
+						<h2 class="text-2xl font-black text-slate-900 uppercase tracking-tight mb-4">4. Reklamacje i zwroty</h2>
+						<p>
+							Darczyńca ma prawo do złożenia reklamacji w przypadku wystąpienia błędów technicznych w procesie płatności. Zgłoszenia prosimy kierować na adres: 
+							<a href="mailto:kontakt@znajgranice.org" class="text-emerald-600 font-bold hover:underline">kontakt@znajgranice.org</a>. 
+							Darowizny, jako świadczenia nieodpłatne, co do zasady nie podlegają zwrotowi.
+						</p>
+					</section>
 
-        <section>
-          <h2 class="text-xl font-bold text-slate-900 uppercase mb-4">5. Ulgi podatkowe</h2>
-          <p>Fundacja przypomina, że darowizny przekazane na cele statutowe można odliczyć od dochodu w rocznym zeznaniu PIT (do 6% dochodu) lub CIT (do 10% dochodu). Potwierdzeniem dla urzędu skarbowego jest wyciąg z rachunku bankowego.</p>
-        </section>
-      </div>
-    </div>
-  </main>
+					<section>
+						<h2 class="text-2xl font-black text-slate-900 uppercase tracking-tight mb-4">5. Ulgi podatkowe</h2>
+						<p>
+							Fundacja przypomina, że darowizny przekazane na cele statutowe można odliczyć od dochodu w rocznym zeznaniu <strong>PIT (do 6% dochodu)</strong> lub <strong>CIT (do 10% dochodu)</strong>. Potwierdzeniem dla urzędu skarbowego jest wyciąg z rachunku bankowego lub potwierdzenie przelewu.
+						</p>
+					</section>
 
-  <Footer />
+				</div>
+			</div>
+		</section>
+	</main>
+	<Footer />
 </Layout>
+
+<style>
+	/* Optymalizacja pod kątem dostępności i czytelności */
+	.prose h2 {
+		border-left: 4px solid #10b981;
+		padding-left: 1rem;
+		margin-top: 2rem;
+	}
+	strong {
+		color: #0f172a;
+	}
+</style>
