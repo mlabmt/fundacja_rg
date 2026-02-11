@@ -1,48 +1,100 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import TopBar from '../components/TopBar.astro';
-import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="RODO - Fundacja Znaj Granice">
-  <div class="fixed top-0 left-0 w-full z-[9999] shadow-2xl bg-white">
-    <TopBar />
-    <Header />
-  </div>
+	<main class="bg-white min-h-screen">
+		<section class="bg-slate-900 py-20 px-6">
+			<div class="max-w-4xl mx-auto">
+				<a href="/" class="text-emerald-500 hover:text-emerald-400 transition-colors font-bold uppercase tracking-widest text-sm flex items-center gap-2 mb-8">
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+					Powrót do strony głównej
+				</a>
+				<h1 class="text-4xl md:text-6xl font-black text-white tracking-tighter">
+					OBOWIĄZEK <span class="text-emerald-500">INFORMACYJNY</span>
+				</h1>
+				<p class="text-slate-400 mt-6 text-xl max-w-2xl">
+					Twoje bezpieczeństwo i prywatność są dla nas priorytetem. Dowiedz się, jak chronimy Twoje dane.
+				</p>
+			</div>
+		</section>
 
-  <main class="pt-[150px] pb-24 px-6">
-    <div class="max-w-3xl mx-auto prose prose-slate">
-      <h1 class="text-4xl font-black uppercase mb-8">Obowiązek Informacyjny (RODO)</h1>
-      
-      <div class="space-y-8 text-slate-700 leading-relaxed">
-        <section>
-          <h2 class="text-xl font-bold text-slate-900 uppercase">1. Administrator Danych</h2>
-          <p>Administratorem Twoich danych osobowych jest <strong>Fundacja Znaj Granice</strong> z siedzibą w [Wpisz Miasto], KRS: [Wpisz numer], NIP: [Wpisz numer].</p>
-        </section>
+		<section class="py-20 px-6">
+			<div class="max-w-4xl mx-auto prose prose-slate prose-lg">
+				
+				<div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 mb-12">
+					<h2 class="text-2xl font-black text-slate-900 uppercase tracking-tight mb-4">1. Administrator Danych</h2>
+					<p class="text-slate-700">
+						Administratorem Twoich danych osobowych jest <strong>Fundacja Znaj Granice</strong> z siedzibą w [Wpisz Miasto], KRS: [Wpisz numer], NIP: [Wpisz numer], REGON: [Wpisz numer].
+					</p>
+				</div>
 
-        <section>
-          <h2 class="text-xl font-bold text-slate-900 uppercase">2. Cel Przetwarzania</h2>
-          <p>Twoje dane przetwarzane są w celu:</p>
-          <ul class="list-disc ml-6">
-            <li>Odpowiedzi na zapytania przesłane przez formularz kontaktowy lub e-mail.</li>
-            <li>Realizacji celów statutowych fundacji (wsparcie operatorów, profilaktyka).</li>
-            <li>Obsługi darowizn i obowiązków księgowych.</li>
-          </ul>
-        </section>
+				<h2 class="text-2xl font-black text-slate-900 uppercase tracking-tight mt-12 mb-6">Prawa osób, których dane przetwarza Fundacja</h2>
+				
+				<div class="space-y-8 text-slate-700 leading-relaxed">
+					<p>
+						1. Każda osoba, której dane osobowe są przez Fundację przetwarzane, ma prawo dostępu do jej danych osobowych. W szczególności może zapytać o cel przetwarzania, kategorie danych, odbiorców danych (w tym w państwach trzecich), planowany okres przechowywania oraz o to, czy podejmujemy zautomatyzowane decyzje (profilowanie).
+					</p>
 
-        <section>
-          <h2 class="text-xl font-bold text-slate-900 uppercase">3. Twoje Prawa</h2>
-          <p>Masz prawo do dostępu do swoich danych, ich sprostowania, usunięcia ("prawo do bycia zapomnianym"), ograniczenia przetwarzania oraz wniesienia sprzeciwu.</p>
-        </section>
+					<p>
+						2. Ma prawo do żądania niezwłocznego sprostowania swoich danych osobowych lub ich uzupełnienia, jeżeli są niekompletne.
+					</p>
 
-        <section>
-          <h2 class="text-xl font-bold text-slate-900 uppercase">4. Kontakt</h2>
-          <p>W sprawach związanych z ochroną danych możesz skontaktować się z nami pod adresem: <span class="text-emerald-600 font-bold">kontakt@znajgranice.org</span></p>
-        </section>
-      </div>
-    </div>
-  </main>
+					<div class="bg-emerald-50/50 p-6 rounded-2xl border-l-4 border-emerald-500">
+						<p class="font-bold text-emerald-900 mb-2">3. Prawo do usunięcia danych ("Prawo do bycia zapomnianym")</p>
+						<p class="text-sm">Możesz żądać usunięcia danych, jeśli: nie są już niezbędne, wycofano zgodę, wniesiono sprzeciw, były przetwarzane niezgodnie z prawem lub muszą zostać usunięte w celu wywiązania się z obowiązku prawnego.</p>
+					</div>
 
-  <Footer />
+					<p>
+						4. Prawo do ograniczenia przetwarzania: możesz zażądać wstrzymania operacji na Twoich danych, jeśli kwestionujesz ich prawidłowość lub przetwarzanie jest niezgodne z prawem, a nie chcesz całkowitego usunięcia danych.
+					</p>
+
+					<p>
+						5. Prawo do przenoszenia danych: masz prawo otrzymać swoje dane w ustrukturyzowanym, powszechnie używanym formacie, jeśli przetwarzanie odbywa się na podstawie zgody i w sposób zautomatyzowany.
+					</p>
+
+					<p>
+						6. Prawo do sprzeciwu: w dowolnym momencie możesz wnieść sprzeciw wobec przetwarzania opartego na prawnie uzasadnionym interesie Fundacji (art. 6 ust. 1 lit. f RODO).
+					</p>
+
+					<p>
+						7. Prawo do skargi: masz prawo wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00-193 Warszawa).
+					</p>
+
+					<p>
+						8. Wycofanie zgody: Jeżeli dane są przetwarzane na podstawie zgody, możesz ją wycofać w każdej chwili. Nie wpływa to na zgodność z prawem przetwarzania, którego dokonano przed wycofaniem.
+					</p>
+				</div>
+
+				<div class="mt-16 bg-slate-900 p-10 rounded-3xl text-white">
+					<h2 class="text-2xl font-black uppercase tracking-tight mb-6">Co zrobić, żeby skorzystać ze swoich praw?</h2>
+					<div class="space-y-6 text-slate-300">
+						<p>
+							1. Wniosek należy zgłosić w formie elektronicznej na adres: 
+							<a href="mailto:kontakt@znajgranice.org" class="text-emerald-400 font-bold hover:underline">kontakt@znajgranice.org</a> 
+							lub pisemnie na adres siedziby fundacji.
+						</p>
+						<p>
+							2. Jeżeli nie będziemy w stanie zidentyfikować osoby składającej wniosek, zwrócimy się o dodatkowe informacje w celu weryfikacji tożsamości.
+						</p>
+						<p>
+							3. Odpowiedź zostanie udzielona w ciągu miesiąca. W sprawach skomplikowanych termin ten może zostać przedłużony, o czym Cię poinformujemy.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<Footer />
 </Layout>
+
+<style>
+	/* Dodatkowe style dla lepszej czytelności tekstu prawnego */
+	.prose p {
+		margin-bottom: 1.5rem;
+	}
+	strong {
+		color: #0f172a;
+	}
+</style>
