@@ -1,0 +1,108 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const articles = [
+  {
+    category: "Profilaktyka",
+    title: "Mechanizmy gier: Jak działają algorytmy?",
+    desc: "Zrozumienie, w jaki sposób nowoczesne gry projektowane są pod kątem retencji, pomaga zachować dystans i kontrolę.",
+    link: "#",
+    tag: "Wiedza Ekspercka"
+  },
+  {
+    category: "Dla Rodziny",
+    title: "Jak rozmawiać o hazardzie bez kłótni?",
+    desc: "Praktyczny poradnik o stawianiu granic i komunikacji opartej na faktach, a nie emocjach.",
+    link: "#",
+    tag: "Poradnik"
+  },
+  {
+    category: "Higiena Cyfrowa",
+    title: "Blokady i limity: Przegląd narzędzi",
+    desc: "Zestawienie darmowych i płatnych aplikacji oraz narzędzi u operatorów, które wspierają samokontrolę.",
+    link: "#",
+    tag: "Narzędzia"
+  },
+  {
+    category: "Psychologia",
+    title: "Błąd hazardzisty - czym jest i jak go unikać?",
+    desc: "Wyjaśniamy pułapki umysłu, które sprawiają, że wierzymy w 'szczęśliwą serię' lub 'przełamanie pecha'.",
+    link: "#",
+    tag: "Edukacja"
+  }
+];
+---
+
+<Layout title="Baza Wiedzy | Fundacja Znaj Granice">
+  <div class="fixed top-0 left-0 w-full z-[9999] shadow-2xl bg-white" style="isolation: isolate;">
+    <TopBar />
+    <Header />
+  </div>
+
+  <main class="pt-[128px] md:pt-[112px] bg-white min-h-screen">
+    
+    <section class="py-20 px-6 bg-slate-50 border-b border-slate-100">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+          <div class="max-w-2xl">
+            <span class="text-emerald-600 font-black uppercase tracking-[0.3em] text-sm mb-4 block">Edukacja i Wsparcie</span>
+            <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none text-slate-900">Baza <span class="text-emerald-500">Wiedzy</span></h1>
+            <p class="text-xl text-slate-600 mt-6 font-medium leading-relaxed">
+              Zrozumienie problemu to połowa sukcesu. Zebraliśmy tu materiały, które pomogą Ci odzyskać kontrolę nad finansami i czasem.
+            </p>
+          </div>
+          <div class="hidden lg:block w-48 h-48 bg-emerald-100 rounded-[3rem] rotate-12 flex items-center justify-center">
+             <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-emerald-600 -rotate-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+             </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 px-6">
+      <div class="max-w-6xl mx-auto">
+        
+        <div class="flex flex-wrap gap-3 mb-12">
+            <button class="px-6 py-2 bg-slate-900 text-white rounded-full text-xs font-black uppercase tracking-widest transition">Wszystkie</button>
+            <button class="px-6 py-2 bg-slate-100 text-slate-500 hover:bg-emerald-100 hover:text-emerald-700 rounded-full text-xs font-black uppercase tracking-widest transition">Dla Gracza</button>
+            <button class="px-6 py-2 bg-slate-100 text-slate-500 hover:bg-emerald-100 hover:text-emerald-700 rounded-full text-xs font-black uppercase tracking-widest transition">Dla Rodziny</button>
+            <button class="px-6 py-2 bg-slate-100 text-slate-500 hover:bg-emerald-100 hover:text-emerald-700 rounded-full text-xs font-black uppercase tracking-widest transition">Mechanizmy Branży</button>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          {articles.map(art => (
+            <a href={art.link} class="group bg-white p-8 rounded-[2.5rem] border-2 border-slate-100 hover:border-emerald-500 hover:shadow-2xl transition-all duration-500 flex flex-col h-full">
+              <div class="flex justify-between items-start mb-6">
+                <span class="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-600 bg-emerald-50 px-3 py-1 rounded-lg">{art.category}</span>
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{art.tag}</span>
+              </div>
+              <h3 class="text-2xl font-black text-slate-900 mb-4 group-hover:text-emerald-600 transition tracking-tight uppercase leading-tight">
+                {art.title}
+              </h3>
+              <p class="text-slate-600 font-medium text-sm leading-relaxed mb-8 flex-grow">
+                {art.desc}
+              </p>
+              <div class="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-slate-900 group-hover:gap-4 transition-all">
+                Czytaj artykuł <span class="text-emerald-500">→</span>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <div class="mt-20 bg-slate-900 rounded-[3rem] p-10 md:p-16 text-center text-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+            <h2 class="text-3xl font-black uppercase tracking-tight mb-4 relative z-10">Szukasz konkretnej informacji?</h2>
+            <p class="text-slate-400 max-w-xl mx-auto mb-10 font-medium relative z-10">Jeśli nie znalazłeś odpowiedzi na swoje pytania, napisz do nas. Nasi eksperci przygotują materiały, które pomogą Tobie i innym.</p>
+            <a href="/#kontakt" class="inline-block bg-emerald-600 hover:bg-emerald-500 text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest shadow-xl transition-all relative z-10">Zadaj Pytanie</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>

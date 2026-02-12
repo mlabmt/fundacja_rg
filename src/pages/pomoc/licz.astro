@@ -1,0 +1,152 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/TopBar.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Kalkulator Wydatków na Hazard | Znaj Granice">
+  <div class="fixed top-0 left-0 w-full z-[9999] shadow-2xl bg-white" style="isolation: isolate;">
+    <TopBar />
+    <Header />
+  </div>
+
+  <main class="pt-[128px] md:pt-[112px] bg-slate-50 min-h-screen">
+    
+    <section class="py-16 px-6 bg-slate-900 text-white relative overflow-hidden">
+      <div class="max-w-4xl mx-auto text-center relative z-10">
+        <span class="text-emerald-400 font-black uppercase tracking-[0.3em] text-sm mb-4 block">Finanse pod kontrolą</span>
+        <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-6">Kalkulator <span class="text-emerald-500">Wydatków</span></h1>
+        <p class="text-xl text-slate-400 font-medium">Sprawdź, ile realnie kosztuje Cię gra w skali roku. To anonimowe narzędzie pomoże Ci zobaczyć pełny obraz sytuacji.</p>
+      </div>
+    </section>
+
+    <section class="py-12 px-6">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-[2.5rem] shadow-2xl border border-slate-200 overflow-hidden">
+          <div class="p-8 md:p-12">
+            
+            <div class="grid md:grid-cols-2 gap-12">
+              <div class="space-y-8">
+                <div>
+                  <label class="block text-xs font-black uppercase tracking-widest text-slate-500 mb-4">Ile średnio wydajesz na jedną sesję?</label>
+                  <div class="relative">
+                    <input type="number" id="spend-amount" value="100" class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-5 font-bold text-2xl outline-none focus:border-emerald-500 transition" />
+                    <span class="absolute right-6 top-1/2 -translate-y-1/2 font-black text-slate-400">PLN</span>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-black uppercase tracking-widest text-slate-500 mb-4">Jak często grasz?</label>
+                  <select id="spend-frequency" class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-5 font-bold text-lg outline-none focus:border-emerald-500 transition appearance-none">
+                    <option value="365">Codziennie</option>
+                    <option value="156">3 razy w tygodniu</option>
+                    <option value="52" selected>Raz w tygodniu</option>
+                    <option value="12">Raz w miesiącu</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-black uppercase tracking-widest text-slate-500 mb-4">Ile czasu poświęcasz na jedną sesję?</label>
+                  <div class="relative">
+                    <input type="number" id="spend-time" value="2" class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-5 font-bold text-2xl outline-none focus:border-emerald-500 transition" />
+                    <span class="absolute right-6 top-1/2 -translate-y-1/2 font-black text-slate-400">H</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-slate-900 rounded-[2rem] p-8 text-white flex flex-col justify-center relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl"></div>
+                
+                <p class="text-xs font-black uppercase tracking-widest text-emerald-400 mb-8 text-center">Twoje szacunkowe koszty</p>
+                
+                <div class="space-y-8">
+                  <div class="text-center">
+                    <p class="text-slate-400 text-xs font-bold uppercase mb-1">W skali miesiąca</p>
+                    <p id="result-month" class="text-4xl font-black tracking-tighter">400 PLN</p>
+                  </div>
+                  
+                  <div class="text-center">
+                    <p class="text-slate-400 text-xs font-bold uppercase mb-1 text-emerald-500">W skali roku</p>
+                    <p id="result-year" class="text-6xl font-black tracking-tighter text-emerald-500">5 200 PLN</p>
+                  </div>
+
+                  <div class="text-center border-t border-slate-800 pt-8">
+                    <p class="text-slate-400 text-xs font-bold uppercase mb-1 text-amber-500">Czas spędzony na grze (rok)</p>
+                    <p id="result-time" class="text-3xl font-black tracking-tighter text-amber-500">104 Godziny</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-12 p-8 bg-emerald-50 rounded-3xl border border-emerald-100">
+               <h3 class="text-lg font-black uppercase tracking-tight text-slate-900 mb-4 text-center">Co mógłbyś mieć za te pieniądze?</h3>
+               <div id="alternatives" class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                  </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto pb-24 px-6">
+        <div class="text-center space-y-6">
+            <h2 class="text-2xl font-black uppercase tracking-tight">Te liczby Cię niepokoją?</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="/pomoc/mapa" class="bg-emerald-600 text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-emerald-700 transition">Znajdź wsparcie</a>
+                <a href="/#kontakt" class="bg-slate-900 text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-slate-800 transition">Porozmawiaj z nami</a>
+            </div>
+        </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script is:inline>
+  const amountInput = document.getElementById('spend-amount');
+  const freqInput = document.getElementById('spend-frequency');
+  const timeInput = document.getElementById('spend-time');
+
+  const resultMonth = document.getElementById('result-month');
+  const resultYear = document.getElementById('result-year');
+  const resultTime = document.getElementById('result-time');
+  const alternativesDiv = document.getElementById('alternatives');
+
+  function calculate() {
+    const amount = parseFloat(amountInput.value) || 0;
+    const freq = parseFloat(freqInput.value);
+    const time = parseFloat(timeInput.value) || 0;
+
+    const yearlySpend = amount * freq;
+    const monthlySpend = yearlySpend / 12;
+    const yearlyTime = time * freq;
+
+    resultMonth.innerText = `${Math.round(monthlySpend).toLocaleString()} PLN`;
+    resultYear.innerText = `${Math.round(yearlySpend).toLocaleString()} PLN`;
+    resultTime.innerText = `${Math.round(yearlyTime)} Godzin`;
+
+    updateAlternatives(yearlySpend);
+  }
+
+  function updateAlternatives(total) {
+    let items = [];
+    if (total < 1000) {
+        items = ["Kilka wyjść do kina", "Nowa gra wideo", "Rodzinna kolacja"];
+    } else if (total < 5000) {
+        items = ["Nowy smartfon", "Weekend w spa", "Kurs zawodowy"];
+    } else if (total < 20000) {
+        items = ["Egzotyczne wakacje", "Używany samochód", "Remont łazienki"];
+    } else {
+        items = ["Wkład własny na mieszkanie", "Nowy samochód z salonu", "Roczny urlop zdrowotny"];
+    }
+
+    alternativesDiv.innerHTML = items.map(item => `
+      <div class="bg-white p-4 rounded-2xl font-bold text-slate-700 shadow-sm border border-emerald-100">${item}</div>
+    `).join('');
+  }
+
+  [amountInput, freqInput, timeInput].forEach(el => el.addEventListener('input', calculate));
+  calculate(); // Initial run
+</script>
