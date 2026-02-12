@@ -1,0 +1,197 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/TopBar.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const hotlines = [
+  { name: "Kryzysowy Telefon Zaufania", phone: "116 123", desc: "Bezpłatny, całodobowy numer dla osób w kryzysie emocjonalnym." },
+  { name: "Telefon Zaufania (Uzależnienia)", phone: "801 889 880", desc: "Instytut Psychologii Zdrowia – pomoc w problemach hazardowych." }
+];
+
+const externalResources = [
+  { title: "Anonimowi Hazardziści", url: "https://anonimowihazardzisci.org/", desc: "Wspólnota osób, które dzielą się doświadczeniem i nadzieją w zdrowieniu." },
+  { title: "Stop Uzależnieniom", url: "https://stopuzaleznieniom.pl/", desc: "Baza wiedzy i oficjalny portal informacyjny o leczeniu hazardu." },
+  { title: "Postaw na Siebie", url: "https://postawnasiebie.org/", desc: "Kampania edukacyjna i praktyczne narzędzia autodiagnozy." },
+  { title: "KCPU", url: "https://kcpu.gov.pl/", desc: "Krajowe Centrum Przeciwdziałania Uzależnieniom." }
+];
+
+const privateCenters = [
+  { name: "Ośrodek Michała Koterskiego", url: "https://michalkoterski-osrodek.pl/", loc: "Wsparcie prywatne" },
+  { name: "Ośrodek Poznaj Siebie", url: "https://osrodekpoznajsiebie.com.pl/", loc: "Poznań/Okolice" },
+  { name: "Pomocna Tratwa", url: "https://pomocnatratwa.pl/", loc: "Specjalistyczna terapia" }
+];
+---
+
+<Layout title="Mapa Pomocy | Znaj Granice">
+  <div class="fixed top-0 left-0 w-full z-[9999] shadow-2xl bg-white" style="isolation: isolate;">
+    <TopBar />
+    <Header />
+  </div>
+
+  <main class="pt-[128px] md:pt-[112px] bg-slate-50 min-h-screen">
+    
+    <section class="bg-slate-900 text-white py-16 px-6 relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+        <svg width="100%" height="100%"><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/></pattern><rect width="100%" height="100%" fill="url(#grid)" /></svg>
+      </div>
+      <div class="max-w-6xl mx-auto relative z-10 text-center">
+        <span class="text-emerald-400 font-black uppercase tracking-[0.3em] text-sm mb-4 block">Nie jesteś sam</span>
+        <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-6">Mapa <span class="text-emerald-500">Ratunku</span></h1>
+        <p class="text-xl text-slate-300 max-w-2xl mx-auto font-medium">
+          Znajdź profesjonalną pomoc blisko siebie. Poniżej znajdziesz ośrodki NFZ, prywatne kliniki oraz grupy wsparcia.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-12 px-6 -mt-10 relative z-20">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-6">
+          {hotlines.map(h => (
+            <div class="bg-white border-b-4 border-emerald-500 p-8 rounded-3xl shadow-xl flex items-center gap-6 group hover:translate-y-[-4px] transition-all">
+              <div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+              </div>
+              <div>
+                <p class="text-xs font-black text-slate-400 uppercase tracking-widest mb-1">{h.name}</p>
+                <p class="text-3xl font-black text-slate-900 group-hover:text-emerald-600 transition">{h.phone}</p>
+                <p class="text-sm text-slate-500 mt-1 font-medium">{h.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-slate-200">
+          <div class="p-8 border-b border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+              <h2 class="text-2xl font-black uppercase tracking-tight text-slate-900">Ogólnopolska Baza Ośrodków NFZ</h2>
+              <p class="text-slate-500 font-medium">Skorzystaj z wyszukiwarki lub wybierz województwo na mapie.</p>
+            </div>
+            <div class="flex gap-2">
+               <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-700 uppercase">● Bezpłatne (NFZ)</span>
+               <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700 uppercase">● Prywatne</span>
+            </div>
+          </div>
+          
+          <div class="aspect-video w-full bg-slate-200 relative group">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2550000!2d19.0!3d52.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47009964a4640bbb%3A0x9757318365440aaa!2sPolska!5e0!3m2!1spl!2spl!4v1620000000000!5m2!1spl!2spl" 
+              class="w-full h-full grayscale hover:grayscale-0 transition-all duration-700"
+              style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+            
+            <div class="absolute inset-0 bg-slate-900/40 flex items-center justify-center pointer-events-none group-hover:opacity-0 transition-opacity">
+               <p class="text-white font-black uppercase tracking-[0.3em] bg-slate-900/80 px-6 py-3 rounded-full border border-white/20 shadow-2xl">Kliknij, aby wejść w interakcję</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-black uppercase text-center mb-16 tracking-tight">Ścieżka <span class="text-emerald-600 underline">Wyjścia</span></h2>
+        
+        <div class="grid md:grid-cols-2 gap-12">
+          
+          <div class="space-y-8">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-slate-900 text-white rounded-full flex items-center justify-center font-black">A</div>
+              <h3 class="text-2xl font-black uppercase tracking-tight">Jestem graczem</h3>
+            </div>
+            <div class="space-y-4">
+              <div class="p-6 bg-slate-50 rounded-2xl border-l-4 border-emerald-500">
+                <p class="font-bold text-slate-900 mb-2 uppercase text-sm">Krok 1: Przerwij pętlę</p>
+                <p class="text-slate-600 text-sm">Zablokuj konta u operatorów (samowykluczenie). To Twoja pierwsza linia obrony.</p>
+              </div>
+              <div class="p-6 bg-slate-50 rounded-2xl border-l-4 border-emerald-500">
+                <p class="font-bold text-slate-900 mb-2 uppercase text-sm">Krok 2: Oddaj finanse</p>
+                <p class="text-slate-600 text-sm">Przekaż dostęp do konta bankowego zaufanej osobie. Bez pieniędzy gra staje się niemożliwa.</p>
+              </div>
+              <div class="p-6 bg-slate-50 rounded-2xl border-l-4 border-emerald-500">
+                <p class="font-bold text-slate-900 mb-2 uppercase text-sm">Krok 3: Terapia</p>
+                <p class="text-slate-600 text-sm">Znajdź grupę <strong>Anonimowych Hazardzistów</strong>. Rozmowa z kimś, kto przeżył to samo, zmienia wszystko.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-8">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-emerald-500 text-white rounded-full flex items-center justify-center font-black">B</div>
+              <h3 class="text-2xl font-black uppercase tracking-tight">Dla bliskich</h3>
+            </div>
+            <div class="space-y-4">
+              <div class="p-6 bg-emerald-50 rounded-2xl border-l-4 border-slate-900">
+                <p class="font-bold text-slate-900 mb-2 uppercase text-sm">Zadbaj o siebie</p>
+                <p class="text-slate-600 text-sm">Nie możesz uratować kogoś, jeśli sam toniesz. Skorzystaj z terapii dla współuzależnionych.</p>
+              </div>
+              <div class="p-6 bg-emerald-50 rounded-2xl border-l-4 border-slate-900">
+                <p class="font-bold text-slate-900 mb-2 uppercase text-sm">Postaw twarde granice</p>
+                <p class="text-slate-600 text-sm">Nie spłacaj długów hazardzisty. Pozwól mu ponieść konsekwencje – to często jedyny impuls do zmiany.</p>
+              </div>
+              <div class="p-6 bg-emerald-50 rounded-2xl border-l-4 border-slate-900">
+                <p class="font-bold text-slate-900 mb-2 uppercase text-sm">Zabezpiecz majątek</p>
+                <p class="text-slate-600 text-sm">Rozdzielność majątkowa to nie brak miłości – to ochrona dachu nad głową Twoich dzieci.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 px-6 bg-slate-50">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid lg:grid-cols-3 gap-12">
+          
+          <div class="lg:col-span-2 space-y-8">
+            <h3 class="text-xl font-black uppercase tracking-widest text-slate-900 flex items-center gap-3">
+               <span class="w-8 h-1 bg-emerald-500"></span> Zasoby internetowe
+            </h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+              {externalResources.map(res => (
+                <a href={res.url} target="_blank" class="block p-6 bg-white border border-slate-200 rounded-3xl hover:border-emerald-500 hover:shadow-lg transition group">
+                  <h4 class="font-black text-slate-900 uppercase text-sm mb-2 group-hover:text-emerald-600">{res.title}</h4>
+                  <p class="text-xs text-slate-500 font-medium leading-relaxed">{res.desc}</p>
+                  <span class="text-[10px] font-black text-emerald-500 uppercase mt-4 block tracking-widest">Odwiedź stronę →</span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div class="space-y-8">
+            <h3 class="text-xl font-black uppercase tracking-widest text-slate-900 flex items-center gap-3">
+                <span class="w-8 h-1 bg-slate-400"></span> Wybrane Ośrodki
+             </h3>
+             <div class="space-y-4">
+               {privateCenters.map(center => (
+                 <a href={center.url} target="_blank" class="flex flex-col p-5 bg-white border border-slate-200 rounded-2xl hover:bg-slate-900 group transition">
+                   <span class="text-xs font-bold text-emerald-500 mb-1">{center.loc}</span>
+                   <span class="font-bold text-slate-900 group-hover:text-white transition">{center.name}</span>
+                 </a>
+               ))}
+             </div>
+             <div class="p-6 bg-slate-900 rounded-[2rem] text-white">
+                <p class="text-xs font-bold text-emerald-400 uppercase mb-2">Ważne</p>
+                <p class="text-sm font-medium leading-relaxed opacity-80">Fundacja nie pobiera opłat za polecanie ośrodków. Lista jest stale aktualizowana o zweryfikowane placówki.</p>
+             </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  /* Płynne przewijanie do sekcji po kliknięciu w linki z kotwicą */
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
