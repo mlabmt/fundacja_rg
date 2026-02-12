@@ -50,55 +50,73 @@ const partners = [
 
   <main class="relative pt-[128px] md:pt-[112px]">
     
-    <section id="test-samooceny" class="py-16 md:py-24 px-6 bg-slate-900 text-white relative overflow-hidden">
+    <section id="pomoc-i-test" class="py-16 md:py-24 px-6 bg-slate-900 text-white relative overflow-hidden">
       <div class="absolute top-0 right-0 w-1/3 h-full bg-emerald-600/10 skew-x-12 translate-x-20"></div>
       
       <div class="max-w-6xl mx-auto relative z-10">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <p class="text-emerald-400 font-bold uppercase tracking-[0.3em] mb-4 text-sm">Sprawdź czy już teraz</p>
+            <p class="text-emerald-400 font-bold uppercase tracking-[0.3em] mb-4 text-sm">Zrób pierwszy krok</p>
             <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9] mb-8">
-              Potrzebujesz <br/><span class="text-emerald-500">pomocy?</span>
+              Odzyskaj <br/><span class="text-emerald-500">kontrolę</span>
             </h1>
-            <p class="text-xl text-slate-300 font-medium max-w-lg leading-relaxed mb-10">
-                Test sprawdzi jak wygląda Twoja gra. Odpowiedz na kilka pytań, aby otrzymać natychmiastową informację zwrotną.
+            <p class="text-xl text-slate-300 font-medium max-w-lg leading-relaxed">
+              Nie musisz przechodzić przez to sam. Sprawdź swoją sytuację lub skorzystaj z profesjonalnej pomocy.
             </p>
-
-            <a href="/pomoc" class="inline-flex items-center gap-4 bg-white/5 hover:bg-white/10 border border-white/20 p-6 rounded-3xl transition-all group mb-10">
-               <div class="w-12 h-12 bg-emerald-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                  </svg>
+            <div class="mt-10 flex flex-wrap gap-4">
+               <div class="flex items-center gap-2 text-sm font-bold text-slate-400 uppercase tracking-widest">
+                  <div class="w-2 h-2 rounded-full bg-emerald-500"></div> Bezpłatnie
                </div>
-               <div>
-                 <p class="text-emerald-400 text-xs font-black uppercase tracking-widest mb-1">Potrzebujesz pomocy?</p>
-                 <p class="text-white font-bold group-hover:text-emerald-400 transition">Odwiedź Bazę Wiedzy i Mapę Pomocy →</p>
-               </div>
-            </a>
-
-            <div class="flex flex-wrap gap-4">
-               <div class="flex items-center gap-2 text-sm font-bold text-slate-400">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                  Anonimowo
-               </div>
-               <div class="flex items-center gap-2 text-sm font-bold text-slate-400">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                  Błyskawicznie
+               <div class="flex items-center gap-2 text-sm font-bold text-slate-400 uppercase tracking-widest">
+                  <div class="w-2 h-2 rounded-full bg-emerald-500"></div> Anonimowo
                </div>
             </div>
           </div>
 
-          <div class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl text-slate-900 relative">
+          <div class="bg-white rounded-[2.5rem] p-6 md:p-10 shadow-2xl text-slate-900 relative">
             <div id="quiz-container">
-              <div id="quiz-intro">
-                <h3 class="text-2xl font-black uppercase tracking-tight mb-4">dowiedz się jak grasz</h3>
-                <p class="text-slate-600 mb-8 font-medium">Odpowiedz szczerze na 10 pytań </p>
-                <button type="button" onclick="window.startQuiz()" class="w-full bg-emerald-600 text-white py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-slate-900 transition-all shadow-lg cursor-pointer">
-                  Sprawdzam
+              
+              <div id="quiz-intro" class="space-y-4">
+                <h3 class="text-2xl font-black uppercase tracking-tight mb-6">W czym możemy pomóc?</h3>
+                
+                <button onclick="window.startQuiz()" class="w-full flex items-center gap-4 p-4 border-2 border-slate-100 rounded-2xl hover:border-emerald-500 hover:bg-emerald-50 transition-all text-left group cursor-pointer">
+                  <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" /></svg>
+                  </div>
+                  <div>
+                    <span class="block font-black uppercase text-sm tracking-widest text-emerald-600 mb-1">KROK 1</span>
+                    <span class="block font-bold text-lg">Wykonaj Test Gry</span>
+                    <span class="text-slate-500 text-xs font-medium">Sprawdź anonimowo stopień ryzyka.</span>
+                  </div>
                 </button>
+
+                <a href="/pomoc#mapa" class="w-full flex items-center gap-4 p-4 border-2 border-slate-100 rounded-2xl hover:border-slate-900 hover:bg-slate-50 transition-all text-left group">
+                  <div class="w-14 h-14 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-slate-900 group-hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                  </div>
+                  <div>
+                    <span class="block font-black uppercase text-sm tracking-widest text-slate-400 mb-1">KROK 2</span>
+                    <span class="block font-bold text-lg text-slate-900">Mapa Pomocy</span>
+                    <span class="text-slate-500 text-xs font-medium">Znajdź najbliższy ośrodek leczenia.</span>
+                  </div>
+                </a>
+
+                <a href="/pomoc#baza-wiedzy" class="w-full flex items-center gap-4 p-4 border-2 border-slate-100 rounded-2xl hover:border-slate-900 hover:bg-slate-50 transition-all text-left group">
+                  <div class="w-14 h-14 bg-slate-100 text-slate-600 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-slate-900 group-hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                  </div>
+                  <div>
+                    <span class="block font-black uppercase text-sm tracking-widest text-slate-400 mb-1">KROK 3</span>
+                    <span class="block font-bold text-lg text-slate-900">Baza Wiedzy</span>
+                    <span class="text-slate-500 text-xs font-medium">Artykuły i materiały edukacyjne.</span>
+                  </div>
+                </a>
               </div>
 
               <div id="quiz-questions" class="hidden">
+                <button onclick="window.location.reload()" class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-4 hover:text-red-500 flex items-center gap-1 cursor-pointer">
+                  ← Anuluj test
+                </button>
                 <div class="flex justify-between items-end mb-4">
                     <span id="question-counter" class="text-xs font-black uppercase tracking-widest text-emerald-600">Pytanie 1 z 10</span>
                 </div>
@@ -117,25 +135,19 @@ const partners = [
               </div>
 
               <div id="quiz-result" class="hidden text-center">
-                 <div id="result-icon-container" class="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 transition-colors duration-500">
-                    <div id="icon-green" class="hidden"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7" /></svg></div>
-                    <div id="icon-orange" class="hidden"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg></div>
-                    <div id="icon-red" class="hidden"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                 <div id="result-icon-container" class="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <div id="icon-green" class="hidden"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7" /></svg></div>
+                    <div id="icon-orange" class="hidden"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg></div>
+                    <div id="icon-red" class="hidden"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
                  </div>
-                 <h3 id="result-title" class="text-2xl font-black uppercase mb-4">TWÓJ WYNIK</h3>
+                 <h3 id="result-title" class="text-2xl font-black uppercase mb-4 tracking-tighter">WYNIK</h3>
                  <p id="result-text" class="text-slate-700 mb-8 font-medium leading-relaxed"></p>
-                 
                  <div class="space-y-3">
-                   <a href="/pomoc" class="block w-full bg-emerald-600 text-white py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-emerald-700 transition shadow-lg border-b-4 border-emerald-800">
-                     Odbierz Plan Pomocy
-                   </a>
-                   <a href="#kontakt" class="block w-full bg-slate-900 text-white py-5 rounded-2xl font-black uppercase tracking-widest hover:opacity-90 transition">
-                     Napisz do nas
-                   </a>
+                   <a href="/pomoc" class="block w-full bg-emerald-600 text-white py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-emerald-700 transition shadow-lg border-b-4 border-emerald-800">Przejdź do Planu Pomocy</a>
+                   <button type="button" onclick="location.reload()" class="w-full bg-slate-100 text-slate-900 py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-slate-200 transition">Powrót do startu</button>
                  </div>
-
-                 <button type="button" onclick="location.reload()" class="mt-6 text-xs font-bold text-slate-400 hover:text-slate-600 uppercase tracking-widest transition">Powtórz test</button>
               </div>
+
             </div>
           </div>
         </div>
@@ -174,7 +186,7 @@ const partners = [
             </p>
             <p>
               Mając wpływ na przekaz reklamowy, kładłem nacisk na zasady Odpowiedzialnej Gry. Czy to wystarczyło?
-              Teraz przechodzę na drugą stronę, by wykorzystać własne dowiadczenie dla bezpiecznej rozrywki.
+              Teraz przechodzę na drugą stronę, by wykorzystać własne doświadczenie dla bezpiecznej rozrywki.
             </p>
           </div>
           <div class="relative bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
@@ -267,7 +279,6 @@ const partners = [
           <h2 class="text-4xl font-black uppercase tracking-tighter">Obszary<br/><span class="text-emerald-500">Działania</span></h2>
           <p class="text-slate-400 max-w-sm font-medium italic">Cele Fundacji realizujemy w 3 obszarach, pozwalających na dostosowanie modelu pomocy i rozwoju.</p>
         </div>
-        
         <div class="grid md:grid-cols-3 gap-8 relative">
           <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-emerald-500 transition-all duration-300 group hover:-translate-y-2">
             <div class="w-12 h-12 bg-emerald-500 rounded-xl mb-6 flex items-center justify-center font-black text-slate-900 text-xl">01</div>
@@ -278,7 +289,6 @@ const partners = [
               <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Terapia</strong> Budowa sieci certyfikowanych specjalistów i ośrodków terapeutycznych.</li>
             </ul>
           </div>
-
           <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-emerald-500 transition-all duration-300 group hover:-translate-y-2">
             <div class="w-12 h-12 bg-emerald-500 rounded-xl mb-6 flex items-center justify-center font-black text-slate-900 text-xl">02</div>
             <h3 class="text-2xl font-black mb-6 uppercase italic group-hover:text-emerald-400 transition text-white">Społeczny</h3>
@@ -288,7 +298,6 @@ const partners = [
               <li><strong class="text-white uppercase text-[10px] block mb-1 tracking-widest">Edukacja</strong> Materiały dla pedagogów, kuratorów, związków i organizacji.</li>
             </ul>
           </div>
-
           <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 hover:border-emerald-500 transition-all duration-300 group hover:-translate-y-2">
             <div class="w-12 h-12 bg-emerald-500 rounded-xl mb-6 flex items-center justify-center font-black text-slate-900 text-xl">03</div>
             <h3 class="text-2xl font-black mb-6 uppercase italic group-hover:text-emerald-400 transition text-white">Biznesowy</h3>
@@ -316,49 +325,24 @@ const partners = [
     </section>
 
     <section id="kontakt" class="py-24 px-6 bg-slate-900 text-white relative z-10">
-        <div class="max-w-6xl mx-auto">
+      <div class="max-w-6xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-20">
-          
           <div>
             <h2 class="text-emerald-500 font-bold uppercase tracking-[0.3em] mb-4 text-sm">Kontakt</h2>
-            <h3 class="text-5xl font-black uppercase tracking-tighter mb-10 leading-none">
-              Jesteśmy tu<br/><span class="text-emerald-500 text-4xl">by Cię wysłuchać</span>
-            </h3>
-            
+            <h3 class="text-5xl font-black uppercase tracking-tighter mb-10 leading-none">Jesteśmy tu<br/><span class="text-emerald-500 text-4xl">by Cię wysłuchać</span></h3>
             <div class="space-y-8">
               <div class="flex items-start gap-6">
                 <div class="w-12 h-12 bg-emerald-600/20 rounded-xl flex items-center justify-center shrink-0 border border-emerald-500/30">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                 </div>
-                <div>
-                  <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Napisz do nas</p>
-                  <p class="text-xl font-bold">kontakt@znajgranice.org</p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-6">
-                <div class="w-12 h-12 bg-emerald-600/20 rounded-xl flex items-center justify-center shrink-0 border border-emerald-500/30">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Nasza Siedziba</p>
-                  <p class="text-xl font-bold">ul. Przykładowa 12/34</p>
-                  <p class="text-slate-400">00-001 Warszawa</p>
-                </div>
+                <div><p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Napisz do nas</p><p class="text-xl font-bold">kontakt@znajgranice.org</p></div>
               </div>
             </div>
-
             <div class="mt-16 p-8 bg-emerald-600 rounded-3xl">
               <p class="text-white font-black uppercase tracking-tight text-2xl mb-2">Potrzebujesz pilnej rozmowy?</p>
-              <p class="text-emerald-100 font-medium mb-4 italic">Nasi specjaliści czekają na Twoje zgłoszenie.</p>
               <p class="text-4xl font-black tracking-tighter text-slate-900">+48 123 456 789</p>
             </div>
           </div>
-
           <div class="bg-slate-800/50 p-8 md:p-12 rounded-[2.5rem] border border-slate-700 shadow-2xl">
             <form action="#" class="space-y-6">
               <div class="grid md:grid-cols-2 gap-6">
@@ -371,20 +355,9 @@ const partners = [
                   <input type="email" placeholder="Gdzie odpisać?" class="w-full bg-slate-900 border border-slate-700 rounded-2xl p-4 focus:border-emerald-500 outline-none transition" />
                 </div>
               </div>
-              <div class="space-y-2">
-                <label class="text-xs font-bold uppercase tracking-widest text-emerald-500 ml-2">W czym możemy pomóc?</label>
-                <textarea rows="4" placeholder="Opisz krótko swoją sytuację..." class="w-full bg-slate-900 border border-slate-700 rounded-2xl p-4 focus:border-emerald-500 outline-none transition resize-none"></textarea>
-              </div>
-              <div class="flex items-center gap-3 px-2">
-                <input type="checkbox" id="zgoda" class="w-5 h-5 accent-emerald-500 cursor-pointer" />
-                <label for="zgoda" class="text-xs text-slate-400 cursor-pointer">Wyrażam zgodę na przetwarzanie danych w celu udzielenia odpowiedzi.</label>
-              </div>
-              <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-black uppercase tracking-[0.2em] py-5 rounded-2xl shadow-xl shadow-emerald-900/20 transition-all active:scale-[0.98]">
-                Wyślij Wiadomość
-              </button>
+              <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-black uppercase tracking-[0.2em] py-5 rounded-2xl shadow-xl transition-all">Wyślij Wiadomość</button>
             </form>
           </div>
-
         </div>
       </div>
     </section>
@@ -395,16 +368,16 @@ const partners = [
 
 <script is:inline>
   const questions = [
-    "Czy poświęcasz coraz więcej czasu na myślenie o grze? (planujesz kolejne zakłady, analizujesz wyniki, szukasz sposobów na zdobycie funduszy w trakcie innych zajęć).",
+    "Czy poświęcasz coraz więcej czasu na myślenie o grze? (planujesz kolejne zakłady, analizujesz wyniki, szukasz sposobów na zdobycie funduszy).",
     "Czy próbujesz grać za coraz wyższe stawki, aby poczuć ten sam poziom emocji co kiedyś?",
     "Czy zdarzyło Ci się kłamać bliskim, aby ukryć to, jak często grasz lub ile pieniędzy na to wydajesz?",
-    "Czy po przegranej czujesz natychmiastowy przymus „odkucia się” i jak najszybszego powrotu do gry, by odrobić straty?",
+    "Czy po przegranej czujesz natychmiastowy przymus „odkucia się” i jak najszybszego powrotu do gry?",
     "Czy masz za sobą próby ograniczenia lub zaprzestania gry, które zakończyły się niepowodzeniem?",
-    "Czy czujesz rozdrażnienie, niepokój lub złość, gdy próbujesz przestać grać lub gdy nie masz dostępu do gry?",
-    "Czy zdarza Ci się grać po to, aby uciec od problemów, poczucia winy, lęku lub by „wyłączyć myślenie”?",
-    "Czy z powodu hazardu zdarzyło Ci się zaniedbać obowiązki zawodowe, naukę lub ważne relacje z bliskimi?",
-    "Czy pieniądze na grę lub na spłatę długów hazardowych pochodziły od rodziny, znajomych lub z instytucji finansowych?",
-    "Czy czujesz, że hazard przestał być rozrywką, a stał się przymusem, który dominuje nad Twoim życiem?"
+    "Czy czujesz rozdrażnienie, niepokój lub złość, gdy próbujesz przestać grać?",
+    "Czy zdarza Ci się grać po to, aby uciec od problemów, poczucia winy lub lęku?",
+    "Czy z powodu hazardu zdarzyło Ci się zaniedbać obowiązki zawodowe lub ważne relacje?",
+    "Czy pieniądze na grę pochodziły od rodziny, znajomych lub z pożyczek?",
+    "Czy czujesz, że hazard przestał być rozrywką, a stał się przymusem?"
   ];
 
   let currentQuestion = 0;
@@ -421,9 +394,7 @@ const partners = [
 
   function showQuestion() {
     const progress = (currentQuestion / questions.length) * 100;
-    const progressBar = document.getElementById('quiz-progress');
-    if(progressBar) progressBar.style.width = `${progress}%`;
-    
+    document.getElementById('quiz-progress').style.width = `${progress}%`;
     document.getElementById('question-counter').innerText = `Pytanie ${currentQuestion + 1} z ${questions.length}`;
     document.getElementById('question-text').innerText = questions[currentQuestion];
   }
@@ -431,7 +402,6 @@ const partners = [
   window.answer = function(val) {
     if(val) score++;
     currentQuestion++;
-
     if(currentQuestion < questions.length) {
       showQuestion();
     } else {
@@ -452,22 +422,22 @@ const partners = [
     document.getElementById('icon-red').classList.add('hidden');
 
     if (score === 0) {
-      iconContainer.className = "w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 bg-emerald-500 shadow-lg shadow-emerald-200";
+      iconContainer.className = "w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 bg-emerald-500";
       document.getElementById('icon-green').classList.remove('hidden');
-      title.className = "text-2xl font-black uppercase mb-4 text-emerald-600";
-      resultText.innerText = "Jest ok! Swoją relację z hazardem masz pod kontrolą. Pamiętaj, aby zawsze grać odpowiedzialnie i trzymać się wyznaczonych limitów.";
+      title.className = "text-2xl font-black uppercase mb-2 text-emerald-600";
+      resultText.innerText = "Grasz odpowiedzialnie. Trzymaj tak dalej!";
     } 
-    else if (score >= 1 && score <= 3) {
-      iconContainer.className = "w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 bg-amber-500 shadow-lg shadow-amber-200";
+    else if (score <= 3) {
+      iconContainer.className = "w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 bg-amber-500";
       document.getElementById('icon-orange').classList.remove('hidden');
-      title.className = "text-2xl font-black uppercase mb-4 text-amber-600";
-      resultText.innerText = "Uważaj! Twoja relacja z hazardem zaczyna być ryzykowna. Warto pogłębić wiedzę o mechanizmach gry, zanim granica zostanie przekroczona.";
+      title.className = "text-2xl font-black uppercase mb-2 text-amber-600";
+      resultText.innerText = "Uważaj, Twoja gra zaczyna być ryzykowna.";
     } 
     else {
-      iconContainer.className = "w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 bg-red-500 shadow-lg shadow-red-200";
+      iconContainer.className = "w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 bg-red-500";
       document.getElementById('icon-red').classList.remove('hidden');
-      title.className = "text-2xl font-black uppercase mb-4 text-red-600";
-      resultText.innerText = "Skup się! Twoja gra nosi znamiona problemu z hazardem. Tracisz kontrolę nad czasem i finansami. To ostatni moment, by skorzystać z profesjonalnej konsultacji.";
+      title.className = "text-2xl font-black uppercase mb-2 text-red-600";
+      resultText.innerText = "Skontaktuj się z nami – Twoja gra nosi znamiona problemu.";
     }
   }
 </script>
