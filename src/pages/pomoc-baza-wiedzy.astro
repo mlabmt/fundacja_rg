@@ -1,7 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import TopBar from '../components/TopBar.astro';
-import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 const articles = [
@@ -37,29 +35,23 @@ const articles = [
 ---
 
 <Layout title="Baza Wiedzy | Fundacja Znaj Granice">
-  <div class="fixed top-0 left-0 w-full z-[9999] shadow-2xl bg-white" style="isolation: isolate;">
-    <TopBar />
-    <Header />
-  </div>
-
-  <main class="pt-[128px] md:pt-[112px] bg-white min-h-screen">
+  <main class="bg-white min-h-screen">
     
-    <section class="py-20 px-6 bg-slate-50 border-b border-slate-100">
-      <div class="max-w-6xl mx-auto">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <div class="max-w-2xl">
-            <span class="text-emerald-600 font-black uppercase tracking-[0.3em] text-sm mb-4 block">Edukacja i Wsparcie</span>
-            <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none text-slate-900">Baza <span class="text-emerald-500">Wiedzy</span></h1>
-            <p class="text-xl text-slate-600 mt-6 font-medium leading-relaxed">
-              Zrozumienie problemu to połowa sukcesu. Zebraliśmy tu materiały, które pomogą Ci odzyskać kontrolę nad finansami i czasem.
-            </p>
-          </div>
-          <div class="hidden lg:block w-48 h-48 bg-emerald-100 rounded-[3rem] rotate-12 flex items-center justify-center">
-             <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-emerald-600 -rotate-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-             </svg>
-          </div>
-        </div>
+    <section class="bg-slate-900 py-20 px-6 text-white relative overflow-hidden">
+      <div class="max-w-4xl mx-auto relative z-10">
+        <a href="/" class="text-emerald-500 hover:text-emerald-400 transition-colors font-bold uppercase tracking-widest text-sm flex items-center gap-2 mb-8">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Powrót do strony głównej
+        </a>
+        <h1 class="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-6">
+          BAZA <span class="text-emerald-500">WIEDZY</span>
+        </h1>
+        <p class="text-slate-400 text-xl max-w-2xl font-medium leading-relaxed">
+          Edukujemy, flagujemy nieprawidłowości i wspieramy w budowaniu zdrowych nawyków cyfrowych. Zrozumienie problemu to pierwszy krok do kontroli.
+        </p>
       </div>
     </section>
 
@@ -70,7 +62,7 @@ const articles = [
             <button class="px-6 py-2 bg-slate-900 text-white rounded-full text-xs font-black uppercase tracking-widest transition">Wszystkie</button>
             <button class="px-6 py-2 bg-slate-100 text-slate-500 hover:bg-emerald-100 hover:text-emerald-700 rounded-full text-xs font-black uppercase tracking-widest transition">Dla Gracza</button>
             <button class="px-6 py-2 bg-slate-100 text-slate-500 hover:bg-emerald-100 hover:text-emerald-700 rounded-full text-xs font-black uppercase tracking-widest transition">Dla Rodziny</button>
-            <button class="px-6 py-2 bg-slate-100 text-slate-500 hover:bg-emerald-100 hover:text-emerald-700 rounded-full text-xs font-black uppercase tracking-widest transition">Mechanizmy Branży</button>
+            <button class="px-6 py-2 bg-slate-100 text-slate-500 hover:bg-emerald-100 hover:text-emerald-700 rounded-full text-xs font-black uppercase tracking-widest transition">Mechanizmy</button>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8">
@@ -102,7 +94,6 @@ const articles = [
 
       </div>
     </section>
-
   </main>
   <Footer />
 </Layout>
