@@ -4,68 +4,208 @@ import Footer from '../components/Footer.astro';
 
 const hotlines = [
   { name: "Kryzysowy Telefon Zaufania", phone: "116 123", desc: "Bezpłatny, całodobowy numer dla osób w kryzysie emocjonalnym." },
-  { name: "Telefon Zaufania (Hazard)", phone: "801 889 880", desc: "Instytut Psychologii Zdrowia – pomoc w problemach hazardowych." }
+  { name: "Telefon Zaufania (Uzależnienia)", phone: "801 889 880", desc: "Instytut Psychologii Zdrowia – pomoc w problemach hazardowych." }
+];
+
+const externalResources = [
+  { title: "Anonimowi Hazardziści", url: "https://anonimowihazardzisci.org/", desc: "Wspólnota osób, które dzielą się doświadczeniem i nadzieją w zdrowieniu." },
+  { title: "Stop Uzależnieniom", url: "https://stopuzaleznieniom.pl/", desc: "Baza wiedzy i oficjalny portal informacyjny o leczeniu hazardu." },
+  { title: "Postaw na Siebie", url: "https://postawnasiebie.org/", desc: "Kampania edukacyjna i praktyczne narzędzia autodiagnozy." },
+  { title: "Fundacja Lotto - Gdzie szukać pomocy", url: "https://www.fundacjalotto.pl/gdzie-szukac-pomocy/", desc: "Wykaz placówek i programów wsparcia finansowanych z Funduszu Rozwiązywania Problemów Hazardowych." }
+];
+
+const privateCenters = [
+  { name: "Ośrodek Michała Koterskiego", url: "https://michalkoterski-osrodek.pl/", loc: "Wsparcie prywatne / Łódź" },
+  { name: "Ośrodek Poznaj Siebie", url: "https://osrodekpoznajsiebie.com.pl/", loc: "Poznań i okolice" },
+  { name: "Pomocna Tratwa", url: "https://pomocnatratwa.pl/", loc: "Gdańsk / Terapia specjalistyczna" }
 ];
 ---
 
 <Layout title="Mapa Pomocy | Znaj Granice">
   <main class="bg-white min-h-screen">
-    <section class="bg-slate-900 py-20 px-6 text-white">
-      <div class="max-w-4xl mx-auto">
+    
+    <section class="bg-slate-900 py-20 px-6 text-white relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+        <svg width="100%" height="100%"><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/></pattern><rect width="100%" height="100%" fill="url(#grid)" /></svg>
+      </div>
+      <div class="max-w-4xl mx-auto relative z-10">
         <a href="/" class="text-emerald-500 hover:text-emerald-400 transition-colors font-bold uppercase tracking-widest text-sm flex items-center gap-2 mb-8">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
           Powrót do strony głównej
         </a>
-        <h1 class="text-4xl md:text-6xl font-black tracking-tighter uppercase">
+        <h1 class="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-6">
           MAPA <span class="text-emerald-500">POMOCY</span>
         </h1>
-        <p class="text-slate-400 mt-6 text-xl max-w-2xl font-medium">
-          Znajdź wsparcie w swojej okolicy. Poniżej zebraliśmy kluczowe numery telefonów oraz mapę sprawdzonych placówek.
+        <p class="text-slate-400 text-xl max-w-2xl font-medium leading-relaxed">
+          Nie szukaj rozwiązań na własną rękę. Poniżej znajdziesz sprawdzone ścieżki wyjścia, numery zaufania oraz bazę ośrodków wsparcia w całej Polsce.
         </p>
       </div>
     </section>
 
-    <section class="py-12 px-6 -mt-10 relative z-10">
+    <section class="py-12 px-6 -mt-10 relative z-20">
       <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
         {hotlines.map(h => (
-          <div class="bg-white border-b-4 border-emerald-500 p-8 rounded-3xl shadow-xl">
-            <p class="text-xs font-black text-slate-400 uppercase tracking-widest mb-1">{h.name}</p>
-            <p class="text-3xl font-black text-slate-900">{h.phone}</p>
-            <p class="text-sm text-slate-500 mt-1">{h.desc}</p>
+          <div class="bg-white border-b-4 border-emerald-500 p-8 rounded-3xl shadow-xl flex items-center gap-6 group hover:translate-y-[-4px] transition-all">
+            <div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+            </div>
+            <div>
+              <p class="text-xs font-black text-slate-400 uppercase tracking-widest mb-1">{h.name}</p>
+              <p class="text-3xl font-black text-slate-900 group-hover:text-emerald-600 transition">{h.phone}</p>
+              <p class="text-sm text-slate-500 mt-1 font-medium">{h.desc}</p>
+            </div>
           </div>
         ))}
       </div>
     </section>
 
-    <section class="py-20 px-6 bg-slate-50">
+    <section class="py-20 px-6 bg-white">
       <div class="max-w-6xl mx-auto">
-        <div class="bg-white rounded-[3rem] shadow-2xl overflow-hidden border border-slate-200">
-          <div class="p-10 border-b border-slate-100">
-            <h2 class="text-2xl font-black uppercase tracking-tight text-slate-900">Placówki stacjonarne i mityngi</h2>
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-black uppercase tracking-tight text-slate-900 mb-4">Jak zacząć <span class="text-emerald-600">zdrowienie?</span></h2>
+            <p class="text-slate-500 max-w-2xl mx-auto font-medium">Sam wybór ośrodka to tylko część drogi. Zobacz, co możesz zrobić już teraz, aby zabezpieczyć siebie i bliskich.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-12">
+          <div class="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="w-12 h-12 bg-slate-900 text-white rounded-full flex items-center justify-center font-black">1</div>
+              <h3 class="text-2xl font-black uppercase tracking-tight">Dla Gracza</h3>
+            </div>
+            <ul class="space-y-6">
+              <li class="flex gap-4">
+                <div class="text-emerald-500 font-bold">●</div>
+                <div><p class="font-bold uppercase text-xs mb-1">Samowykluczenie</p><p class="text-sm text-slate-600 leading-relaxed">Wykorzystaj narzędzia u operatorów i zablokuj dostęp do kont. Przerwij impuls gry.</p></div>
+              </li>
+              <li class="flex gap-4">
+                <div class="text-emerald-500 font-bold">●</div>
+                <div><p class="font-bold uppercase text-xs mb-1">Szczerość finansowa</p><p class="text-sm text-slate-600 leading-relaxed">Przekaż karty i dostęp do konta zaufanej osobie. Nie ufaj swoim impulsom w fazie kryzysu.</p></div>
+              </li>
+              <li class="flex gap-4">
+                <div class="text-emerald-500 font-bold">●</div>
+                <div><p class="font-bold uppercase text-xs mb-1">Wspólnota</p><p class="text-sm text-slate-600 leading-relaxed">Znajdź mityng Anonimowych Hazardzistów. To ludzie, którzy rozumieją Twój problem bez oceniania.</p></div>
+              </li>
+            </ul>
           </div>
-          <div id="map" class="w-full h-[600px] z-0"></div>
+
+          <div class="bg-emerald-50/50 p-10 rounded-[2.5rem] border border-emerald-100">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="w-12 h-12 bg-emerald-500 text-white rounded-full flex items-center justify-center font-black">2</div>
+              <h3 class="text-2xl font-black uppercase tracking-tight">Dla Rodziny</h3>
+            </div>
+            <ul class="space-y-6">
+              <li class="flex gap-4">
+                <div class="text-slate-900 font-bold">●</div>
+                <div><p class="font-bold uppercase text-xs mb-1">Koniec ze spłacaniem</p><p class="text-sm text-slate-600 leading-relaxed">Nie spłacaj długów hazardzisty. To najtrudniejsza, ale najskuteczniejsza pomoc w uświadomieniu skali problemu.</p></div>
+              </li>
+              <li class="flex gap-4">
+                <div class="text-slate-900 font-bold">●</div>
+                <div><p class="font-bold uppercase text-xs mb-1">Ochrona prawna</p><p class="text-sm text-slate-600 leading-relaxed">Zadbaj o rozdzielność majątkową. Chronisz nie tylko pieniądze, ale bezpieczeństwo dzieci i dachu nad głową.</p></div>
+              </li>
+              <li class="flex gap-4">
+                <div class="text-slate-900 font-bold">●</div>
+                <div><p class="font-bold uppercase text-xs mb-1">Twoja Terapia</p><p class="text-sm text-slate-600 leading-relaxed">Współuzależnienie to realny problem zdrowotny. Szukaj grup Al-Anon lub terapii dla bliskich osób uzależnionych.</p></div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
+
+    <section class="py-20 px-6 bg-slate-50 border-t border-slate-200">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid lg:grid-cols-3 gap-12">
+          
+          <div class="lg:col-span-2 space-y-10">
+            <h3 class="text-xl font-black uppercase tracking-widest text-slate-900 flex items-center gap-3">
+                <span class="w-8 h-1 bg-emerald-500"></span> Ważne instytucje i portale
+            </h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+              {externalResources.map(res => (
+                <a href={res.url} target="_blank" class="block p-6 bg-white border border-slate-200 rounded-3xl hover:border-emerald-500 hover:shadow-lg transition group">
+                  <h4 class="font-black text-slate-900 uppercase text-sm mb-2 group-hover:text-emerald-600">{res.title}</h4>
+                  <p class="text-xs text-slate-500 font-medium leading-relaxed">{res.desc}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div class="space-y-10">
+            <h3 class="text-xl font-black uppercase tracking-widest text-slate-900 flex items-center gap-3">
+                <span class="w-8 h-1 bg-slate-400"></span> Wybrane Ośrodki
+             </h3>
+             <div class="space-y-4">
+               {privateCenters.map(center => (
+                 <a href={center.url} target="_blank" class="flex flex-col p-5 bg-white border border-slate-200 rounded-2xl hover:bg-slate-900 group transition shadow-sm">
+                   <span class="text-xs font-bold text-emerald-500 mb-1">{center.loc}</span>
+                   <span class="font-bold text-slate-900 group-hover:text-white transition uppercase text-sm tracking-tight">{center.name}</span>
+                 </a>
+               ))}
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 px-6 bg-slate-100 border-t border-slate-200">
+      <div class="max-w-6xl mx-auto">
+        <div class="bg-white rounded-[3rem] shadow-2xl overflow-hidden border border-slate-200">
+          <div class="p-10 border-b border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div>
+              <h2 class="text-3xl font-black uppercase tracking-tight text-slate-900">Mapa placówek <span class="text-emerald-600">stacjonarnych</span></h2>
+              <p class="text-slate-500 font-medium mt-2">Przeglądaj ośrodki NFZ oraz prywatne punkty konsultacyjne w całej Polsce.</p>
+            </div>
+            <div class="flex gap-3">
+               <span class="inline-flex items-center px-4 py-2 rounded-full text-[10px] font-black bg-emerald-100 text-emerald-700 uppercase tracking-widest">● Punkty NFZ / AH</span>
+            </div>
+          </div>
+          
+          <div id="map" class="w-full h-[650px] z-0"></div>
+        </div>
+      </div>
+    </section>
+
   </main>
   <Footer />
 </Layout>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<script is:inline src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
     const map = L.map('map').setView([52.068, 19.479], 6);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '&copy; OpenStreetMap' }).addTo(map);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
 
     const locations = [
-      { lat: 52.2297, lng: 21.0122, name: "Warszawa: Anonimowi Hazardziści", desc: "Mityngi i wsparcie grupowe." },
-      { lat: 51.7592, lng: 19.4560, name: "Łódź: Ośrodek Michała Koterskiego", desc: "Profesjonalna klinika leczenia uzależnień." },
-      { lat: 52.4064, lng: 16.9252, name: "Poznań: Ośrodek Poznaj Siebie", desc: "Terapia uzależnień behawioralnych." }
+      { lat: 52.2297, lng: 21.0122, name: "Warszawa: Anonimowi Hazardziści", desc: "Mityngi i wsparcie grupowe.<br><a href='https://anonimowihazardzisci.org/' target='_blank' style='color:#10b981; font-weight:bold;'>Strona WWW</a>" },
+      { lat: 52.4064, lng: 16.9252, name: "Poznań: Ośrodek Poznaj Siebie", desc: "Terapia uzależnień behawioralnych.<br><a href='https://osrodekpoznajsiebie.com.pl/' target='_blank' style='color:#10b981; font-weight:bold;'>Strona WWW</a>" },
+      { lat: 51.7592, lng: 19.4560, name: "Łódź: Ośrodek Michała Koterskiego", desc: "Profesjonalna klinika leczenia uzależnień.<br><a href='https://michalkoterski-osrodek.pl/' target='_blank' style='color:#10b981; font-weight:bold;'>Strona WWW</a>" },
+      { lat: 54.3520, lng: 18.6466, name: "Gdańsk: Pomocna Tratwa", desc: "Konsultacje i wsparcie specjalistyczne.<br><a href='https://pomocnatratwa.pl/' target='_blank' style='color:#10b981; font-weight:bold;'>Strona WWW</a>" }
     ];
 
     locations.forEach(loc => {
-      L.marker([loc.lat, loc.lng]).addTo(map).bindPopup(`<strong style="color:#0f172a;">${loc.name}</strong><br><span style="color:#64748b;">${loc.desc}</span>`);
+      L.marker([loc.lat, loc.lng])
+        .addTo(map)
+        .bindPopup(`
+          <div style="padding: 10px; font-family: sans-serif;">
+            <strong style="display:block; margin-bottom: 5px; color:#0f172a; font-size: 14px; text-transform: uppercase;">${loc.name}</strong>
+            <span style="color:#64748b; font-size: 12px;">${loc.desc}</span>
+          </div>
+        `);
     });
   });
 </script>
+
+<style>
+  #map { background: #f1f5f9; }
+  
+  :global(.leaflet-popup-content-wrapper) {
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+    border: 1px solid #e2e8f0;
+  }
+</style>
