@@ -1,0 +1,133 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+
+// Dane do przelewu tradycyjnego (możesz edytować)
+const fundacjaInfo = {
+  nazwa: "Fundacja Znaj Granice",
+  konto: "00 0000 0000 0000 0000 0000 0000",
+  bank: "Nazwa Twojego Banku",
+  tytul: "Darowizna na cele statutowe",
+  adres: "ul. Przykładowa 1, 00-000 Miasto"
+};
+---
+
+<Layout title="Wesprzyj nas | Fundacja Znaj Granice">
+  <main class="bg-white min-h-screen">
+    
+    <section class="bg-slate-900 py-20 px-6 text-white relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+        <svg width="100%" height="100%"><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/></pattern><rect width="100%" height="100%" fill="url(#grid)" /></svg>
+      </div>
+      <div class="max-w-4xl mx-auto relative z-10">
+        <a href="/" class="text-emerald-500 hover:text-emerald-400 transition-colors font-bold uppercase tracking-widest text-sm flex items-center gap-2 mb-8">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Powrót do strony głównej
+        </a>
+        <h1 class="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-6">
+          WESPRZYJ <span class="text-emerald-500">NAS</span>
+        </h1>
+        <p class="text-slate-400 text-xl max-w-2xl font-medium leading-relaxed">
+          Twoje wsparcie pozwala nam flagować nieprawidłowości, edukować i realnie zmieniać rynek gier oraz hazardu na bezpieczniejszy dla każdego.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-20 px-6 -mt-10 relative z-20">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+          
+          <div class="bg-white p-10 md:p-12 rounded-[3rem] shadow-2xl border border-slate-100">
+            <div class="flex items-center gap-3 mb-8">
+              <span class="w-12 h-1 bg-emerald-500"></span>
+              <h2 class="text-2xl font-black uppercase tracking-tight text-slate-900">Szybka wpłata online</h2>
+            </div>
+            
+            <form action="https://secure.upay.pl/payment" method="POST" class="space-y-8">
+              <input type="hidden" name="merchant_id" value="TUTAJ_WPISZ_ID_PARTNERA" />
+              <input type="hidden" name="service_id" value="TUTAJ_WPISZ_ID_PUNKTU" />
+              <input type="hidden" name="description" value="Darowizna na cele statutowe Fundacji Znaj Granice" />
+              <input type="hidden" name="return_url" value="https://twojadomena.pl/dziekujemy" />
+
+              <div>
+                <p class="text-xs font-black uppercase tracking-widest text-slate-400 mb-4">Wybierz kwotę wsparcia</p>
+                <div class="grid grid-cols-3 gap-3">
+                  <label class="cursor-pointer group">
+                    <input type="radio" name="amount" value="20.00" class="peer hidden" checked />
+                    <div class="py-4 border-2 border-slate-100 rounded-2xl text-center font-black group-hover:border-emerald-200 peer-checked:bg-emerald-500 peer-checked:text-white peer-checked:border-emerald-500 transition-all">20 PLN</div>
+                  </label>
+                  <label class="cursor-pointer group">
+                    <input type="radio" name="amount" value="50.00" class="peer hidden" />
+                    <div class="py-4 border-2 border-slate-100 rounded-2xl text-center font-black group-hover:border-emerald-200 peer-checked:bg-emerald-500 peer-checked:text-white peer-checked:border-emerald-500 transition-all">50 PLN</div>
+                  </label>
+                  <label class="cursor-pointer group">
+                    <input type="radio" name="amount" value="100.00" class="peer hidden" />
+                    <div class="py-4 border-2 border-slate-100 rounded-2xl text-center font-black group-hover:border-emerald-200 peer-checked:bg-emerald-500 peer-checked:text-white peer-checked:border-emerald-500 transition-all">100 PLN</div>
+                  </label>
+                </div>
+              </div>
+
+              <button type="submit" class="w-full bg-slate-900 hover:bg-emerald-600 text-white py-6 rounded-2xl font-black uppercase tracking-widest transition-all shadow-xl flex items-center justify-center gap-3 group">
+                Wpłać teraz 
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:translate-x-1 transition" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+              </button>
+
+              <p class="text-center text-[10px] text-slate-400 font-medium uppercase tracking-tighter">
+                Bezpieczne płatności obsługiwane przez <span class="font-bold">uPay</span>
+              </p>
+            </form>
+          </div>
+
+          <div class="space-y-8">
+            <div class="bg-slate-50 p-10 rounded-[3rem] border border-slate-100">
+              <h3 class="text-xl font-black uppercase tracking-tight text-slate-900 mb-6 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
+                Przelew tradycyjny
+              </h3>
+              <div class="space-y-4">
+                <div>
+                  <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Nazwa odbiorcy</p>
+                  <p class="font-bold text-slate-900">{fundacjaInfo.nazwa}</p>
+                </div>
+                <div>
+                  <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Numer konta</p>
+                  <p class="font-mono font-bold text-slate-900 tracking-wider text-sm md:text-base">{fundacjaInfo.konto}</p>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                  <div>
+                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Tytuł przelewu</p>
+                    <p class="font-bold text-slate-900 text-sm">{fundacjaInfo.tytul}</p>
+                  </div>
+                  <div>
+                    <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Bank</p>
+                    <p class="font-bold text-slate-900 text-sm">{fundacjaInfo.bank}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-emerald-600 p-10 rounded-[3rem] text-white relative overflow-hidden group">
+               <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-white/10 rounded-full group-hover:scale-150 transition-transform duration-700"></div>
+               <h3 class="text-xl font-black uppercase tracking-tight mb-4 relative z-10">Dlaczego warto nas wesprzeć?</h3>
+               <p class="text-emerald-50 text-sm leading-relaxed font-medium relative z-10">
+                 Każda złotówka trafia na działania statutowe: flagowanie naruszeń u operatorów, wsparcie prawne dla osób poszkodowanych oraz rozwój bazy wiedzy, która pomaga chronić młodych graczy.
+               </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 px-6 border-t border-slate-100">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-xs font-black uppercase tracking-[0.3em] text-emerald-600 mb-4">Ważna informacja</h2>
+        <p class="text-slate-500 text-sm leading-relaxed italic">
+          Pamiętaj, że darowizny przekazane na cele statutowe fundacji możesz odliczyć od podatku dochodowego (PIT/CIT). Zachowaj potwierdzenie przelewu lub wpłaty online do rocznego rozliczenia.
+        </p>
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>
